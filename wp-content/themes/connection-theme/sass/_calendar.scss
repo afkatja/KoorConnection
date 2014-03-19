@@ -1,0 +1,14 @@
+#calendar_wrap {
+	#wp-calendar { position: relative; font-size: 1.2em; width: 100%; }
+	caption { color: $dk-brown; @extend .h3; @extend .gamma; }
+	th { color: $grey; text-align: center; font-weight: bold; padding-bottom: 5px;	}
+	td { text-align: center; color: $dk-grey; padding: 5px; background: $lila; border: 1px solid #fff;
+		&.pad { background: none;	}
+	}
+	tfoot {
+		position: absolute; top: 0; left: 0; width: 100%;
+		#prev, #next { font-size: 1.4em; padding: 0; background: none; }
+		#prev { text-align: left; }
+		#next { text-align: right; }
+	}
+}

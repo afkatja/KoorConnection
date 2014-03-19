@@ -1,0 +1,17 @@
+.copse { font-family: $copse; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 { font-family: $copse; margin-bottom: .5em; margin-left: 0; margin-top: 0; }
+h1, .alpha, .featured-title { font-size: 3em; }
+h2, .beta { font-size: 2.4em; }
+h3, .gamma { font-size: 2em; }
+h4, .delta { font-size: 1.6em; }
+p { font-size: 1.4em; margin-bottom: .5em; }
+
+.strong { font-weight: bold; 
+	.copse &, &.copse { font-family: Helvetica, Arial, sans-serif; }
+}
+
+.widget-title {	@extend .h3; }
+.featured-title {
+	@include media-query(mobilel) { padding: 0; }
+}

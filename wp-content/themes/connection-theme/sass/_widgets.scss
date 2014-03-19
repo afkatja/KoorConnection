@@ -1,0 +1,15 @@
+.widget-wrapper { margin-bottom: 0; background: #fff; @extend .box; @include vendor(border-radius, 3px); }
+
+#widgets.search {	background: $warm-pink; 
+	.widget_search { padding: 0; }
+	.submit {	width: 25%; }
+}
+
+#widgets { 
+	&, .front-page & { margin-top: 0; 
+		@include media-query(tabletl) {	margin-top: 0; }
+	}
+	.widget_recent_entries {
+	 	ul { padding: 0; }
+	 }
+}

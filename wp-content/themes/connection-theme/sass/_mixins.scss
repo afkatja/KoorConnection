@@ -1,0 +1,95 @@
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+            #{$property}:$value;
+}
+
+@mixin vendor-value($property, $value){  
+  #{$property}:-webkit-#{$value};
+     #{$property}:-moz-#{$value};
+      #{$property}:-ms-#{$value};
+          #{$property}:#{$value};
+}
+@mixin box-sizing($sizing) { 
+  @include vendor(box-sizing, $sizing);
+}
+
+@mixin mass-extend($classes...) {
+	@each $class in $classes {
+		@extend .#{$class};
+	}
+}
+
+@mixin sticky-footer($footer-height, $root-selector: unquote("#root"), $root-footer-selector: unquote("#root_footer"), $footer-selector: unquote("#footer")) {
+  html, body { height: 100%; width: 100%; }
+  #wrap, #page-wrap { height: 100%; }
+  #{$root-selector} {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    padding-bottom: $footer-height;
+    margin-bottom: -$footer-height;
+    @if ($root-footer-selector != "") {
+      #{$root-footer-selector} { height: $footer-height; } }
+    }
+  #{$footer-selector} {
+    clear: both;
+    position: relative;
+    //min-height: $footer-height;
+  }
+}
+
+@mixin vertical-gradient($fromColor, $toColor, $fromPosition: 0, $toPosition: 100%){
+  background-color: $fromColor; /*Old browsers*/
+  background: -moz-linear-gradient(top, $fromColor $fromPosition $toColor $toPosition); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($fromPosition, $fromColor), color-stop($toPosition, $toColor)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $fromColor $fromPosition, $toColor $toPosition); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $fromColor $fromPosition, $toColor $toPosition); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $fromColor $fromPosition, $toColor $toPosition); /* IE10+ */
+  background: linear-gradient(to bottom, $fromColor $fromPosition, $toColor $toPosition); /* W3C */
+}
+
+$base-font-size:    16px !default;
+$base-line-height:  22px !default;
+@mixin font-size($font-size){
+  font-size:$font-size;
+  font-size: ($font-size / $base-font-size)*1rem;
+}
+
+@mixin line-height($font-size, $line-height){
+  line-height: ($line-height / $font-size)*1rem;
+}
+
+/**
+ * Media queries
+ */
+
+@mixin media-query($media-query){
+  @if $media-query == tabletl-and-up{
+      @media only screen and (min-width: $tabletp + 1) { @content; }
+  }
+  @if $media-query == tablet-and-up{
+      @media only screen and (min-width: $mobilel + 1) { @content; }
+  }
+  @if $media-query == tabletl{
+      @media only screen and (max-width: $tabletl) { @content; }
+  }
+  @if $media-query == tabletp{
+      @media only screen and (max-width: $tabletp) { @content; }
+  }
+  @if $media-query == mobilel{
+    @media only screen and (max-width: $mobilel) { @content; }
+  }
+  @if $media-query == mobilep{
+    @media only screen and (max-width: $mobilep) { @content; }
+  }
+  @if $media-query == retina {
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) { @content; }
+  }
+}
+
+@mixin custom-mq($mq) {
+	@media only screen and (max-width: $mq) { @content; }
+}

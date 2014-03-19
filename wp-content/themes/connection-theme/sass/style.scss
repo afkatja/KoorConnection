@@ -1,0 +1,17 @@
+/*!
+Theme Name:     Connection Theme
+Theme URI:      
+Description:    Child theme for the Responsive theme
+Author:         Katja Hollaar
+Author URI:     
+Template:       responsive                             
+Version:        0.1.0
+*/
+
+/*! responsive theme's styles */
+@import url('../responsive/style.css');
+
+/*! google font Copse*/
+@import url("http://fonts.googleapis.com/css?family=Copse");
+
+@import "connection";

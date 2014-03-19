@@ -1,0 +1,1707 @@
+@import url("../responsive/style.css");
+@import url("http://fonts.googleapis.com/css?family=Copse");
+/*
+Theme Name:     Connection Theme
+Theme URI:      
+Description:    Child theme for the Responsive theme
+Author:         Katja Hollaar
+Author URI:     
+Template:       responsive                             
+Version:        0.1.0
+*/
+/* responsive theme's styles */
+/* google font Copse*/
+/** Media queries */
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+/* line 12, sass/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+/* line 21, sass/_reset.scss */
+body, body * { line-height: 1; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+
+/* line 25, sass/_reset.scss */
+ol, ul { list-style: none; }
+
+/* line 28, sass/_reset.scss */
+blockquote, q { quotes: none; }
+
+/* line 32, sass/_reset.scss */
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+/* remember to define focus styles! */
+/* line 38, sass/_reset.scss */
+:focus { outline: 0; }
+
+/* remember to highlight inserts somehow! */
+/* line 43, sass/_reset.scss */
+ins { text-decoration: none; }
+
+/* line 46, sass/_reset.scss */
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 51, sass/_reset.scss */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* line 56, sass/_reset.scss */
+*, *:before, *:after { box-sizing: border-box; }
+
+/* line 58, sass/_reset.scss */
+img { max-width: 100%; }
+
+/* Base reset */
+/* Site styles*/
+/* line 3, sass/_utils.scss */
+html, body { height: 100%; }
+
+/* line 4, sass/_utils.scss */
+body { font-size: 62%; line-height: 1.3; font-family: Helvetica, Arial, sans-serif; /*background-color: #D7C6D4; -webkit-radial-gradient(center, ellipse cover, $beige 0%, #faeed9 100%) */ background: #ebdebb url(images/bgx.png) 50% 60px no-repeat; background-size: 840px auto; }
+
+/* line 8, sass/_utils.scss */
+nav ul { list-style: none; }
+
+/* line 9, sass/_utils.scss */
+a, .link { text-decoration: none; color: #92278f; }
+/* line 10, sass/_utils.scss */
+a:hover, .link:hover { color: #AA766C; }
+
+/* line 14, sass/_utils.scss */
+q:before { content: "\201C"; }
+/* line 15, sass/_utils.scss */
+q:after { content: '\201D'; }
+
+/* line 18, sass/_utils.scss */
+.contain:after, .sub-header-nav:after, .contain:before, .sub-header-nav:before { content: " 0020"; display: block; height: 0; overflow: hidden; }
+/* line 19, sass/_utils.scss */
+.contain:after, .sub-header-nav:after { clear: both; }
+
+/* line 21, sass/_utils.scss */
+.clear { clear: both; }
+
+/* line 22, sass/_utils.scss */
+.vh { text-indent: -9999em; }
+
+/* line 23, sass/_utils.scss */
+.ib { display: inline-block; }
+
+/* line 24, sass/_utils.scss */
+.hidden { display: none !important; }
+
+/* line 25, sass/_utils.scss */
+.mask { overflow: hidden; }
+
+/* line 26, sass/_utils.scss */
+.left { float: left; }
+
+/* line 27, sass/_utils.scss */
+.right { float: right; }
+/* line 28, sass/_utils.scss */
+.right.abs { right: 0; }
+
+/* line 30, sass/_utils.scss */
+.left + .left { margin-left: 2%; }
+
+/* line 31, sass/_utils.scss */
+.right + .right { margin-right: 2%; }
+
+/* line 33, sass/_utils.scss */
+.horizontal li { float: left; }
+/* line 34, sass/_utils.scss */
+.horizontal li + li { margin-left: 10px; }
+
+/* line 36, sass/_utils.scss */
+.one-of-three { width: 29%; }
+
+/* line 37, sass/_utils.scss */
+.center { margin: 0 auto; }
+
+/* line 38, sass/_utils.scss */
+.full, .sub-header-nav { width: 100%; }
+
+/* line 39, sass/_utils.scss */
+.box, .widget-wrapper { padding: 10px; }
+
+/* line 40, sass/_utils.scss */
+.round-box, .sub-header-nav { border-radius: 5px; padding: 10px; }
+/* line 41, sass/_utils.scss */
+.round-box:not(.button), .sub-header-nav:not(.button) { -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); -ms-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); }
+
+/* line 44, sass/_utils.scss */
+.flush { margin: 0 !important; }
+
+/* line 46, sass/_utils.scss */
+.default { background-color: #fff; color: #444444; }
+
+/* line 47, sass/_utils.scss */
+.secondary { background-color: #d2bea0; }
+
+/* line 48, sass/_utils.scss */
+.inverted { background-color: #444444; color: #fff; }
+/* line 49, sass/_utils.scss */
+.inverted a { color: #fff; }
+
+/* line 52, sass/_utils.scss */
+.abs { position: absolute; }
+
+/* line 53, sass/_utils.scss */
+.rel { position: relative; }
+
+/* line 54, sass/_utils.scss */
+.fxd { position: fixed; }
+
+/* line 56, sass/_utils.scss */
+.text-left { text-align: left; }
+
+/* line 57, sass/_utils.scss */
+.text-center { text-align: center; }
+
+/* line 58, sass/_utils.scss */
+.text-right { text-align: right; }
+
+/* =Responsive 12 Column Grid http://themeid.com/responsive-grid/
+-------------------------------------------------------------- */
+/* line 4, sass/_grid.scss */
+.grid, .site-nav, .main-nav { float: left; margin-bottom: 2.127659574468%; /*	padding-top: 0;*/ }
+
+/* line 10, sass/_grid.scss */
+.grid-right, .sub-header-nav { float: right; margin-bottom: 2.127659574468%; /*	padding-top: 0;*/ }
+
+/* line 26, sass/_grid.scss */
+.col-60, .col-140, .col-220, .col-300, .col-380, .col-460, .col-540, .col-620, .col-700, .col-780, .site-nav, .main-nav, .col-860 { margin-right: 2.127659574468%; display: block; }
+
+/* line 30, sass/_grid.scss */
+.col-60 { width: 6.382978723404%; }
+
+/* line 34, sass/_grid.scss */
+.col-140 { width: 14.893617021277%; }
+
+/* line 38, sass/_grid.scss */
+.col-220 { width: 23.404255319149%; }
+
+/* line 42, sass/_grid.scss */
+.col-300 { width: 31.914893617021%; }
+
+/* line 46, sass/_grid.scss */
+.col-380 { width: 40.425531914894%; }
+
+/* line 50, sass/_grid.scss */
+.col-460 { width: 48.936170212766%; }
+
+/* line 54, sass/_grid.scss */
+.col-540 { width: 57.446808510638%; }
+
+/* line 58, sass/_grid.scss */
+.col-620 { width: 65.957446808511%; }
+
+/* line 62, sass/_grid.scss */
+.col-700 { width: 74.468085106383%; }
+
+/* line 66, sass/_grid.scss */
+.col-780, .site-nav, .main-nav { width: 82.978723404255%; }
+
+/* line 70, sass/_grid.scss */
+.col-860 { width: 91.489361702128%; }
+
+/* line 74, sass/_grid.scss */
+.col-940 { width: 100%; }
+
+/* line 78, sass/_grid.scss */
+.fit, .sub-header-nav { margin-left: 0 !important; margin-right: 0 !important; }
+
+/* Font Awesome icons */
+@font-face { font-family: 'FontAwesome'; src: url("fonts/fontawesome-webfont.eot"); src: url("fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff") format("woff"), url("fonts/fontawesome-webfont.ttf") format("truetype"), url("fonts/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"), url("fonts/fontawesome-webfont.svg#FontAwesomeRegular") format("svg"); font-weight: normal; font-style: normal; }
+
+/* line 13, sass/_icons.scss */
+[class^="icon-"]:before, [class*=" icon-"] { font-family: FontAwesome; font-weight: normal; font-style: normal; display: inline-block; }
+
+/* line 14, sass/_icons.scss */
+a [class^="icon-"], a [class*=" icon-"] { display: inline-block; }
+
+/* makes the font 33% larger relative to the icon container */
+/* line 16, sass/_icons.scss */
+.icon-large:before { vertical-align: top; font-size: 4/3em; }
+
+/* line 18, sass/_icons.scss */
+.icon-arrow-left:before { content: "\f060"; }
+
+/* line 19, sass/_icons.scss */
+.icon-arrow-right:before { content: "\f061"; }
+
+/* line 20, sass/_icons.scss */
+.icon-arrow-up:before { content: "\f062"; }
+
+/* line 21, sass/_icons.scss */
+.icon-arrow-down:before { content: "\f063"; }
+
+/* line 22, sass/_icons.scss */
+.icon-chevron-right:before { content: "\f054"; text-indent: -10px; display: inline-block; }
+
+/* line 23, sass/_icons.scss */
+.icon-chevron-down:before, .icon-expand:before { content: "\f078"; text-indent: -15px; display: inline-block; }
+
+/* line 24, sass/_icons.scss */
+.icon-chevron-up:before, .icon-collapse:before { content: "\f077"; text-indent: -15px; display: inline-block; }
+
+/* line 25, sass/_icons.scss */
+.icon-facebook-sign:before { content: "\f082"; }
+
+/* line 26, sass/_icons.scss */
+.icon-twitter-sign:before { content: "\f081"; }
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers do not read off random characters that represent icons */
+/* line 29, sass/_icons.scss */
+.icon-glass:before { content: "\f000"; }
+
+/* line 32, sass/_icons.scss */
+.icon-music:before { content: "\f001"; }
+
+/* line 35, sass/_icons.scss */
+.icon-search:before { content: "\f002"; }
+
+/* line 38, sass/_icons.scss */
+.icon-envelope:before { content: "\f003"; }
+
+/* line 41, sass/_icons.scss */
+.icon-heart:before { content: "\f004"; }
+
+/* line 44, sass/_icons.scss */
+.icon-star:before { content: "\f005"; }
+
+/* line 47, sass/_icons.scss */
+.icon-star-empty:before { content: "\f006"; }
+
+/* line 50, sass/_icons.scss */
+.icon-user:before { content: "\f007"; }
+
+/* line 53, sass/_icons.scss */
+.icon-film:before { content: "\f008"; }
+
+/* line 56, sass/_icons.scss */
+.icon-th-large:before { content: "\f009"; }
+
+/* line 59, sass/_icons.scss */
+.icon-th:before { content: "\f00a"; }
+
+/* line 62, sass/_icons.scss */
+.icon-th-list:before { content: "\f00b"; }
+
+/* line 65, sass/_icons.scss */
+.icon-ok:before { content: "\f00c"; }
+
+/* line 68, sass/_icons.scss */
+.icon-remove:before { content: "\f00d"; }
+
+/* line 71, sass/_icons.scss */
+.icon-zoom-in:before { content: "\f00e"; }
+
+/* line 74, sass/_icons.scss */
+.icon-zoom-out:before { content: "\f010"; }
+
+/* line 77, sass/_icons.scss */
+.icon-off:before { content: "\f011"; }
+
+/* line 80, sass/_icons.scss */
+.icon-signal:before { content: "\f012"; }
+
+/* line 83, sass/_icons.scss */
+.icon-cog:before { content: "\f013"; }
+
+/* line 86, sass/_icons.scss */
+.icon-trash:before { content: "\f014"; }
+
+/* line 89, sass/_icons.scss */
+.icon-home:before { content: "\f015"; }
+
+/* line 92, sass/_icons.scss */
+.icon-file:before { content: "\f016"; }
+
+/* line 95, sass/_icons.scss */
+.icon-time:before { content: "\f017"; }
+
+/* line 98, sass/_icons.scss */
+.icon-road:before { content: "\f018"; }
+
+/* line 101, sass/_icons.scss */
+.icon-download-alt:before { content: "\f019"; }
+
+/* line 104, sass/_icons.scss */
+.icon-download:before { content: "\f01a"; }
+
+/* line 107, sass/_icons.scss */
+.icon-upload:before { content: "\f01b"; }
+
+/* line 110, sass/_icons.scss */
+.icon-inbox:before { content: "\f01c"; }
+
+/* line 113, sass/_icons.scss */
+.icon-play-circle:before { content: "\f01d"; }
+
+/* line 117, sass/_icons.scss */
+.icon-repeat:before, .icon-rotate-right:before { content: "\f01e"; }
+
+/* F020 doesn't work in Safari. all shifted one down */
+/* line 121, sass/_icons.scss */
+.icon-refresh:before { content: "\f021"; }
+
+/* line 124, sass/_icons.scss */
+.icon-list-alt:before { content: "\f022"; }
+
+/* line 127, sass/_icons.scss */
+.icon-lock:before { content: "\f023"; }
+
+/* line 130, sass/_icons.scss */
+.icon-flag:before { content: "\f024"; }
+
+/* line 133, sass/_icons.scss */
+.icon-headphones:before { content: "\f025"; }
+
+/* line 136, sass/_icons.scss */
+.icon-volume-off:before { content: "\f026"; }
+
+/* line 139, sass/_icons.scss */
+.icon-volume-down:before { content: "\f027"; }
+
+/* line 142, sass/_icons.scss */
+.icon-volume-up:before { content: "\f028"; }
+
+/* line 145, sass/_icons.scss */
+.icon-qrcode:before { content: "\f029"; }
+
+/* line 148, sass/_icons.scss */
+.icon-barcode:before { content: "\f02a"; }
+
+/* line 151, sass/_icons.scss */
+.icon-tag:before { content: "\f02b"; }
+
+/* line 154, sass/_icons.scss */
+.icon-tags:before { content: "\f02c"; }
+
+/* line 157, sass/_icons.scss */
+.icon-book:before { content: "\f02d"; }
+
+/* line 160, sass/_icons.scss */
+.icon-bookmark:before { content: "\f02e"; }
+
+/* line 163, sass/_icons.scss */
+.icon-print:before { content: "\f02f"; }
+
+/* line 166, sass/_icons.scss */
+.icon-camera:before { content: "\f030"; }
+
+/* line 169, sass/_icons.scss */
+.icon-font:before { content: "\f031"; }
+
+/* line 172, sass/_icons.scss */
+.icon-bold:before { content: "\f032"; }
+
+/* line 175, sass/_icons.scss */
+.icon-italic:before { content: "\f033"; }
+
+/* line 178, sass/_icons.scss */
+.icon-text-height:before { content: "\f034"; }
+
+/* line 181, sass/_icons.scss */
+.icon-text-width:before { content: "\f035"; }
+
+/* line 184, sass/_icons.scss */
+.icon-align-left:before { content: "\f036"; }
+
+/* line 187, sass/_icons.scss */
+.icon-align-center:before { content: "\f037"; }
+
+/* line 190, sass/_icons.scss */
+.icon-align-right:before { content: "\f038"; }
+
+/* line 193, sass/_icons.scss */
+.icon-align-justify:before { content: "\f039"; }
+
+/* line 196, sass/_icons.scss */
+.icon-list:before { content: "\f03a"; }
+
+/* line 199, sass/_icons.scss */
+.icon-indent-left:before { content: "\f03b"; }
+
+/* line 202, sass/_icons.scss */
+.icon-indent-right:before { content: "\f03c"; }
+
+/* line 205, sass/_icons.scss */
+.icon-facetime-video:before { content: "\f03d"; }
+
+/* line 208, sass/_icons.scss */
+.icon-picture:before { content: "\f03e"; }
+
+/* line 211, sass/_icons.scss */
+.icon-pencil:before, .post-edit-link:before { content: "\f040"; }
+
+/* line 214, sass/_icons.scss */
+.icon-map-marker:before { content: "\f041"; }
+
+/* line 217, sass/_icons.scss */
+.icon-adjust:before { content: "\f042"; }
+
+/* line 220, sass/_icons.scss */
+.icon-tint:before { content: "\f043"; }
+
+/* line 223, sass/_icons.scss */
+.icon-edit:before { content: "\f044"; }
+
+/* line 226, sass/_icons.scss */
+.icon-share:before { content: "\f045"; }
+
+/* line 229, sass/_icons.scss */
+.icon-check:before { content: "\f046"; }
+
+/* line 232, sass/_icons.scss */
+.icon-move:before { content: "\f047"; }
+
+/* line 235, sass/_icons.scss */
+.icon-step-backward:before { content: "\f048"; }
+
+/* line 238, sass/_icons.scss */
+.icon-fast-backward:before { content: "\f049"; }
+
+/* line 241, sass/_icons.scss */
+.icon-backward:before { content: "\f04a"; }
+
+/* line 244, sass/_icons.scss */
+.icon-play:before { content: "\f04b"; }
+
+/* line 247, sass/_icons.scss */
+.icon-pause:before { content: "\f04c"; }
+
+/* line 250, sass/_icons.scss */
+.icon-stop:before { content: "\f04d"; }
+
+/* line 253, sass/_icons.scss */
+.icon-forward:before { content: "\f04e"; }
+
+/* line 256, sass/_icons.scss */
+.icon-fast-forward:before { content: "\f050"; }
+
+/* line 259, sass/_icons.scss */
+.icon-step-forward:before { content: "\f051"; }
+
+/* line 262, sass/_icons.scss */
+.icon-eject:before { content: "\f052"; }
+
+/* line 265, sass/_icons.scss */
+.icon-chevron-left:before { content: "\f053"; }
+
+/* line 268, sass/_icons.scss */
+.icon-chevron-right:before { content: "\f054"; }
+
+/* line 271, sass/_icons.scss */
+.icon-plus-sign:before { content: "\f055"; }
+
+/* line 274, sass/_icons.scss */
+.icon-minus-sign:before { content: "\f056"; }
+
+/* line 277, sass/_icons.scss */
+.icon-remove-sign:before { content: "\f057"; }
+
+/* line 280, sass/_icons.scss */
+.icon-ok-sign:before { content: "\f058"; }
+
+/* line 283, sass/_icons.scss */
+.icon-question-sign:before { content: "\f059"; }
+
+/* line 286, sass/_icons.scss */
+.icon-info-sign:before { content: "\f05a"; }
+
+/* line 289, sass/_icons.scss */
+.icon-screenshot:before { content: "\f05b"; }
+
+/* line 292, sass/_icons.scss */
+.icon-remove-circle:before { content: "\f05c"; }
+
+/* line 295, sass/_icons.scss */
+.icon-ok-circle:before { content: "\f05d"; }
+
+/* line 298, sass/_icons.scss */
+.icon-ban-circle:before { content: "\f05e"; }
+
+/* line 301, sass/_icons.scss */
+.icon-arrow-left:before { content: "\f060"; }
+
+/* line 304, sass/_icons.scss */
+.icon-arrow-right:before { content: "\f061"; }
+
+/* line 307, sass/_icons.scss */
+.icon-arrow-up:before { content: "\f062"; }
+
+/* line 310, sass/_icons.scss */
+.icon-arrow-down:before { content: "\f063"; }
+
+/* line 314, sass/_icons.scss */
+.icon-share-alt:before, .icon-mail-forward:before { content: "\f064"; }
+
+/* line 317, sass/_icons.scss */
+.icon-resize-full:before { content: "\f065"; }
+
+/* line 320, sass/_icons.scss */
+.icon-resize-small:before { content: "\f066"; }
+
+/* line 323, sass/_icons.scss */
+.icon-plus:before { content: "\f067"; }
+
+/* line 326, sass/_icons.scss */
+.icon-minus:before { content: "\f068"; }
+
+/* line 329, sass/_icons.scss */
+.icon-asterisk:before { content: "\f069"; }
+
+/* line 332, sass/_icons.scss */
+.icon-exclamation-sign:before { content: "\f06a"; }
+
+/* line 335, sass/_icons.scss */
+.icon-gift:before { content: "\f06b"; }
+
+/* line 338, sass/_icons.scss */
+.icon-leaf:before { content: "\f06c"; }
+
+/* line 341, sass/_icons.scss */
+.icon-fire:before { content: "\f06d"; }
+
+/* line 344, sass/_icons.scss */
+.icon-eye-open:before { content: "\f06e"; }
+
+/* line 347, sass/_icons.scss */
+.icon-eye-close:before { content: "\f070"; }
+
+/* line 350, sass/_icons.scss */
+.icon-warning-sign:before { content: "\f071"; }
+
+/* line 353, sass/_icons.scss */
+.icon-plane:before { content: "\f072"; }
+
+/* line 356, sass/_icons.scss */
+.icon-calendar:before { content: "\f073"; }
+
+/* line 359, sass/_icons.scss */
+.icon-random:before { content: "\f074"; }
+
+/* line 362, sass/_icons.scss */
+.icon-comment:before { content: "\f075"; }
+
+/* line 365, sass/_icons.scss */
+.icon-magnet:before { content: "\f076"; }
+
+/* line 368, sass/_icons.scss */
+.icon-chevron-up:before { content: "\f077"; }
+
+/* line 371, sass/_icons.scss */
+.icon-chevron-down:before { content: "\f078"; }
+
+/* line 374, sass/_icons.scss */
+.icon-retweet:before { content: "\f079"; }
+
+/* line 377, sass/_icons.scss */
+.icon-shopping-cart:before { content: "\f07a"; }
+
+/* line 380, sass/_icons.scss */
+.icon-folder-close:before { content: "\f07b"; }
+
+/* line 383, sass/_icons.scss */
+.icon-folder-open:before { content: "\f07c"; }
+
+/* line 386, sass/_icons.scss */
+.icon-resize-vertical:before { content: "\f07d"; }
+
+/* line 389, sass/_icons.scss */
+.icon-resize-horizontal:before { content: "\f07e"; }
+
+/* line 392, sass/_icons.scss */
+.icon-bar-chart:before { content: "\f080"; }
+
+/* line 395, sass/_icons.scss */
+.icon-twitter-sign:before { content: "\f081"; }
+
+/* line 398, sass/_icons.scss */
+.icon-facebook-sign:before { content: "\f082"; }
+
+/* line 401, sass/_icons.scss */
+.icon-camera-retro:before { content: "\f083"; }
+
+/* line 404, sass/_icons.scss */
+.icon-key:before { content: "\f084"; }
+
+/* line 407, sass/_icons.scss */
+.icon-cogs:before { content: "\f085"; }
+
+/* line 410, sass/_icons.scss */
+.icon-comments:before { content: "\f086"; }
+
+/* line 413, sass/_icons.scss */
+.icon-thumbs-up:before { content: "\f087"; }
+
+/* line 416, sass/_icons.scss */
+.icon-thumbs-down:before { content: "\f088"; }
+
+/* line 419, sass/_icons.scss */
+.icon-star-half:before { content: "\f089"; }
+
+/* line 422, sass/_icons.scss */
+.icon-heart-empty:before { content: "\f08a"; }
+
+/* line 425, sass/_icons.scss */
+.icon-signout:before { content: "\f08b"; }
+
+/* line 428, sass/_icons.scss */
+.icon-linkedin-sign:before { content: "\f08c"; }
+
+/* line 431, sass/_icons.scss */
+.icon-pushpin:before { content: "\f08d"; }
+
+/* line 434, sass/_icons.scss */
+.icon-external-link:before { content: "\f08e"; }
+
+/* line 437, sass/_icons.scss */
+.icon-signin:before { content: "\f090"; }
+
+/* line 440, sass/_icons.scss */
+.icon-trophy:before { content: "\f091"; }
+
+/* line 443, sass/_icons.scss */
+.icon-github-sign:before { content: "\f092"; }
+
+/* line 446, sass/_icons.scss */
+.icon-upload-alt:before { content: "\f093"; }
+
+/* line 449, sass/_icons.scss */
+.icon-lemon:before { content: "\f094"; }
+
+/* line 452, sass/_icons.scss */
+.icon-phone:before { content: "\f095"; }
+
+/* line 455, sass/_icons.scss */
+.icon-check-empty:before { content: "\f096"; }
+
+/* line 458, sass/_icons.scss */
+.icon-bookmark-empty:before { content: "\f097"; }
+
+/* line 461, sass/_icons.scss */
+.icon-phone-sign:before { content: "\f098"; }
+
+/* line 464, sass/_icons.scss */
+.icon-twitter:before { content: "\f099"; }
+
+/* line 467, sass/_icons.scss */
+.icon-facebook:before { content: "\f09a"; }
+
+/* line 470, sass/_icons.scss */
+.icon-github:before { content: "\f09b"; }
+
+/* line 473, sass/_icons.scss */
+.icon-unlock:before { content: "\f09c"; }
+
+/* line 476, sass/_icons.scss */
+.icon-credit-card:before { content: "\f09d"; }
+
+/* line 479, sass/_icons.scss */
+.icon-rss:before { content: "\f09e"; }
+
+/* line 482, sass/_icons.scss */
+.icon-hdd:before { content: "\f0a0"; }
+
+/* line 485, sass/_icons.scss */
+.icon-bullhorn:before { content: "\f0a1"; }
+
+/* line 488, sass/_icons.scss */
+.icon-bell:before { content: "\f0a2"; }
+
+/* line 491, sass/_icons.scss */
+.icon-certificate:before { content: "\f0a3"; }
+
+/* line 494, sass/_icons.scss */
+.icon-hand-right:before { content: "\f0a4"; }
+
+/* line 497, sass/_icons.scss */
+.icon-hand-left:before { content: "\f0a5"; }
+
+/* line 500, sass/_icons.scss */
+.icon-hand-up:before { content: "\f0a6"; }
+
+/* line 503, sass/_icons.scss */
+.icon-hand-down:before { content: "\f0a7"; }
+
+/* line 506, sass/_icons.scss */
+.icon-circle-arrow-left:before { content: "\f0a8"; }
+
+/* line 509, sass/_icons.scss */
+.icon-circle-arrow-right:before { content: "\f0a9"; }
+
+/* line 512, sass/_icons.scss */
+.icon-circle-arrow-up:before { content: "\f0aa"; }
+
+/* line 515, sass/_icons.scss */
+.icon-circle-arrow-down:before { content: "\f0ab"; }
+
+/* line 518, sass/_icons.scss */
+.icon-globe:before { content: "\f0ac"; }
+
+/* line 521, sass/_icons.scss */
+.icon-wrench:before { content: "\f0ad"; }
+
+/* line 524, sass/_icons.scss */
+.icon-tasks:before { content: "\f0ae"; }
+
+/* line 527, sass/_icons.scss */
+.icon-filter:before { content: "\f0b0"; }
+
+/* line 530, sass/_icons.scss */
+.icon-briefcase:before { content: "\f0b1"; }
+
+/* line 533, sass/_icons.scss */
+.icon-fullscreen:before { content: "\f0b2"; }
+
+/* line 536, sass/_icons.scss */
+.icon-group:before { content: "\f0c0"; }
+
+/* line 539, sass/_icons.scss */
+.icon-link:before { content: "\f0c1"; }
+
+/* line 542, sass/_icons.scss */
+.icon-cloud:before { content: "\f0c2"; }
+
+/* line 545, sass/_icons.scss */
+.icon-beaker:before { content: "\f0c3"; }
+
+/* line 548, sass/_icons.scss */
+.icon-cut:before { content: "\f0c4"; }
+
+/* line 551, sass/_icons.scss */
+.icon-copy:before { content: "\f0c5"; }
+
+/* line 554, sass/_icons.scss */
+.icon-paper-clip:before { content: "\f0c6"; }
+
+/* line 557, sass/_icons.scss */
+.icon-save:before { content: "\f0c7"; }
+
+/* line 560, sass/_icons.scss */
+.icon-sign-blank:before { content: "\f0c8"; }
+
+/* line 563, sass/_icons.scss */
+.icon-reorder:before { content: "\f0c9"; }
+
+/* line 566, sass/_icons.scss */
+.icon-list-ul:before { content: "\f0ca"; }
+
+/* line 569, sass/_icons.scss */
+.icon-list-ol:before { content: "\f0cb"; }
+
+/* line 572, sass/_icons.scss */
+.icon-strikethrough:before { content: "\f0cc"; }
+
+/* line 575, sass/_icons.scss */
+.icon-underline:before { content: "\f0cd"; }
+
+/* line 578, sass/_icons.scss */
+.icon-table:before { content: "\f0ce"; }
+
+/* line 581, sass/_icons.scss */
+.icon-magic:before { content: "\f0d0"; }
+
+/* line 584, sass/_icons.scss */
+.icon-truck:before { content: "\f0d1"; }
+
+/* line 587, sass/_icons.scss */
+.icon-pinterest:before { content: "\f0d2"; }
+
+/* line 590, sass/_icons.scss */
+.icon-pinterest-sign:before { content: "\f0d3"; }
+
+/* line 593, sass/_icons.scss */
+.icon-google-plus-sign:before { content: "\f0d4"; }
+
+/* line 596, sass/_icons.scss */
+.icon-google-plus:before { content: "\f0d5"; }
+
+/* line 599, sass/_icons.scss */
+.icon-money:before { content: "\f0d6"; }
+
+/* line 602, sass/_icons.scss */
+.icon-caret-down:before { content: "\f0d7"; }
+
+/* line 605, sass/_icons.scss */
+.icon-caret-up:before { content: "\f0d8"; }
+
+/* line 608, sass/_icons.scss */
+.icon-caret-left:before { content: "\f0d9"; }
+
+/* line 611, sass/_icons.scss */
+.icon-caret-right:before { content: "\f0da"; }
+
+/* line 614, sass/_icons.scss */
+.icon-columns:before { content: "\f0db"; }
+
+/* line 617, sass/_icons.scss */
+.icon-sort:before { content: "\f0dc"; }
+
+/* line 620, sass/_icons.scss */
+.icon-sort-down:before { content: "\f0dd"; }
+
+/* line 623, sass/_icons.scss */
+.icon-sort-up:before { content: "\f0de"; }
+
+/* line 626, sass/_icons.scss */
+.icon-envelope-alt:before { content: "\f0e0"; }
+
+/* line 629, sass/_icons.scss */
+.icon-linkedin:before { content: "\f0e1"; }
+
+/* line 633, sass/_icons.scss */
+.icon-undo:before, .icon-rotate-left:before { content: "\f0e2"; }
+
+/* line 636, sass/_icons.scss */
+.icon-legal:before { content: "\f0e3"; }
+
+/* line 639, sass/_icons.scss */
+.icon-dashboard:before { content: "\f0e4"; }
+
+/* line 642, sass/_icons.scss */
+.icon-comment-alt:before { content: "\f0e5"; }
+
+/* line 645, sass/_icons.scss */
+.icon-comments-alt:before { content: "\f0e6"; }
+
+/* line 648, sass/_icons.scss */
+.icon-bolt:before { content: "\f0e7"; }
+
+/* line 651, sass/_icons.scss */
+.icon-sitemap:before { content: "\f0e8"; }
+
+/* line 654, sass/_icons.scss */
+.icon-umbrella:before { content: "\f0e9"; }
+
+/* line 657, sass/_icons.scss */
+.icon-paste:before { content: "\f0ea"; }
+
+/* line 660, sass/_icons.scss */
+.icon-lightbulb:before { content: "\f0eb"; }
+
+/* line 663, sass/_icons.scss */
+.icon-exchange:before { content: "\f0ec"; }
+
+/* line 666, sass/_icons.scss */
+.icon-cloud-download:before { content: "\f0ed"; }
+
+/* line 669, sass/_icons.scss */
+.icon-cloud-upload:before { content: "\f0ee"; }
+
+/* line 672, sass/_icons.scss */
+.icon-user-md:before { content: "\f0f0"; }
+
+/* line 675, sass/_icons.scss */
+.icon-stethoscope:before { content: "\f0f1"; }
+
+/* line 678, sass/_icons.scss */
+.icon-suitcase:before { content: "\f0f2"; }
+
+/* line 681, sass/_icons.scss */
+.icon-bell-alt:before { content: "\f0f3"; }
+
+/* line 684, sass/_icons.scss */
+.icon-coffee:before { content: "\f0f4"; }
+
+/* line 687, sass/_icons.scss */
+.icon-food:before { content: "\f0f5"; }
+
+/* line 690, sass/_icons.scss */
+.icon-file-alt:before { content: "\f0f6"; }
+
+/* line 693, sass/_icons.scss */
+.icon-building:before { content: "\f0f7"; }
+
+/* line 696, sass/_icons.scss */
+.icon-hospital:before { content: "\f0f8"; }
+
+/* line 699, sass/_icons.scss */
+.icon-ambulance:before { content: "\f0f9"; }
+
+/* line 702, sass/_icons.scss */
+.icon-medkit:before { content: "\f0fa"; }
+
+/* line 705, sass/_icons.scss */
+.icon-fighter-jet:before { content: "\f0fb"; }
+
+/* line 708, sass/_icons.scss */
+.icon-beer:before { content: "\f0fc"; }
+
+/* line 711, sass/_icons.scss */
+.icon-h-sign:before { content: "\f0fd"; }
+
+/* line 714, sass/_icons.scss */
+.icon-plus-sign-alt:before { content: "\f0fe"; }
+
+/* line 717, sass/_icons.scss */
+.icon-double-angle-left:before { content: "\f100"; }
+
+/* line 720, sass/_icons.scss */
+.icon-double-angle-right:before { content: "\f101"; }
+
+/* line 723, sass/_icons.scss */
+.icon-double-angle-up:before { content: "\f102"; }
+
+/* line 726, sass/_icons.scss */
+.icon-double-angle-down:before { content: "\f103"; }
+
+/* line 729, sass/_icons.scss */
+.icon-angle-left:before { content: "\f104"; }
+
+/* line 732, sass/_icons.scss */
+.icon-angle-right:before { content: "\f105"; }
+
+/* line 735, sass/_icons.scss */
+.icon-angle-up:before { content: "\f106"; }
+
+/* line 738, sass/_icons.scss */
+.icon-angle-down:before { content: "\f107"; }
+
+/* line 741, sass/_icons.scss */
+.icon-desktop:before { content: "\f108"; }
+
+/* line 744, sass/_icons.scss */
+.icon-laptop:before { content: "\f109"; }
+
+/* line 747, sass/_icons.scss */
+.icon-tablet:before { content: "\f10a"; }
+
+/* line 750, sass/_icons.scss */
+.icon-mobile-phone:before { content: "\f10b"; }
+
+/* line 753, sass/_icons.scss */
+.icon-circle-blank:before { content: "\f10c"; }
+
+/* line 756, sass/_icons.scss */
+.icon-quote-left:before { content: "\f10d"; }
+
+/* line 759, sass/_icons.scss */
+.icon-quote-right:before { content: "\f10e"; }
+
+/* line 762, sass/_icons.scss */
+.icon-spinner:before { content: "\f110"; }
+
+/* line 765, sass/_icons.scss */
+.icon-circle:before { content: "\f111"; }
+
+/* line 769, sass/_icons.scss */
+.icon-reply:before, .icon-mail-reply:before { content: "\f112"; }
+
+/* line 772, sass/_icons.scss */
+.icon-folder-close-alt:before { content: "\f114"; }
+
+/* line 775, sass/_icons.scss */
+.icon-folder-open-alt:before { content: "\f115"; }
+
+/* line 778, sass/_icons.scss */
+.icon-expand-alt:before { content: "\f116"; }
+
+/* line 781, sass/_icons.scss */
+.icon-collapse-alt:before { content: "\f117"; }
+
+/* line 784, sass/_icons.scss */
+.icon-smile:before { content: "\f118"; }
+
+/* line 787, sass/_icons.scss */
+.icon-frown:before { content: "\f119"; }
+
+/* line 790, sass/_icons.scss */
+.icon-meh:before { content: "\f11a"; }
+
+/* line 793, sass/_icons.scss */
+.icon-gamepad:before { content: "\f11b"; }
+
+/* line 796, sass/_icons.scss */
+.icon-keyboard:before { content: "\f11c"; }
+
+/* line 799, sass/_icons.scss */
+.icon-flag-alt:before { content: "\f11d"; }
+
+/* line 802, sass/_icons.scss */
+.icon-flag-checkered:before { content: "\f11e"; }
+
+/* line 805, sass/_icons.scss */
+.icon-terminal:before { content: "\f120"; }
+
+/* line 808, sass/_icons.scss */
+.icon-code:before { content: "\f121"; }
+
+/* line 811, sass/_icons.scss */
+.icon-reply-all:before { content: "\f122"; }
+
+/* line 814, sass/_icons.scss */
+.icon-mail-reply-all:before { content: "\f122"; }
+
+/* line 818, sass/_icons.scss */
+.icon-star-half-full:before, .icon-star-half-empty:before { content: "\f123"; }
+
+/* line 821, sass/_icons.scss */
+.icon-location-arrow:before { content: "\f124"; }
+
+/* line 824, sass/_icons.scss */
+.icon-crop:before { content: "\f125"; }
+
+/* line 827, sass/_icons.scss */
+.icon-code-fork:before { content: "\f126"; }
+
+/* line 830, sass/_icons.scss */
+.icon-unlink:before { content: "\f127"; }
+
+/* line 833, sass/_icons.scss */
+.icon-question:before { content: "\f128"; }
+
+/* line 836, sass/_icons.scss */
+.icon-info:before { content: "\f129"; }
+
+/* line 839, sass/_icons.scss */
+.icon-exclamation:before { content: "\f12a"; }
+
+/* line 842, sass/_icons.scss */
+.icon-superscript:before { content: "\f12b"; }
+
+/* line 845, sass/_icons.scss */
+.icon-subscript:before { content: "\f12c"; }
+
+/* line 848, sass/_icons.scss */
+.icon-eraser:before { content: "\f12d"; }
+
+/* line 851, sass/_icons.scss */
+.icon-puzzle-piece:before { content: "\f12e"; }
+
+/* line 854, sass/_icons.scss */
+.icon-microphone:before { content: "\f130"; }
+
+/* line 857, sass/_icons.scss */
+.icon-microphone-off:before { content: "\f131"; }
+
+/* line 860, sass/_icons.scss */
+.icon-shield:before { content: "\f132"; }
+
+/* line 863, sass/_icons.scss */
+.icon-calendar-empty:before { content: "\f133"; }
+
+/* line 866, sass/_icons.scss */
+.icon-fire-extinguisher:before { content: "\f134"; }
+
+/* line 869, sass/_icons.scss */
+.icon-rocket:before { content: "\f135"; }
+
+/* line 872, sass/_icons.scss */
+.icon-maxcdn:before { content: "\f136"; }
+
+/* line 875, sass/_icons.scss */
+.icon-chevron-sign-left:before { content: "\f137"; }
+
+/* line 878, sass/_icons.scss */
+.icon-chevron-sign-right:before { content: "\f138"; }
+
+/* line 881, sass/_icons.scss */
+.icon-chevron-sign-up:before { content: "\f139"; }
+
+/* line 884, sass/_icons.scss */
+.icon-chevron-sign-down:before { content: "\f13a"; }
+
+/* line 887, sass/_icons.scss */
+.icon-html5:before { content: "\f13b"; }
+
+/* line 890, sass/_icons.scss */
+.icon-css3:before { content: "\f13c"; }
+
+/* line 893, sass/_icons.scss */
+.icon-anchor:before { content: "\f13d"; }
+
+/* line 896, sass/_icons.scss */
+.icon-unlock-alt:before { content: "\f13e"; }
+
+/* line 899, sass/_icons.scss */
+.icon-bullseye:before { content: "\f140"; }
+
+/* line 902, sass/_icons.scss */
+.icon-ellipsis-horizontal:before { content: "\f141"; }
+
+/* line 905, sass/_icons.scss */
+.icon-ellipsis-vertical:before { content: "\f142"; }
+
+/* line 908, sass/_icons.scss */
+.icon-rss-sign:before { content: "\f143"; }
+
+/* line 911, sass/_icons.scss */
+.icon-play-sign:before { content: "\f144"; }
+
+/* line 914, sass/_icons.scss */
+.icon-ticket:before { content: "\f145"; }
+
+/* line 917, sass/_icons.scss */
+.icon-minus-sign-alt:before { content: "\f146"; }
+
+/* line 920, sass/_icons.scss */
+.icon-check-minus:before { content: "\f147"; }
+
+/* line 923, sass/_icons.scss */
+.icon-level-up:before { content: "\f148"; }
+
+/* line 926, sass/_icons.scss */
+.icon-level-down:before { content: "\f149"; }
+
+/* line 929, sass/_icons.scss */
+.icon-check-sign:before { content: "\f14a"; }
+
+/* line 932, sass/_icons.scss */
+.icon-edit-sign:before { content: "\f14b"; }
+
+/* line 935, sass/_icons.scss */
+.icon-external-link-sign:before { content: "\f14c"; }
+
+/* line 938, sass/_icons.scss */
+.icon-share-sign:before { content: "\f14d"; }
+
+/* line 1, sass/_typography.scss */
+.copse { font-family: "Copse", sans-serif; }
+
+/* line 3, sass/_typography.scss */
+h1, .h1, h2, .h2, h3, .h3, .widget-title, #calendar_wrap caption, h4, .h4 { font-family: "Copse", sans-serif; margin-bottom: .5em; margin-left: 0; margin-top: 0; }
+
+/* line 4, sass/_typography.scss */
+h1, .alpha, .featured-title { font-size: 3em; }
+
+/* line 5, sass/_typography.scss */
+h2, .beta { font-size: 2.4em; }
+
+/* line 6, sass/_typography.scss */
+h3, .gamma, #calendar_wrap caption { font-size: 2em; }
+
+/* line 7, sass/_typography.scss */
+h4, .delta { font-size: 1.6em; }
+
+/* line 8, sass/_typography.scss */
+p { font-size: 1.4em; margin-bottom: .5em; }
+
+/* line 10, sass/_typography.scss */
+.strong { font-weight: bold; }
+/* line 11, sass/_typography.scss */
+.copse .strong, .strong.copse { font-family: Helvetica, Arial, sans-serif; }
+
+@media only screen and (max-width: 740px) { /* line 15, sass/_typography.scss */
+  .featured-title { padding: 0; } }
+
+/* line 1, sass/_nav.scss */
+.site-nav, .main-nav { /*background-color: $lila;*/ clear: none; display: block; padding: 10px; margin-top: 30px; margin-right: 0; }
+/* line 3, sass/_nav.scss */
+.site-nav #responsive_current_menu_item, .main-nav #responsive_current_menu_item { display: none; }
+/* line 4, sass/_nav.scss */
+.site-nav ul, .site-nav .menu, .main-nav ul, .main-nav .menu { /*background-color: #fff;*/ background-image: none; }
+/* line 5, sass/_nav.scss */
+.site-nav ul > li, .site-nav .menu > li, .main-nav ul > li, .main-nav .menu > li { padding: 0 0 5px; position: relative; float: left; max-width: 15%; }
+/* line 6, sass/_nav.scss */
+.site-nav ul > li a, .site-nav .menu > li a, .main-nav ul > li a, .main-nav .menu > li a { display: block; padding: 0 15px; border: none; color: #92278f; white-space: nowrap; font-family: "Copse", sans-serif; font-size: 1.4em; line-height: 25px; height: 25px; text-shadow: 0px -1px 2px #777777; text-overflow: ellipsis; overflow: hidden; }
+/* line 10, sass/_nav.scss */
+.site-nav ul > li a:hover, .site-nav .menu > li a:hover, .main-nav ul > li a:hover, .main-nav .menu > li a:hover { background: none; color: #aa766c; }
+/* line 12, sass/_nav.scss */
+.site-nav ul > li:first-child, .site-nav .menu > li:first-child, .main-nav ul > li:first-child, .main-nav .menu > li:first-child { padding-left: 3px; }
+/* line 13, sass/_nav.scss */
+.site-nav ul > li:last-child, .site-nav .menu > li:last-child, .main-nav ul > li:last-child, .main-nav .menu > li:last-child { padding-right: 3px; }
+/* line 14, sass/_nav.scss */
+.site-nav ul > li:hover, .site-nav .menu > li:hover, .main-nav ul > li:hover, .main-nav .menu > li:hover { background: none; /*&:after { position: absolute; content: ' '; bottom: -19px; left: 50%; width: 0px; height: 0px; border-color: #fff transparent transparent transparent; border-width: 10px; border-style: solid; margin-left: -10px; }*/ }
+/* line 17, sass/_nav.scss */
+.site-nav ul > li.current_page_item, .site-nav .menu > li.current_page_item, .main-nav ul > li.current_page_item, .main-nav .menu > li.current_page_item { /*&:after { position: absolute; content: ' '; bottom: -19px; left: 50%; width: 0px; height: 0px; border-color: #fff transparent transparent transparent; border-width: 10px; border-style: solid; margin-left: -10px; }*/ }
+/* line 18, sass/_nav.scss */
+.site-nav ul > li.current_page_item a, .site-nav .menu > li.current_page_item a, .main-nav ul > li.current_page_item a, .main-nav .menu > li.current_page_item a { background: none; color: #aa766c; }
+/* line 22, sass/_nav.scss */
+.site-nav ul li + li, .site-nav .menu li + li, .main-nav ul li + li, .main-nav .menu li + li { border-left: 2px solid #d2bdc0; }
+@media only screen and (max-width: 740px) { /* line 25, sass/_nav.scss */
+  .js .site-nav, .js .main-nav { float: none; width: 100%; background-color: #d2bdc0; background-image: none; margin-bottom: 20px; }
+  /* line 26, sass/_nav.scss */
+  .js .site-nav #responsive_current_menu_item, .js .main-nav #responsive_current_menu_item { display: block; border: none; color: #92278f; font-family: "Copse", sans-serif; font-size: 1.4em; line-height: 25px; height: 25px; }
+  /* line 27, sass/_nav.scss */
+  .js .site-nav a#responsive_menu_button, .js .main-nav a#responsive_menu_button { height: 100%; background: none; border: none; } }
+
+/* line 32, sass/_nav.scss */
+.sub-header-nav { background-color: #fae7e5; }
+@media only screen and (max-width: 740px) { /* line 32, sass/_nav.scss */
+  .sub-header-nav { float: none; width: 100%; } }
+
+/* line 35, sass/_nav.scss */
+.members-nav { z-index: 100; position: relative; box-sizing: border-box; background: #fff; }
+/* line 36, sass/_nav.scss */
+.members-nav article, .members-nav .widget-wrapper { border-radius: 6px; padding: 10px; }
+/* line 37, sass/_nav.scss */
+.members-nav li + li { border-top: 2px solid #d2bdc0; }
+/* line 38, sass/_nav.scss */
+.members-nav a { display: block; padding: 0 15px; border: none; color: #92278f; font-family: "Copse", sans-serif; font-size: 1.4em; line-height: 25px; height: 25px; text-shadow: 0px -1px 2px #777777; text-align: right; text-overflow: ellipsis; overflow: hidden; }
+/* line 42, sass/_nav.scss */
+.members-nav a:hover { background: none; color: #aa766c; }
+/* line 45, sass/_nav.scss */
+.members-nav .current-menu-item, .members-nav .current-menu-item.current_page_item { position: relative; }
+/* line 46, sass/_nav.scss */
+.members-nav .current-menu-item a, .members-nav .current-menu-item.current_page_item a { background: none; color: #aa766c; }
+/* line 47, sass/_nav.scss */
+.members-nav .current-menu-item:after, .members-nav .current-menu-item.current_page_item:after { position: absolute; content: ' '; left: -19px; top: 3px; width: 0px; height: 0px; border-color: transparent #fff transparent transparent; border-width: 10px; border-style: solid; }
+
+/* line 52, sass/_nav.scss */
+.social { right: 0; top: 50%; margin-top: -60px; background-color: #444444; box-shadow: -1px 0 5px #777777; z-index: 20; -webkit-border-radius: 5px 0 0 5px; -moz-border-radius: 5px 0 0 5px; -ms-border-radius: 5px 0 0 5px; border-radius: 5px 0 0 5px; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; transition: all 0.3s ease-out; }
+/* line 55, sass/_nav.scss */
+.social:hover { padding-right: 10px; padding-left: 10px; }
+/* line 56, sass/_nav.scss */
+.social li a { height: 35px; width: 35px; color: #ddbfa7; }
+/* line 57, sass/_nav.scss */
+.social li a:before { font-size: 3em; text-indent: 0; position: absolute; left: 50%; margin-left: -.5em; top: 50%; margin-top: -17px; }
+/* line 58, sass/_nav.scss */
+.social li a:hover { color: #fae7e5; }
+/* line 60, sass/_nav.scss */
+.social li + li { margin-top: 5px; margin-bottom: 2px; }
+
+/* line 63, sass/_nav.scss */
+.prev, .next { position: absolute; top: 0; width: 30px; height: 30px; padding: 10px; line-height: 1; background-color: #ddbfa7; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; border-radius: 5px; z-index: 50; }
+/* line 64, sass/_nav.scss */
+.prev:before, .next:before { color: #444444; text-indent: -10px; }
+/* line 65, sass/_nav.scss */
+.prev a, .next a { display: none; }
+/* line 66, sass/_nav.scss */
+.prev:hover, .next:hover { cursor: pointer; }
+/* line 67, sass/_nav.scss */
+.prev:hover:before, .next:hover:before { color: #fff; }
+/* line 68, sass/_nav.scss */
+.prev:hover a, .next:hover a { display: block; position: absolute; width: 50px; height: 50px; padding: 5px; left: 0; bottom: 50px; }
+
+/* line 71, sass/_nav.scss */
+.prev { left: 0; }
+
+/* line 72, sass/_nav.scss */
+.next { right: 0; }
+
+/* line 1, sass/_widgets.scss */
+.widget-wrapper { margin-bottom: 0; background: #fff; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; }
+
+/* line 3, sass/_widgets.scss */
+#widgets.search { background: #ead5ce; }
+/* line 4, sass/_widgets.scss */
+#widgets.search .widget_search { padding: 0; }
+/* line 5, sass/_widgets.scss */
+#widgets.search .submit { width: 25%; }
+
+/* line 9, sass/_widgets.scss */
+#widgets, .front-page #widgets { margin-top: 0; }
+@media only screen and (max-width: 980px) { /* line 9, sass/_widgets.scss */
+  #widgets, .front-page #widgets { margin-top: 0; } }
+/* line 13, sass/_widgets.scss */
+#widgets .widget_recent_entries ul { padding: 0; }
+
+/* line 7, sass/_forms.scss */
+input[type=text], input[type=search], input[type=password], input[type=email], input[type=url], textarea, .field { line-height: 16px; margin: 0; border: none; background-color: white; color: #444444; padding: 6px 8px; -webkit-box-shadow: 0 1px 0 white, inset 0 1px 1px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 0 white, inset 0 1px 1px rgba(0, 0, 0, 0.2); -ms-box-shadow: 0 1px 0 white, inset 0 1px 1px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 0 white, inset 0 1px 1px rgba(0, 0, 0, 0.2); -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; width: 100%; }
+/* line 8, sass/_forms.scss */
+input[type=text]:focus, input[type=search]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, textarea:focus, .field:focus { box-shadow: inset 0 1px 3px #777777; outline: none; }
+
+/* line 11, sass/_forms.scss */
+.submit, input[type=submit], button[type=submit] { -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset; -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset; -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; background-color: #f9f9f9; /*Old browsers*/ background: -moz-linear-gradient(top, #f9f9f9 0 #f1f1f1 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(100%, #f1f1f1)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #f9f9f9 0, #f1f1f1 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #f9f9f9 0, #f1f1f1 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #f9f9f9 0, #f1f1f1 100%); /* IE10+ */ background: linear-gradient(to bottom, #f9f9f9 0%, #f1f1f1 100%); /* W3C */ border: 1px solid #ddd; color: #444444; cursor: pointer; display: inline-block; font-weight: 700; line-height: 20px; margin: 0; padding: 4px 10px 4px 4px; text-decoration: none; text-shadow: 0 1px 0 #fff; vertical-align: middle; white-space: nowrap; text-align: center; }
+
+/* line 29, sass/_forms.scss */
+.input-field { width: 300px; }
+/* line 30, sass/_forms.scss */
+.input-field input { padding: 3px 9px; border-radius: 5px; width: 94%; height: 22px; }
+
+/* line 32, sass/_forms.scss */
+label.abs.inside { left: 10px; top: 6px; font-weight: normal; font-size: .7em; color: #444444; line-height: 20px; display: inline-block; }
+
+/* line 34, sass/_forms.scss */
+.input-field + .input-field { margin-top: 10px; }
+
+/* line 36, sass/_forms.scss */
+.button { background-color: #92278f; color: #fff; width: auto; padding: 5px 10px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+
+/* line 38, sass/_forms.scss */
+.required { color: #92278f; }
+
+/* line 39, sass/_forms.scss */
+label { position: relative; }
+/* line 40, sass/_forms.scss */
+label .required { left: -5px; position: absolute; top: 5px; }
+
+/* line 43, sass/_forms.scss */
+.button { -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; }
+
+@font-face { font-family: 'fontello'; src: url("fonts/fontello.eot?19752574"); src: url("fonts/fontello.eot?19752574#iefix") format("embedded-opentype"), url("fonts/fontello.woff?19752574") format("woff"), url("fonts/fontello.ttf?19752574") format("truetype"), url("fonts/fontello.svg?19752574#fontello") format("svg"); font-weight: normal; font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) { @font-face { font-family: 'fontello'; src: url('../font/fontello.svg?19752574#fontello') format('svg'); }
+}
+*/
+/* line 26, sass/_fontello.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before, .post-edit-link:before, .comments-link:before { font-family: "fontello"; font-style: normal; font-weight: normal; speak: none; display: inline-block; text-decoration: inherit; width: 1em; margin-right: .2em; text-align: center; /* opacity: .8; */ /* For safety - reset parent styles, that can break glyph codes*/ font-variant: normal; text-transform: none; /* fix buttons height, for twitter bootstrap */ line-height: 1em; /* Animation center compensation - margins should be symmetric */ /* remove if not needed */ margin-left: .2em; /* you can be more comfortable with increased icons size */ font-size: 120%; /* Uncomment for 3D effect */ text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); }
+
+/* line 58, sass/_fontello.scss */
+.icon-note:before { content: '\e802'; }
+
+/* '' */
+/* line 59, sass/_fontello.scss */
+.icon-youtube:before { content: '\e828'; }
+
+/* '' */
+/* line 60, sass/_fontello.scss */
+.icon-music:before { content: '\e803'; }
+
+/* '' */
+/* line 61, sass/_fontello.scss */
+.icon-search:before { content: '\e804'; }
+
+/* '' */
+/* line 62, sass/_fontello.scss */
+.icon-mail:before { content: '\e805'; }
+
+/* '' */
+/* line 63, sass/_fontello.scss */
+.icon-heart:before { content: '\e82e'; }
+
+/* '' */
+/* line 64, sass/_fontello.scss */
+.icon-heart-empty:before { content: '\e82d'; }
+
+/* '' */
+/* line 65, sass/_fontello.scss */
+.icon-star:before { content: '\e82c'; }
+
+/* '' */
+/* line 66, sass/_fontello.scss */
+.icon-star-empty:before { content: '\e82b'; }
+
+/* '' */
+/* line 67, sass/_fontello.scss */
+.icon-user:before { content: '\e836'; }
+
+/* '' */
+/* line 68, sass/_fontello.scss */
+.icon-camera:before { content: '\e820'; }
+
+/* '' */
+/* line 69, sass/_fontello.scss */
+.icon-menu-1:before { content: '\e82a'; }
+
+/* '' */
+/* line 70, sass/_fontello.scss */
+.icon-check:before { content: '\e806'; }
+
+/* '' */
+/* line 71, sass/_fontello.scss */
+.icon-cancel:before { content: '\e807'; }
+
+/* '' */
+/* line 72, sass/_fontello.scss */
+.icon-cancel-circled:before { content: '\e82f'; }
+
+/* '' */
+/* line 73, sass/_fontello.scss */
+.icon-plus:before { content: '\e808'; }
+
+/* '' */
+/* line 74, sass/_fontello.scss */
+.icon-plus-circled:before { content: '\e809'; }
+
+/* '' */
+/* line 75, sass/_fontello.scss */
+.icon-minus:before { content: '\e80a'; }
+
+/* '' */
+/* line 76, sass/_fontello.scss */
+.icon-minus-circled:before { content: '\e80b'; }
+
+/* '' */
+/* line 77, sass/_fontello.scss */
+.icon-help-circled:before { content: '\e80c'; }
+
+/* '' */
+/* line 78, sass/_fontello.scss */
+.icon-info:before { content: '\e80d'; }
+
+/* '' */
+/* line 79, sass/_fontello.scss */
+.icon-info-circled:before { content: '\e80e'; }
+
+/* '' */
+/* line 80, sass/_fontello.scss */
+.icon-home:before { content: '\e80f'; }
+
+/* '' */
+/* line 81, sass/_fontello.scss */
+.icon-lock:before { content: '\e811'; }
+
+/* '' */
+/* line 82, sass/_fontello.scss */
+.icon-lock-open:before { content: '\e800'; }
+
+/* '' */
+/* line 83, sass/_fontello.scss */
+.icon-eye:before { content: '\e810'; }
+
+/* '' */
+/* line 84, sass/_fontello.scss */
+.icon-tag:before { content: '\e835'; }
+
+/* '' */
+/* line 85, sass/_fontello.scss */
+.icon-note-beamed:before { content: '\e801'; }
+
+/* '' */
+/* line 86, sass/_fontello.scss */
+.icon-thumbs-down:before { content: '\e813'; }
+
+/* '' */
+/* line 87, sass/_fontello.scss */
+.icon-export:before { content: '\e815'; }
+
+/* '' */
+/* line 88, sass/_fontello.scss */
+.icon-pencil:before, .post-edit-link:before { content: '\e814'; }
+
+/* '' */
+/* line 89, sass/_fontello.scss */
+.icon-print:before { content: '\e821'; }
+
+/* '' */
+/* line 90, sass/_fontello.scss */
+.icon-chat:before, .comments-link:before { content: '\e816'; }
+
+/* '' */
+/* line 91, sass/_fontello.scss */
+.icon-attention:before { content: '\e834'; }
+
+/* '' */
+/* line 92, sass/_fontello.scss */
+.icon-location:before { content: '\e822'; }
+
+/* '' */
+/* line 93, sass/_fontello.scss */
+.icon-trash:before { content: '\e817'; }
+
+/* '' */
+/* line 94, sass/_fontello.scss */
+.icon-cog:before { content: '\e818'; }
+
+/* '' */
+/* line 95, sass/_fontello.scss */
+.icon-login:before { content: '\e819'; }
+
+/* '' */
+/* line 96, sass/_fontello.scss */
+.icon-logout:before { content: '\e81a'; }
+
+/* '' */
+/* line 97, sass/_fontello.scss */
+.icon-down-open:before { content: '\e823'; }
+
+/* '' */
+/* line 98, sass/_fontello.scss */
+.icon-left-open:before { content: '\e824'; }
+
+/* '' */
+/* line 99, sass/_fontello.scss */
+.icon-right-open:before { content: '\e825'; }
+
+/* '' */
+/* line 100, sass/_fontello.scss */
+.icon-up-open:before { content: '\e826'; }
+
+/* '' */
+/* line 101, sass/_fontello.scss */
+.icon-down-open-mini:before { content: '\e827'; }
+
+/* '' */
+/* line 102, sass/_fontello.scss */
+.icon-down-dir:before { content: '\e830'; }
+
+/* '' */
+/* line 103, sass/_fontello.scss */
+.icon-left-dir:before { content: '\e831'; }
+
+/* '' */
+/* line 104, sass/_fontello.scss */
+.icon-right-dir:before { content: '\e832'; }
+
+/* '' */
+/* line 105, sass/_fontello.scss */
+.icon-up-dir:before { content: '\e833'; }
+
+/* '' */
+/* line 106, sass/_fontello.scss */
+.icon-ccw:before { content: '\e81c'; }
+
+/* '' */
+/* line 107, sass/_fontello.scss */
+.icon-trophy:before { content: '\e81b'; }
+
+/* '' */
+/* line 108, sass/_fontello.scss */
+.icon-key:before { content: '\e81f'; }
+
+/* '' */
+/* line 109, sass/_fontello.scss */
+.icon-twitter:before { content: '\e81d'; }
+
+/* '' */
+/* line 110, sass/_fontello.scss */
+.icon-facebook:before { content: '\e81e'; }
+
+/* '' */
+/* line 111, sass/_fontello.scss */
+.icon-thumbs-up:before { content: '\e812'; }
+
+/* '' */
+/* line 2, sass/_calendar.scss */
+#calendar_wrap #wp-calendar { position: relative; font-size: 1.2em; width: 100%; }
+/* line 3, sass/_calendar.scss */
+#calendar_wrap caption { color: #aa766c; }
+/* line 4, sass/_calendar.scss */
+#calendar_wrap th { color: #777777; text-align: center; font-weight: bold; padding-bottom: 5px; }
+/* line 5, sass/_calendar.scss */
+#calendar_wrap td { text-align: center; color: #444444; padding: 5px; background: #d2bdc0; border: 1px solid #fff; }
+/* line 6, sass/_calendar.scss */
+#calendar_wrap td.pad { background: none; }
+/* line 8, sass/_calendar.scss */
+#calendar_wrap tfoot { position: absolute; top: 0; left: 0; width: 100%; }
+/* line 10, sass/_calendar.scss */
+#calendar_wrap tfoot #prev, #calendar_wrap tfoot #next { font-size: 1.4em; padding: 0; background: none; }
+/* line 11, sass/_calendar.scss */
+#calendar_wrap tfoot #prev { text-align: left; }
+/* line 12, sass/_calendar.scss */
+#calendar_wrap tfoot #next { text-align: right; }
+
+/* line 2, sass/_media.scss */
+.mejs-container .mejs-horizontal-volume-slider { float: right; width: 59px; }
+
+/* line 15, sass/_connection.scss */
+body { color: #444444; }
+
+/* line 25, sass/_mixins.scss */
+html, body { height: 100%; width: 100%; }
+
+/* line 26, sass/_mixins.scss */
+#wrap, #page-wrap { height: 100%; }
+
+/* line 27, sass/_mixins.scss */
+#container { clear: both; min-height: 100%; height: auto !important; height: 100%; padding-bottom: 40px; margin-bottom: -40px; }
+/* line 35, sass/_mixins.scss */
+#container #footer { height: 40px; }
+
+/* line 37, sass/_mixins.scss */
+#footer { clear: both; position: relative; }
+
+/* line 18, sass/_connection.scss */
+footer.full, footer.sub-header-nav { height: 35px; }
+/* line 19, sass/_connection.scss */
+footer.full ul, footer.sub-header-nav ul { padding-left: 25px; padding-right: 25px; box-sizing: border-box; }
+
+/* line 21, sass/_connection.scss */
+#container { max-width: 100%; }
+
+/* line 22, sass/_connection.scss */
+.wrap { width: 90%; /*background: -webkit-linear-gradient(top, transparent 0%, red 20px, orange 50px, yellow 80px, green 110px, blue 140px, indigo 170px, violet 200px, transparent 230px, transparent 100%);*/ /*url(/connection-site-v3-header_03.png)0 0 no-repeat*/ }
+
+/* line 26, sass/_connection.scss */
+.main, #wrapper { padding: 35px 0; position: relative; background: none; border: none; max-width: 1200px; /*&:before { content: ""; position: absolute; left: -5%; top: 0;  background: url(images/treble_clef.svg) -130px 0 no-repeat; background-size: 430px auto; width: 15%; height: 600px; -webkit-mask-position: 0 0; -webkit-mask-size: 100%; -webkit-mask-image: -webkit-gradient(linear, left center, right center, color-stop(0, #000), color-stop(55%, transparent)); opacity: .7;
+}*/ }
+@media only screen and (max-width: 740px) { /* line 26, sass/_connection.scss */
+  .main, #wrapper { padding-left: 0; } }
+
+/* line 39, sass/_connection.scss */
+.title { margin-top: 70px; }
+
+/* line 41, sass/_connection.scss */
+.masthead { z-index: 200; }
+/* line 44, sass/_connection.scss */
+.masthead .main-logo { display: block; height: 120px; background: url(images/logo1.png) 0 0 no-repeat; }
+
+/* line 50, sass/_connection.scss */
+.content, #container { position: relative; /*&:before { content: ""; display: block; position: absolute; right: -50px; top: 50%; margin-top: -380px;  background: url(images/bassClef.svg) -45px 0 no-repeat; background-size: 420px auto; width: 30%; height: 500px; -webkit-mask-position: 0 0; -webkit-mask-size: 300px 200px; -webkit-mask-image: -webkit-gradient(linear, right center, left center, color-stop(0, #000), color-stop(55%, transparent)); opacity: .7;
+}*/ }
+/* line 58, sass/_connection.scss */
+.content .cropper, #container .cropper { width: 100%; height: 100px; }
+/* line 59, sass/_connection.scss */
+.content .cropper img, #container .cropper img { width: auto; }
+
+/* line 63, sass/_connection.scss */
+.main-pane, #featured { border: none; background-color: #ddbfa7; margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative; }
+/* line 66, sass/_connection.scss */
+.main-pane article, #featured article { padding: 15px; box-sizing: border-box; }
+/* line 67, sass/_connection.scss */
+.main-pane p, #featured p { text-align: left; padding: 0; }
+/* line 68, sass/_connection.scss */
+.main-pane #featured-image, #featured #featured-image { margin-top: 20px; }
+/* line 69, sass/_connection.scss */
+.main-pane #featured-image a, #featured #featured-image a { display: block; }
+@media only screen and (max-width: 740px) { /* line 63, sass/_connection.scss */
+  .main-pane, #featured { float: none; width: 100%; } }
+
+/* line 74, sass/_connection.scss */
+.photo-slider, .featured-slider { width: 100%; height: 350px; }
+/* line 75, sass/_connection.scss */
+.photo-slider img, .featured-slider img { border: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; box-shadow: none; margin-top: -180px; }
+/* line 76, sass/_connection.scss */
+.photo-slider p.mask, .featured-slider p.mask { height: 100%; width: 100%; overflow: hidden; text-align: center; border-radius: 5px; }
+/* line 77, sass/_connection.scss */
+.photo-slider p.mask img, .featured-slider p.mask img { position: absolute; z-index: 1; }
+/* line 78, sass/_connection.scss */
+.photo-slider p.mask img.current, .featured-slider p.mask img.current { z-index: 3; }
+
+/* line 83, sass/_connection.scss */
+#content, #content-full, #content-search, #content-images { border: none; background-color: #ddbfa7; margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative; }
+/* line 85, sass/_connection.scss */
+#content .post-entry, #content .page, #content .attachment, #content-full .post-entry, #content-full .page, #content-full .attachment, #content-search .post-entry, #content-search .page, #content-search .attachment, #content-images .post-entry, #content-images .page, #content-images .attachment { background: #fff; padding: 10px; margin: 0; }
+@media only screen and (max-width: 740px) { /* line 83, sass/_connection.scss */
+  #content, #content-full, #content-search, #content-images { float: none; width: 100%; } }
+
+/* line 89, sass/_connection.scss */
+.secondary-pane { margin-top: 20px; box-sizing: border-box; /*.highlight { background-color: #0afcd8; }
+.news { background-color: #3c6ef2; }
+.blog { background-color: #ed9e7f; }*/ }
+/* line 90, sass/_connection.scss */
+.secondary-pane article { border-radius: 6px; padding: 10px; }
+/* line 91, sass/_connection.scss */
+.secondary-pane article img { width: 100%; }
+/* line 93, sass/_connection.scss */
+.secondary-pane .highlight, .secondary-pane .news, .secondary-pane .blog { background-color: #ead5ce; }
+
+/* line 99, sass/_connection.scss */
+.call-to-action { text-align: left; }
+/* line 100, sass/_connection.scss */
+.call-to-action a.button { font-size: 22px; font-size: 1.375rem; padding: 10px 20px; }
+
+/* line 103, sass/_connection.scss */
+.pulldown, .logout { margin-bottom: 30px; font-size: 1.2em; }
+/* line 104, sass/_connection.scss */
+.pulldown.active, .logout.active { background-color: #d2bea0; color: #fff; display: block; height: 30px; padding: 5px 10px 5px 20px; border-radius: 5px 5px 0 0; margin-top: 0; position: relative; }
+/* line 105, sass/_connection.scss */
+.pulldown.active:after, .logout.active:after { content: " "; position: absolute; bottom: 0; width: 100%; height: 1px; right: 0; border-top: 10px solid #d2bea0; z-index: 200; }
+
+/* line 108, sass/_connection.scss */
+.login-form { top: 60px; right: 0; z-index: 100; }
+
+/* line 110, sass/_connection.scss */
+.title-search-results { color: #fff; margin: 10px 0; }
+
+/* line 111, sass/_connection.scss */
+.page + .page { border-top: 10px solid #ddbfa7; }
+
+/* line 113, sass/_connection.scss */
+.post-meta, .post-title { padding: 10px; margin: 0; color: #777777; }
+/* line 114, sass/_connection.scss */
+.post-meta h1, .post-title h1 { padding-left: 0; }
+
+/* line 117, sass/_connection.scss */
+#respond { -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; border-radius: 0; background-color: #e3cbb8; /*Old browsers*/ background: -moz-linear-gradient(top, #e3cbb8 0 rgba(0, 0, 0, 0) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e3cbb8), color-stop(100%, rgba(0, 0, 0, 0))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #e3cbb8 0, rgba(0, 0, 0, 0) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #e3cbb8 0, rgba(0, 0, 0, 0) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #e3cbb8 0, rgba(0, 0, 0, 0) 100%); /* IE10+ */ background: linear-gradient(to bottom, #e3cbb8 0%, rgba(0, 0, 0, 0) 100%); /* W3C */ border: none; }
+/* line 118, sass/_connection.scss */
+#respond .comment-form-comment { clear: both; }
+
+/* line 121, sass/_connection.scss */
+.post-edit { border-top: 1px solid #efefef; padding-top: 10px; -webkit-box-shadow: 0 -1px 0 rgba(250, 231, 229, 0.5); -moz-box-shadow: 0 -1px 0 rgba(250, 231, 229, 0.5); -ms-box-shadow: 0 -1px 0 rgba(250, 231, 229, 0.5); box-shadow: 0 -1px 0 rgba(250, 231, 229, 0.5); }
+
+/* line 126, sass/_connection.scss */
+.gallery-columns-3 .gallery-item { width: 31.914893617021%; max-width: 33%; margin-top: 10px; }
+/* line 127, sass/_connection.scss */
+.gallery-columns-3 .gallery-item .gallery-icon { -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); -ms-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); padding: 10px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; border-radius: 5px; }
+/* line 129, sass/_connection.scss */
+.gallery-columns-3 .gallery-item + .gallery-item { margin-left: 2.127659574468%; }
+
+/* line 132, sass/_connection.scss */
+img { border: 2px solid #efefef; background: #fff; -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset; -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset; -ms-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset; }
