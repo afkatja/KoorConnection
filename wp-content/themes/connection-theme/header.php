@@ -37,6 +37,7 @@ if ( !defined('ABSPATH')) exit;
 
 <?php wp_enqueue_style('responsive-style', get_stylesheet_uri(), false, '1.9.3.2');
 	wp_enqueue_script ('connection-scripts', get_stylesheet_directory_uri() . '/js/connection-scripts.js', array( 'jquery' ), '1.0' );
+	wp_enqueue_script ('jquery.isotope.min', get_stylesheet_directory_uri() . '/js/jquery.isotope.min.js', array( 'jquery' ), '1.5.26' );
 ?>
 <?php wp_head(); ?>
 </head>

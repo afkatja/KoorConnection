@@ -20,7 +20,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); ?>
 
-<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
+<div id="content" class="standard grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
         
 	<?php if (have_posts()) : ?>
 
@@ -97,8 +97,7 @@ get_header(); ?>
   			'menu_class'      => 'members-nav',
   			'theme_location'  => 'sub-header-menu')
   		); 
-	   	} 
-		} 
+   	} 
 	}?>
 </aside> 
 <?php get_footer(); ?>

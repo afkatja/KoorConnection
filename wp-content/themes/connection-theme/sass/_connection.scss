@@ -11,6 +11,7 @@
 @import "_fontello";
 @import "_calendar";
 @import "_media";
+@import "_gallery";
 
 body { color: $dk-grey; }
 @include sticky-footer(40px, '#container', '#footer', '#footer');
@@ -133,13 +134,6 @@ body { color: $dk-grey; }
  .post-edit {	border-top: 1px solid #efefef; padding-top: 10px; @include vendor(box-shadow, 0 -1px 0 transparentize($pink, .5)); }
  .post-edit-link {	@extend .icon-pencil; }
  .comments-link {	@extend .icon-chat; }
- 
- .gallery-columns-3 {	
- 	 .gallery-item { width: 31.914893617021%; max-width: 33%; margin-top: 10px; 
- 	   .gallery-icon { @include vendor(box-shadow, 0px 0px 10px rgba(0,0,0, .3)); padding: 10px; @include vendor(border-radius, 5px); }
- 	 }
- 	 .gallery-item + .gallery-item { margin-left: 2.127659574468%; }
- }
  
 img {
 	border: 2px solid #efefef;

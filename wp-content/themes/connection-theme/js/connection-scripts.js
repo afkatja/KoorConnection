@@ -19,6 +19,13 @@ jQuery(function($){
    }).blur(function(){
      $(this).parent().find('label.abs').show();
    });
+   
+  /* Isotope masonic tiles */
+  $('.gallery').isotope({
+    // options
+    itemSelector : '.gallery-item'
+  });
+   
   var picasaweb = 'https://picasaweb.google.com/data/feed/api/user/114842468267912126592/albumid/5664032092199429489?kind=photo',
   photos = [];
   

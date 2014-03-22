@@ -37,14 +37,17 @@
 		}
 	}
 }
-
-.tribe-events-content { font-family: $copse; font-size: 16px; color: $dk-grey; }
+.tribe-events-content { font-family: $copse; font-size: 1em; color: $dk-grey; }
 .tribe-events-schedule { margin-top: 10px; }
 .single-tribe_events .tribe-events-event-meta { border: none; margin: 20px 0; 
 	.tribe-events-meta-group { padding-left: 0; padding-right: 0;
 		& + .tribe-events-meta-group { padding-left: 2%; }
 	}
 }
+.tribe-events-list h2.tribe-events-page-title { text-align: left; }
+.tribe-events-list h2.tribe-events-list-event-title {	font-size: 2em; }
+.tribe-events-list-separator-month { color: $dk-grey; background: none; text-transform: capitalize; padding: 0; }
+.tribe-events-read-more { margin-top: 20px; font-family: $arial; font-size: 12px; }
 
 
 .datepicker.dropdown-menu table {
