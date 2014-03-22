@@ -1,6 +1,6 @@
 .widget-wrapper { margin-bottom: 0; background: #fff; @extend .box; @include vendor(border-radius, 3px); }
 
-#widgets.search {	background: $warm-pink; 
+#widgets.search {	background: $warm-pink; margin-bottom: 10px;
 	.widget_search { padding: 0; }
 	.submit {	width: 25%; }
 }

@@ -65,8 +65,8 @@ if ( !defined('ABSPATH')) exit;
    
 	<?php if ( get_header_image() != '' ) : ?>
                
-    <div class="left contain full">
-        <a id="logo" href="<?php echo home_url('/'); ?>" class="block left main-logo col-140"><img src="<?php header_image(); ?>" width="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> width;} else { echo HEADER_IMAGE_WIDTH;} ?>" height="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> height;} else { echo HEADER_IMAGE_HEIGHT;} ?>" alt="<?php bloginfo('name'); ?>" /></a>
+    <div class="left contain full rel">
+        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140"><img src="<?php header_image(); ?>" width="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> width;} else { echo HEADER_IMAGE_WIDTH;} ?>" height="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> height;} else { echo HEADER_IMAGE_HEIGHT;} ?>" alt="<?php bloginfo('name'); ?>" /></a>
         <p class="title copse strong left alpha col-540 icon-note-beamed">Koor Connection</p>
     </div><!-- end of #logo -->
         
@@ -74,8 +74,8 @@ if ( !defined('ABSPATH')) exit;
 
     <?php if ( !get_header_image() ) : ?>
                 
-    <div class="left full contain">
-        <a id="logo" href="<?php echo home_url('/'); ?>" class="block left main-logo col-140" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"></a>
+    <div class="left full contain rel">
+        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"></a>
         <?php wp_nav_menu(array(
             'container'       => 'nav',
         		'container_class'	=> 'main-nav',
@@ -88,8 +88,7 @@ if ( !defined('ABSPATH')) exit;
 	<?php endif; // header image was removed (again) ?> 	
 	<?php responsive_header_bottom(); // after header content hook ?>
 	
-	<?php //get_sidebar(); 
-	?> <!--search form-->
+	<?php get_sidebar(); ?> <!--search form-->
 </div><!-- end of #header -->
 <?php responsive_header_end(); // after header container hook ?>
 

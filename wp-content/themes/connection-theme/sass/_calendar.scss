@@ -12,3 +12,59 @@
 		#next { text-align: right; }
 	}
 }
+
+#tribe-bar-form.tribe-bar-mini {
+	.tribe-bar-filters {
+		 .tribe-bar-submit { width: 20%; padding-top: 25px; }
+		 .label-tribe-bar-search, .label-tribe-bar-date { text-indent: -9999em; overflow: hidden; text-transform: capitalize;
+		 	 &:before { text-indent: 0; position: absolute; top: 0; left: 0; }
+		 }
+		 .label-tribe-bar-search:before { content: 'Zoek'; }
+		 .label-tribe-bar-date:before { content: 'Op datum'; }
+	}	
+}
+
+#tribe-events-content {
+	.tribe-events-calendar {
+		th { color: $dk-grey; text-transform: capitalize; }
+		td.tribe-events-present div[id*="tribe-events-daynum-"], 
+		td.tribe-events-present div[id*="tribe-events-daynum-"]>a {
+			background-color: $warm-brown;
+		}
+		.tribe-events-tooltip { border: none; background-color: white; color: $dk-grey; padding: 6px 8px; @include vendor(box-shadow, 0 1px 3px 1px rgba(0, 0, 0, 0.2)); @include vendor(border-radius, 2px); 
+			h4 { background-color: transparent; color: $dk-grey; font-family: $copse; }
+			.tribe-events-arrow { height: 18px;	background-image: none; background-color: #fff;	@include vendor(box-shadow, 0 1px 3px 1px rgba(0,0,0,0.3)); @include vendor(border-radius, 2px); @include vendor(transform, rotate(45deg)); clip: rect(0px, 20px, 20px, 0px); bottom: -9px; }
+		}
+	}
+}
+
+.tribe-events-content { font-family: $copse; font-size: 16px; color: $dk-grey; }
+.tribe-events-schedule { margin-top: 10px; }
+.single-tribe_events .tribe-events-event-meta { border: none; margin: 20px 0; 
+	.tribe-events-meta-group { padding-left: 0; padding-right: 0;
+		& + .tribe-events-meta-group { padding-left: 2%; }
+	}
+}
+
+
+.datepicker.dropdown-menu table {
+	border-collapse: separate; border-spacing: 0;
+	thead th { padding: 10px 0; }
+	th.next, th.prev { text-indent: -9999em; margin-top: 10px;
+		&:before { text-indent: 0; position: absolute; top: 3px; } 
+		&:hover, &:focus { background-color: $warm-brown;
+			&:before { color: #fff; }
+		}
+	}
+	th.next { right: 10px;
+		&:before { left: 5px; }
+	}
+	th.prev { left: 10px;
+		&:before { left: 3px; }
+	}
+	tr td { border: none;
+		span { height: 30px; width: 25%; line-height: 30px; border: 1px solid #efefef; margin: 0; color: $purple; 
+			&:hover, &:focus { color: $brown; }
+		}
+	}
+}

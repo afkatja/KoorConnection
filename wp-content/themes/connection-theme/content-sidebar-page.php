@@ -21,7 +21,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); ?>
 
-<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
+<div id="content" class="content-side-page grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
         
 	<?php get_template_part( 'loop-header' ); ?>
         
@@ -39,8 +39,6 @@ get_header(); ?>
               <?php the_content(__('Read more &#8250;', 'responsive')); ?>
               <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
           </div><!-- end of .post-entry -->
-            
-				<?php get_template_part( 'post-data' ); ?>
 				               
 				<?php responsive_entry_bottom(); ?>      
 			</div><!-- end of #post-<?php the_ID(); ?> -->       
@@ -88,7 +86,7 @@ get_header(); ?>
    		<?php wp_login_form( $args ); ?>
   	</div>
   <?php } else { // If logged in: ?>
-  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="abs right strong logout icon-logout">Uitloggen</a> 
+  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="right strong logout icon-logout">Uitloggen</a> 
 	<?php  
   	if (has_nav_menu('sub-header-menu', 'responsive')) { 
     	wp_nav_menu(array(

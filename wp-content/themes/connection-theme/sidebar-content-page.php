@@ -21,16 +21,13 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php get_header(); ?>
 
- <div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-460"; } else echo "col-700 fit"; ?> round-box">
+ <div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
         
 <?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
         
         <?php $options = get_option('responsive_theme_options'); ?>
-		<?php if ($options['breadcrumb'] == 0): ?>
-		<?php //echo responsive_breadcrumb_lists(); ?>
-        <?php endif; ?>
         
 			<?php responsive_entry_before(); ?>
 			<div id="post<?php the_ID(); ?>" <?php post_class(); ?>>       
@@ -72,19 +69,43 @@ if ( !defined('ABSPATH')) exit;
 	endif;
 	?>
 
-        </div><!-- end of #content -->
+</div><!-- end of #content -->
 
-<!--  User area-->
-<?php if(is_user_logged_in() ) { 
-	if (has_nav_menu('sub-header-menu', 'responsive')) { 
-  	wp_nav_menu(array(
-	    'container'       => 'nav',
-	    'container_class' => 'sub-header-nav',
-			'menu_class'      => 'members-nav',
-			'theme_location'  => 'sub-header-menu')
-		); 
- 	} 
-} 
-//get_sidebar('home');
-get_footer(); 
-?>
+  <aside class="col-220 grid-right contain fit">
+  <!--  User area-->
+  <?php if(! is_user_logged_in() ) { ?>
+  	<a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>
+  	<div class="contain login-form flydown round-box secondary abs col-220 fit hidden">
+   		<?php $args = array(
+        'echo' => true,
+        'redirect' => site_url( $_SERVER['REQUEST_URI'] ), 
+        'form_id' => 'loginform',
+        'label_username' => __( 'Username' ),
+        'label_password' => __( 'Password' ),
+        'label_remember' => __( 'Remember Me' ),
+        'label_log_in' => __( 'Log In' ),
+        'id_username' => 'username',
+        'id_password' => 'pass',
+        'id_remember' => 'rememberme',
+        'id_submit' => 'wp-submit',
+        'remember' => true,
+        'value_username' => NULL,
+        'value_remember' => false 
+		  ); ?>
+		  <?php wp_login_form( $args ); ?>
+  	</div>
+  <?php } else { // If logged in: ?>
+  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right strong logout icon-logout">Uitloggen</a> 
+	<?php  
+  	if (has_nav_menu('sub-header-menu', 'responsive')) { 
+    	wp_nav_menu(array(
+  	    'container'       => 'nav',
+  	    'container_class' => 'sub-header-nav',
+  			'menu_class'      => 'members-nav',
+  			'theme_location'  => 'sub-header-menu')
+  		); 
+   	} 
+	}?>
+</aside>
+
+<?php get_footer(); ?>
