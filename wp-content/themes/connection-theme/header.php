@@ -92,11 +92,13 @@ if ( !defined('ABSPATH')) exit;
 	?> <!--search form-->
 </div><!-- end of #header -->
 <?php responsive_header_end(); // after header container hook ?>
-    
+
+<?php if(is_front_page() || is_home()) { ?>
   <div class="featured-slider full fit mask">
     <?php $featured_content = ( !empty( $responsive_options['featured_content'] ) ) ? $responsive_options['featured_content'] : '<img class="aligncenter" src="' . get_stylesheet_directory_uri() . '/images/connection.JPG" alt="" />'; ?>
     <?php echo do_shortcode( $featured_content ); ?>		
   </div>
+<?php } ?>
     
 <?php responsive_wrapper(); // before wrapper container hook ?>
   <div id="wrapper" class="contain wrap center">

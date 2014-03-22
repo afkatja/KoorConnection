@@ -21,8 +21,10 @@
  
  [class^="icon-"], 
  [class*=" icon-"], 
+ .comments-link,
+ .comment-edit-link,
  .post-edit-link,
- .comments-link {
+ .comment-reply-link {
  	&:before {
 	  font-family: "fontello";
 	  font-style: normal;

@@ -82,7 +82,18 @@ body { color: $dk-grey; }
  
  #content, #content-full, #content-search, #content-images { border: none; background-color: $warm-brown;
    margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative; 
- 	.post-entry, .page, .attachment {	background: #fff; padding: 10px; margin: 0; }
+ 	.post, .post-entry, .page, .attachment, .comments {	background: #fff; padding: 10px; margin: 0; }
+ 	.comments { margin-top: 20px; 
+ 		.comment-author { @extend %contain; margin-bottom: 20px;
+ 			img, .fn { display: block; float: left; }
+ 			.fn, .says { margin-top: 15px; margin-left: 5px; }
+ 			.says { display: inline-block; }
+ 		}
+ 		.comment-metadata, .reply { padding-top: 5px; padding-bottom: 5px; }
+ 		.comment-reply-link { @extend .icon-ccw; }
+ 		.comment-edit-link { @extend .icon-pencil; margin-left: 5px; }
+ 		.comment-content { padding-top: 10px; padding-bottom: 10px; }
+ 	}
  	@include media-query(mobilel) { float: none; width: 100%; }
  }
  
@@ -113,9 +124,10 @@ body { color: $dk-grey; }
  .post-meta, .post-title { padding: 10px; margin: 0; color: $grey; 
  		h1 { padding-left: 0; }
  }
- 
- #respond {	@include vendor(border-radius, 0); @include vertical-gradient(mix($warm-brown, #fff, 80%), rgba(0,0,0,0)); border: none; 
- 	.comment-form-comment { clear: both; }
+
+ #respond {	margin-top: 20px;	border: none; 
+ 	.logged-in-as { font-size: 10px; }
+ 	.comment-form-comment { padding-top: 10px; }
  }
  
  .post-edit {	border-top: 1px solid #efefef; padding-top: 10px; @include vendor(box-shadow, 0 -1px 0 transparentize($pink, .5)); }

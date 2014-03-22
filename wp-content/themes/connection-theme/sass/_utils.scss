@@ -14,13 +14,14 @@ q {
 	&:before { content: '\201C' }
 	&:after {	content: '\201D'; }
 }
-.contain {
+.contain, %contain {
   &:after, &:before { content: " 0020"; display: block; height: 0; overflow: hidden; }
   &:after { clear: both; }
 }
 .clear { clear: both; }
 .vh { text-indent: -9999em; }
 .ib { display: inline-block; }
+.block { display: block; }
 .hidden { display: none !important; }
 .mask { overflow: hidden; }
 .left { float: left; }

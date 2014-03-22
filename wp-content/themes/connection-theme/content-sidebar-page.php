@@ -21,7 +21,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); ?>
 
-<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-460"; } else echo "col-700 fit"; ?> round-box">
+<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
         
 	<?php get_template_part( 'loop-header' ); ?>
         
@@ -65,6 +65,7 @@ get_header(); ?>
 </div><!-- end of #content -->
 
   <!--  User area-->
+<aside class="col-220 grid-right contain fit">
   <?php $args = array(
         'echo' => true,
         'redirect' => site_url( $_SERVER['REQUEST_URI'] ), 
@@ -82,7 +83,7 @@ get_header(); ?>
         'value_remember' => false 
   ); 
   if(! is_user_logged_in() ) { ?>
-  	<a href="#" class="abs right pulldown icon-expand strong icon-login">Login leden</a>
+  	<a href="#" class="right pulldown icon-expand strong icon-login">Login leden</a>
   	<div class="contain login-form flydown round-box secondary abs col-220 fit hidden">
    		<?php wp_login_form( $args ); ?>
   	</div>
@@ -97,6 +98,6 @@ get_header(); ?>
   			'theme_location'  => 'sub-header-menu')
   		); 
    	} 
-	} 
-	get_footer(); 
-?>
+	} ?>
+</aside>
+<?php get_footer(); ?>

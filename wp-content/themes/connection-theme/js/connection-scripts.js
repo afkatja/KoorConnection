@@ -9,11 +9,11 @@ jQuery(function($){
     	pullDownLogin.goUp(this, $loginForm); 
   	}
    });
-   /*$(document).click(function(ev){  
-     if($.contains($('.masthead')[0], ev.target) || $(ev.target) == $('.pulldown')) {
+   $(document).click(function(ev){  
+     if($.contains($('.login-form')[0], ev.target) || ($(ev.target)[0] == $('.pulldown')[0] && $loginForm.hasClass('expanded'))) {
         return;
      } else pullDownLogin.goUp($('.pulldown'), $loginForm);  
-   });*/
+   });
    $('.input-field input').focus(function(){
      $(this).parent().find('label.abs').hide();
    }).blur(function(){
@@ -42,12 +42,12 @@ jQuery(function($){
     },
      goDown: function(target, div){
        $(div).removeClass('hidden').slideDown(200, function(){
-         $(this).find('input').eq(0).focus();
+         $(this).addClass('expanded').find('input').eq(0).focus();
        });
        $(target).removeClass('icon-expand').addClass('active icon-collapse');
      },
      goUp: function(target, div){
-       $(div).slideUp(200).addClass('hidden');
+       $(div).addClass('expanded').slideUp(200).addClass('hidden');
        $(target).removeClass('active icon-collapse').addClass('icon-expand');
      }
   };
@@ -90,17 +90,9 @@ jQuery.fn.filterNode = function(name) {
 (function ($) {
 	var current = $('.main-nav li.current-menu-item a').html();
 	current = $('.main-nav li.current_page_item a').html();
-	console.log(current);
 	if ($('span').hasClass('custom-mobile-menu-title')) {
 		current = $('span.custom-mobile-menu-title').html();
 	} else if (typeof current == 'undefined' || current === null) {
-		/*if ($('body').hasClass('home')) {
-			if ($('#logo span').hasClass('site-name')) {
-				current = $('#logo .site-name a').html();
-			} else {
-				current = $('#logo img').attr('alt');
-			}
-		} else {*/
 			switch ($('body').attr('class')) {
 				case 'home':
 					if ($('#logo span').hasClass('site-name')) {
@@ -129,30 +121,6 @@ jQuery.fn.filterNode = function(name) {
 				default: 
 					current = '&nbsp;';
 			}
-			/*if ($('body').hasClass('woocommerce')) {
-				current = $('h1.page-title').html();
-			} else if ($('body').hasClass('woocommerce')) {
-				current = $('h1.entry-title').html();
-			}
-			else if ($('body').hasClass('archive')) {
-				current = $('h6.title-archive').html();
-			}
-			else if ($('body').hasClass('search-results')) {
-				current = $('h6.title-search-results').html();
-			}
-			else if ($('body').hasClass('page-template-blog-excerpt-php')) {
-				current = $('.current_page_item').text();
-			}
-			else if ($('body').hasClass('page-template-blog-php')) {
-				current = $('.current_page_item').text();
-			}
-			else if ($('h1').hasClass('post-title')) {
-				current = $('h1.post-title').html();
-			}
-			else {
-				current = '&nbsp;';
-			}
-		}*/
 	}
 	$('.main-nav').append('<a id="responsive_menu_button" class="icon-menu-1" />').prepend('<p id="responsive_current_menu_item">' + current + '</p>');
 	$('a#responsive_menu_button, #responsive_current_menu_item').click(function () {

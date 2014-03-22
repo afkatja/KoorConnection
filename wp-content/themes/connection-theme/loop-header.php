@@ -50,4 +50,4 @@ if ( is_category() || is_tag() || is_author() || is_date() ) {
 		?>
 	</h6>
 	<?php
-}
+}?>

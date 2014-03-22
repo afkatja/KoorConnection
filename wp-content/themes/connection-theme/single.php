@@ -20,7 +20,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); ?>
 
-<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-460"; } else echo "col-700 fit"; ?> round-box">
+<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
         
 	<?php get_template_part( 'loop-header' ); ?>
         
@@ -32,40 +32,38 @@ get_header(); ?>
 			<div id="post<?php the_ID(); ?>" <?php post_class(); ?>>       
 				<?php responsive_entry_top(); ?>
 
-                <?php get_template_part( 'post-meta' ); ?>
+        <?php get_template_part( 'post-meta' ); ?>
 
-                <div class="post-entry">
-                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
-                    
-                    <?php if ( get_the_author_meta('description') != '' ) : ?>
-                    
-                    <div id="author-meta">
-                    <?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '80' ); }?>
-                        <div class="about-author"><?php _e('About','responsive'); ?> <?php the_author_posts_link(); ?></div>
-                        <p><?php the_author_meta('description') ?></p>
-                    </div><!-- end of #author-meta -->
-                    
-                    <?php endif; // no description, no author's meta ?>
-                    
-                    <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
-                </div><!-- end of .post-entry -->
-                
-                <div class="navigation">
-			        <div class="previous"><?php previous_post_link( '&#8249; %link' ); ?></div>
-                    <div class="next"><?php next_post_link( '%link &#8250;' ); ?></div>
-		        </div><!-- end of .navigation -->
-                
-                <?php get_template_part( 'post-data' ); ?>
+        <div class="post-entry">
+            <?php the_content(__('Read more &#8250;', 'responsive')); ?>
+            
+            <?php if ( get_the_author_meta('description') != '' ) : ?>
+            
+            <div id="author-meta">
+            <?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '80' ); }?>
+                <div class="about-author"><?php _e('About','responsive'); ?> <?php the_author_posts_link(); ?></div>
+                <p><?php the_author_meta('description') ?></p>
+            </div><!-- end of #author-meta -->
+            
+            <?php endif; // no description, no author's meta ?>
+            
+            <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
+        </div><!-- end of .post-entry -->
+        
+        <div class="navigation rel box">
+      <div class="prev"><?php previous_post_link( '&#8249; %link' ); ?></div>
+      <div class="next"><?php next_post_link( '%link &#8250;' ); ?></div>
+    </div><!-- end of .navigation -->
 				               
-				<?php responsive_entry_bottom(); ?>      
-			</div><!-- end of #post-<?php the_ID(); ?> -->       
-			<?php responsive_entry_after(); ?>            
-            
-			<?php responsive_comments_before(); ?>
-			<?php comments_template( '', true ); ?>
-			<?php responsive_comments_after(); ?>
-            
-        <?php 
+		<?php responsive_entry_bottom(); ?>      
+		</div><!-- end of #post-<?php the_ID(); ?> -->       
+		<?php responsive_entry_after(); ?>            
+	        
+		<?php responsive_comments_before(); ?>
+		<?php comments_template( '', true ); ?>
+		<?php responsive_comments_after(); ?>
+        
+    <?php 
 		endwhile; 
 
 		get_template_part( 'loop-nav' ); 
@@ -79,8 +77,32 @@ get_header(); ?>
       
 </div><!-- end of #content -->
 
+  <aside class="col-220 grid-right contain fit">
   <!--  User area-->
-  <?php if(is_user_logged_in() ) { 
+  <?php if(! is_user_logged_in() ) { ?>
+  	<a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>
+  	<div class="contain login-form flydown round-box secondary abs col-220 fit hidden">
+   		<?php $args = array(
+        'echo' => true,
+        'redirect' => site_url( $_SERVER['REQUEST_URI'] ), 
+        'form_id' => 'loginform',
+        'label_username' => __( 'Username' ),
+        'label_password' => __( 'Password' ),
+        'label_remember' => __( 'Remember Me' ),
+        'label_log_in' => __( 'Log In' ),
+        'id_username' => 'username',
+        'id_password' => 'pass',
+        'id_remember' => 'rememberme',
+        'id_submit' => 'wp-submit',
+        'remember' => true,
+        'value_username' => NULL,
+        'value_remember' => false 
+		  ); ?>
+		  <?php wp_login_form( $args ); ?>
+  	</div>
+  <?php } else { // If logged in: ?>
+  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right strong logout icon-logout">Uitloggen</a> 
+	<?php  
   	if (has_nav_menu('sub-header-menu', 'responsive')) { 
     	wp_nav_menu(array(
   	    'container'       => 'nav',
@@ -89,7 +111,7 @@ get_header(); ?>
   			'theme_location'  => 'sub-header-menu')
   		); 
    	} 
-	} 
-	//get_sidebar('home');
-	get_footer();  
-?>
+	}?>
+</aside>
+
+<?php get_footer(); ?>

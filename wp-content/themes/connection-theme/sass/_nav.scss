@@ -61,7 +61,7 @@
 }
 
 .prev, .next { position: absolute; top: 0; width: 30px; height: 30px; padding: 10px; line-height: 1; background-color: $warm-brown; @include vendor(border-radius, 5px); z-index: 50;
-  &:before { color: $dk-grey; text-indent: -10px; }
+  &:before { color: $dk-grey; text-indent: 0; }
   a {	display: none; }
   &:hover { cursor: pointer;
   	&:before { color: #fff; }

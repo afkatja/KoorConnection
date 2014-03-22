@@ -22,7 +22,7 @@ if ( !defined('ABSPATH')) exit;
 
 <?php if ( comments_open() ) : ?>
 	<?php if(is_user_logged_in() ) { ?>               
-		<div class="post-meta">
+		<div class="post-meta default">
 			<?php responsive_post_meta_data(); ?>
 		
 			<?php if ( comments_open() ) : ?>

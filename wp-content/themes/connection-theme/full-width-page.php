@@ -21,7 +21,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); ?>
 
-<div id="content-full" class="grid col-700 fit round-box">
+<div id="content-full" class="grid col-960 fit round-box">
         
 	<?php if (have_posts()) : ?>
 
@@ -33,14 +33,12 @@ get_header(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>       
 				<?php responsive_entry_top(); ?>
 
-                <?php get_template_part( 'post-meta-page' ); ?>
-                
-                <div class="post-entry">
-                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
-                    <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
-                </div><!-- end of .post-entry -->
-            
-				<?php get_template_part( 'post-data' ); ?>
+        <?php get_template_part( 'post-meta-page' ); ?>
+        
+        <div class="post-entry">
+            <?php the_content(__('Read more &#8250;', 'responsive')); ?>
+            <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
+        </div><!-- end of .post-entry -->
 				               
 				<?php responsive_entry_bottom(); ?>      
 			</div><!-- end of #post-<?php the_ID(); ?> -->       
