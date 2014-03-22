@@ -67,9 +67,6 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 					_e( 'Your H2 subheadline here', 'responsive' );
 				?>
 			</h2>
-			<div id="featured-image" class="full fit">								
-				<?php echo do_shortcode( $featured_content ); ?>
-			</div>
 			<p>
 				<?php
 				if ( isset( $responsive_options['home_content_area'] ) && $db && $empty )

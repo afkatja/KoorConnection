@@ -96,7 +96,7 @@ if ( !defined('ABSPATH')) exit;
 <?php if(is_front_page() || is_home()) { ?>
   <div class="featured-slider full fit mask">
     <?php $featured_content = ( !empty( $responsive_options['featured_content'] ) ) ? $responsive_options['featured_content'] : '<img class="aligncenter" src="' . get_stylesheet_directory_uri() . '/images/connection.JPG" alt="" />'; ?>
-    <?php echo do_shortcode( $featured_content ); ?>		
+    <?php echo do_shortcode( wpautop( $featured_content ) ); ?>		
   </div>
 <?php } ?>
     
