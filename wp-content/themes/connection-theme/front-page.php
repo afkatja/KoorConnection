@@ -48,7 +48,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
     $empty = ( empty( $responsive_options['home_headline'] ) && empty( $responsive_options['home_subheadline'] ) && empty( $responsive_options['home_content_area'] ) ) ? false : true;
 	?>
 
-	<div id="featured" class="grid col-700 main-pane round-box">
+	<div id="featured" class="grid <?php if(is_user_logged_in()) { ?> col-700 <?php } else {?> col-960 <?php } ?> main-pane round-box">
 		<div class="clear default box">
 			<h1 class="featured-title">
 				<?php
