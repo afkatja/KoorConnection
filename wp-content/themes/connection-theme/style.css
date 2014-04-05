@@ -1575,78 +1575,108 @@ label .required { left: -5px; position: absolute; top: 5px; }
 /* line 12, sass/_calendar.scss */
 #calendar_wrap tfoot #next { text-align: right; }
 
-/* line 18, sass/_calendar.scss */
-#tribe-bar-form.tribe-bar-mini .tribe-bar-filters .tribe-bar-submit { width: 20%; padding-top: 25px; }
+/* line 17, sass/_calendar.scss */
+#tribe-bar-form #tribe-bar-collapse-toggle { text-transform: capitalize; }
 /* line 19, sass/_calendar.scss */
-#tribe-bar-form.tribe-bar-mini .tribe-bar-filters .label-tribe-bar-search, #tribe-bar-form.tribe-bar-mini .tribe-bar-filters .label-tribe-bar-date { text-indent: -9999em; overflow: hidden; text-transform: capitalize; }
-/* line 20, sass/_calendar.scss */
-#tribe-bar-form.tribe-bar-mini .tribe-bar-filters .label-tribe-bar-search:before, #tribe-bar-form.tribe-bar-mini .tribe-bar-filters .label-tribe-bar-date:before { text-indent: 0; position: absolute; top: 0; left: 0; }
-/* line 22, sass/_calendar.scss */
-#tribe-bar-form.tribe-bar-mini .tribe-bar-filters .label-tribe-bar-search:before { content: 'Zoek'; }
+#tribe-bar-form #tribe-bar-collapse-toggle span.tribe-bar-toggle-arrow:after { content: '\E823'; font-family: "fontello"; border: none; font-size: 24px; top: 5px; right: 5px; }
 /* line 23, sass/_calendar.scss */
-#tribe-bar-form.tribe-bar-mini .tribe-bar-filters .label-tribe-bar-date:before { content: 'Op datum'; }
+#tribe-bar-form .tribe-bar-filters .label-tribe-bar-search, #tribe-bar-form .tribe-bar-filters .label-tribe-bar-date { text-indent: -9999em; overflow: hidden; text-transform: capitalize; }
+/* line 24, sass/_calendar.scss */
+#tribe-bar-form .tribe-bar-filters .label-tribe-bar-search:before, #tribe-bar-form .tribe-bar-filters .label-tribe-bar-date:before { text-indent: 0; position: absolute; top: 0; left: 0; }
+/* line 26, sass/_calendar.scss */
+#tribe-bar-form .tribe-bar-filters .label-tribe-bar-search:before { content: 'Zoek'; }
+/* line 27, sass/_calendar.scss */
+#tribe-bar-form .tribe-bar-filters .label-tribe-bar-date:before { content: 'Op datum'; }
 
-/* line 29, sass/_calendar.scss */
-#tribe-events-content .tribe-events-calendar th { color: #444444; text-transform: capitalize; }
-/* line 31, sass/_calendar.scss */
-#tribe-events-content .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"], #tribe-events-content .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"] > a { background-color: #ddbfa7; }
+/* line 32, sass/_calendar.scss */
+#tribe-events-content .tribe-bar-filters-inner > div, #tribe-events .tribe-bar-filters-inner > div { width: 33.333%; }
+/* line 33, sass/_calendar.scss */
+#tribe-events-content .tribe-bar-submit, #tribe-events .tribe-bar-submit { padding-top: 30px; }
 /* line 34, sass/_calendar.scss */
-#tribe-events-content .tribe-events-calendar .tribe-events-tooltip { border: none; background-color: white; color: #444444; padding: 6px 8px; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); -ms-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; }
-/* line 35, sass/_calendar.scss */
-#tribe-events-content .tribe-events-calendar .tribe-events-tooltip h4 { background-color: transparent; color: #444444; font-family: "Copse", sans-serif; }
-/* line 36, sass/_calendar.scss */
-#tribe-events-content .tribe-events-calendar .tribe-events-tooltip .tribe-events-arrow { height: 18px; background-image: none; background-color: #fff; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3); -ms-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3); -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); clip: rect(0px, 20px, 20px, 0px); bottom: -9px; }
+#tribe-events-content .tribe-bar-submit input[type=submit], #tribe-events .tribe-bar-submit input[type=submit] { padding: 5px 10px; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; text-transform: capitalize; }
+/* line 37, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-inner, #tribe-events #tribe-bar-views .tribe-bar-views-inner { background: #ebdebb; }
+/* line 38, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-inner label, #tribe-events #tribe-bar-views .tribe-bar-views-inner label { text-transform: capitalize; }
+/* line 39, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-inner label:after, #tribe-events #tribe-bar-views .tribe-bar-views-inner label:after { content: '\E827'; font-family: "fontello"; display: inline-block; margin-left: 5px; }
+/* line 42, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-list, #tribe-events #tribe-bar-views .tribe-bar-views-list { margin-top: 10px; }
+/* line 44, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option.tribe-bar-active a, #tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option.tribe-bar-active a, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a { background: #ebdebb; }
+/* line 45, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option.tribe-bar-active a:hover, #tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option.tribe-bar-active a:focus, #tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a:hover, #tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a:focus, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option.tribe-bar-active a:hover, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option.tribe-bar-active a:focus, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a:hover, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a:focus { background-color: #ddbfa7; }
+/* line 48, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option-upcoming .tribe-icon-upcoming, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option-upcoming .tribe-icon-upcoming { background: none; padding-left: 0; }
+/* line 49, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option-upcoming .tribe-icon-upcoming:before, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option-upcoming .tribe-icon-upcoming:before { content: '\F00B'; font-family: "FontAwesome"; }
+/* line 51, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option-month .tribe-icon-month, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option-month .tribe-icon-month { background: none; padding-left: 0; }
+/* line 52, sass/_calendar.scss */
+#tribe-events-content #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option-month .tribe-icon-month:before, #tribe-events #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option-month .tribe-icon-month:before { content: '\F073'; font-family: "FontAwesome"; }
+/* line 56, sass/_calendar.scss */
+#tribe-events-content .tribe-events-list, #tribe-events .tribe-events-list { margin-bottom: 0; }
+/* line 58, sass/_calendar.scss */
+#tribe-events-content .tribe-events-calendar th, #tribe-events .tribe-events-calendar th { color: #444444; text-transform: capitalize; }
+/* line 60, sass/_calendar.scss */
+#tribe-events-content .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"], #tribe-events-content .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"] > a, #tribe-events .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"], #tribe-events .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"] > a { background-color: #ddbfa7; }
+/* line 63, sass/_calendar.scss */
+#tribe-events-content .tribe-events-calendar .tribe-events-tooltip, #tribe-events .tribe-events-calendar .tribe-events-tooltip { border: none; background-color: white; color: #444444; padding: 6px 8px; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); -ms-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2); -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; }
+/* line 64, sass/_calendar.scss */
+#tribe-events-content .tribe-events-calendar .tribe-events-tooltip h4, #tribe-events .tribe-events-calendar .tribe-events-tooltip h4 { background-color: transparent; color: #444444; font-family: "Copse", sans-serif; }
+/* line 65, sass/_calendar.scss */
+#tribe-events-content .tribe-events-calendar .tribe-events-tooltip .tribe-events-arrow, #tribe-events .tribe-events-calendar .tribe-events-tooltip .tribe-events-arrow { height: 18px; background-image: none; background-color: #fff; -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3); -ms-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3); box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3); -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); clip: rect(0px, 20px, 20px, 0px); bottom: -9px; }
 
-/* line 40, sass/_calendar.scss */
+/* line 69, sass/_calendar.scss */
 .tribe-events-content { font-family: "Copse", sans-serif; font-size: 1em; color: #444444; }
 
-/* line 41, sass/_calendar.scss */
+/* line 70, sass/_calendar.scss */
 .tribe-events-schedule { margin-top: 10px; }
 
-/* line 42, sass/_calendar.scss */
+/* line 71, sass/_calendar.scss */
 .single-tribe_events .tribe-events-event-meta { border: none; margin: 20px 0; }
-/* line 43, sass/_calendar.scss */
+/* line 72, sass/_calendar.scss */
 .single-tribe_events .tribe-events-event-meta .tribe-events-meta-group { padding-left: 0; padding-right: 0; }
-/* line 44, sass/_calendar.scss */
+/* line 73, sass/_calendar.scss */
 .single-tribe_events .tribe-events-event-meta .tribe-events-meta-group + .tribe-events-meta-group { padding-left: 2%; }
 
-/* line 47, sass/_calendar.scss */
+/* line 76, sass/_calendar.scss */
 .tribe-events-list h2.tribe-events-page-title { text-align: left; }
 
-/* line 48, sass/_calendar.scss */
+/* line 77, sass/_calendar.scss */
 .tribe-events-list h2.tribe-events-list-event-title { font-size: 2em; }
 
-/* line 49, sass/_calendar.scss */
+/* line 78, sass/_calendar.scss */
 .tribe-events-list-separator-month { color: #444444; background: none; text-transform: capitalize; padding: 0; }
 
-/* line 50, sass/_calendar.scss */
+/* line 79, sass/_calendar.scss */
 .tribe-events-read-more { margin-top: 20px; font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
 
-/* line 53, sass/_calendar.scss */
+/* line 82, sass/_calendar.scss */
 .datepicker.dropdown-menu table { border-collapse: separate; border-spacing: 0; }
-/* line 55, sass/_calendar.scss */
+/* line 84, sass/_calendar.scss */
 .datepicker.dropdown-menu table thead th { padding: 10px 0; }
-/* line 56, sass/_calendar.scss */
+/* line 85, sass/_calendar.scss */
 .datepicker.dropdown-menu table th.next, .datepicker.dropdown-menu table th.prev { text-indent: -9999em; margin-top: 10px; }
-/* line 57, sass/_calendar.scss */
+/* line 86, sass/_calendar.scss */
 .datepicker.dropdown-menu table th.next:before, .datepicker.dropdown-menu table th.prev:before { text-indent: 0; position: absolute; top: 3px; }
-/* line 58, sass/_calendar.scss */
+/* line 87, sass/_calendar.scss */
 .datepicker.dropdown-menu table th.next:hover, .datepicker.dropdown-menu table th.next:focus, .datepicker.dropdown-menu table th.prev:hover, .datepicker.dropdown-menu table th.prev:focus { background-color: #ddbfa7; }
-/* line 59, sass/_calendar.scss */
+/* line 88, sass/_calendar.scss */
 .datepicker.dropdown-menu table th.next:hover:before, .datepicker.dropdown-menu table th.next:focus:before, .datepicker.dropdown-menu table th.prev:hover:before, .datepicker.dropdown-menu table th.prev:focus:before { color: #fff; }
-/* line 62, sass/_calendar.scss */
+/* line 91, sass/_calendar.scss */
 .datepicker.dropdown-menu table th.next { right: 10px; }
-/* line 63, sass/_calendar.scss */
+/* line 92, sass/_calendar.scss */
 .datepicker.dropdown-menu table th.next:before { left: 5px; }
-/* line 65, sass/_calendar.scss */
+/* line 94, sass/_calendar.scss */
 .datepicker.dropdown-menu table th.prev { left: 10px; }
-/* line 66, sass/_calendar.scss */
+/* line 95, sass/_calendar.scss */
 .datepicker.dropdown-menu table th.prev:before { left: 3px; }
-/* line 68, sass/_calendar.scss */
+/* line 97, sass/_calendar.scss */
 .datepicker.dropdown-menu table tr td { border: none; }
-/* line 69, sass/_calendar.scss */
+/* line 98, sass/_calendar.scss */
 .datepicker.dropdown-menu table tr td span { height: 30px; width: 25%; line-height: 30px; border: 1px solid #efefef; margin: 0; color: #92278f; }
-/* line 70, sass/_calendar.scss */
+/* line 99, sass/_calendar.scss */
 .datepicker.dropdown-menu table tr td span:hover, .datepicker.dropdown-menu table tr td span:focus { color: #d2bea0; }
 
 /* line 2, sass/_media.scss */

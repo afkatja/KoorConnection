@@ -13,9 +13,13 @@
 	}
 }
 
-#tribe-bar-form.tribe-bar-mini {
+#tribe-bar-form {
+	#tribe-bar-collapse-toggle { text-transform: capitalize; 
+		span.tribe-bar-toggle-arrow { 
+			&:after { content: '\E823'; font-family: $fontello; border: none; font-size: 24px; top: 5px; right: 5px; }
+		}
+	}
 	.tribe-bar-filters {
-		 .tribe-bar-submit { width: 20%; padding-top: 25px; }
 		 .label-tribe-bar-search, .label-tribe-bar-date { text-indent: -9999em; overflow: hidden; text-transform: capitalize;
 		 	 &:before { text-indent: 0; position: absolute; top: 0; left: 0; }
 		 }
@@ -24,7 +28,32 @@
 	}	
 }
 
-#tribe-events-content {
+#tribe-events-content, #tribe-events {
+	.tribe-bar-filters-inner>div { width: 33.333%; }
+	.tribe-bar-submit { padding-top: 30px; 
+		input[type=submit] { padding: 5px 10px; @include vendor(border-radius, 2px); text-transform: capitalize; }
+	}
+	#tribe-bar-views {
+		.tribe-bar-views-inner { background: $beige; 
+			label { text-transform: capitalize; 
+				&:after { content: '\E827'; font-family: $fontello; display: inline-block; margin-left: 5px; }
+			}
+		}
+		.tribe-bar-views-list { margin-top: 10px;
+			.tribe-bar-views-option.tribe-bar-active a,
+			.tribe-bar-views-option a { background:  $beige;
+				&:hover, &:focus { background-color: $warm-brown; }
+				
+			}
+			.tribe-bar-views-option-upcoming .tribe-icon-upcoming { background: none; padding-left: 0;
+				&:before { content: '\F00B'; font-family: $awesome; }
+			}
+			.tribe-bar-views-option-month .tribe-icon-month { background: none; padding-left: 0;
+				&:before { content: '\F073'; font-family: $awesome; }
+			}
+		}
+	}
+	.tribe-events-list { margin-bottom: 0; }
 	.tribe-events-calendar {
 		th { color: $dk-grey; text-transform: capitalize; }
 		td.tribe-events-present div[id*="tribe-events-daynum-"], 

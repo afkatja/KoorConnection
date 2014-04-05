@@ -48,7 +48,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
     $empty = ( empty( $responsive_options['home_headline'] ) && empty( $responsive_options['home_subheadline'] ) && empty( $responsive_options['home_content_area'] ) ) ? false : true;
 	?>
 
-	<div id="featured" class="grid <?php if(is_user_logged_in()) { ?> col-700 <?php } else {?> col-960 <?php } ?> main-pane round-box">
+	<div id="featured" class="grid <?php if(is_user_logged_in()) { ?> col-700 <?php } else {?> col-780 <?php } ?> main-pane round-box">
 		<div class="clear default box">
 			<h1 class="featured-title">
 				<?php
@@ -98,10 +98,10 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 	</div><!-- end of #featured -->
 	
 	
-  <aside class="col-220 grid-right contain fit">
+  <aside class="<?php if(is_user_logged_in()) { ?> col-220 <?php } else {?> col-140 <?php } ?> grid-right contain fit">
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
-  	<a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>
+  	<a href="#" class="grid pulldown icon-expand strong icon-login">Login leden</a>
   	<div class="contain login-form flydown round-box secondary abs col-220 fit hidden">
    		<?php $args = array(
         'echo' => true,
