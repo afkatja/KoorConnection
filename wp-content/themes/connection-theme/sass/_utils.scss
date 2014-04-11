@@ -38,8 +38,8 @@ q {
 .center { margin: 0 auto; }
 .full { width: 100%; }
 .box { padding: 10px; }
-.round-box { border-radius: 5px; padding: 10px; 
-  &:not(.button) { @include vendor(box-shadow, 0px 0px 10px rgba(0,0,0, .3)); }
+.round-box { @include vendor(border-radius, 3px); padding: 10px; 
+  &:not(.button) { @include vendor(box-shadow, 0px 0px 5px rgba(0,0,0, .3)); }
 }
 
 .flush { margin: 0 !important; }
@@ -57,3 +57,5 @@ q {
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right {	text-align: right; }
+
+.divided + .divided { margin-top: 20px; }

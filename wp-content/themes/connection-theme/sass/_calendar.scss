@@ -79,7 +79,6 @@
 .tribe-events-list-separator-month { color: $dk-grey; background: none; text-transform: capitalize; padding: 0; }
 .tribe-events-read-more { margin-top: 20px; font-family: $arial; font-size: 12px; }
 
-
 .datepicker.dropdown-menu table {
 	border-collapse: separate; border-spacing: 0;
 	thead th { padding: 10px 0; }
@@ -100,4 +99,7 @@
 			&:hover, &:focus { color: $brown; }
 		}
 	}
+}
+.single-tribe_events .tribe-events-venue-map { border: 1px solid #fff; @include vendor(box-shadow, 0 0 5px rgba(0,0,0, .2)); background: mix($warm-brown, #fff, 25%);
+	img, .grid img { @include vendor(box-shadow, none); background: none; }
 }

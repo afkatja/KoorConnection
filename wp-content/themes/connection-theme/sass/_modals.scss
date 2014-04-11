@@ -7,7 +7,7 @@
 	@include vendor(box-sizing, border-box);
 }
 #cboxOverlay { background: transparentize($dk-grey, .1); }
-#cboxWrapper { background: $warm-brown; @include vendor(border-radius, 3px); padding: 10px; }
+#cboxWrapper { background: mix($warm-brown, #fff, 25%); @include vendor(border-radius, 3px); padding: 10px; }
 #cboxTopLeft,
 #cboxTopRight,
 #cboxBottomLeft,

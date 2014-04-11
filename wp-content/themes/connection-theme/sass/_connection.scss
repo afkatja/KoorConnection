@@ -22,17 +22,8 @@ body { color: $dk-grey; }
  }
  #container { max-width: 100%; }
  .wrap { width: 90%; 
-   /*background: -webkit-linear-gradient(top, transparent 0%, red 20px, orange 50px, yellow 80px, green 110px, blue 140px, indigo 170px, violet 200px, transparent 230px, transparent 100%);*/
-   /*url(/connection-site-v3-header_03.png)0 0 no-repeat*/ 
  }
  .main, #wrapper { padding: 30px 0; position: relative; background: none; border: none; max-width: 1200px;
-   /*&:before { content: ""; position: absolute; left: -5%; top: 0; 
-     background: url(images/treble_clef.svg) -130px 0 no-repeat; background-size: 430px auto;
-     width: 15%; height: 600px;
-     -webkit-mask-position: 0 0; -webkit-mask-size: 100%;
-     -webkit-mask-image: -webkit-gradient(linear, left center, right center, color-stop(0, #000), color-stop(55%, transparent));
-     opacity: .7;
-   }*/
    @include media-query(mobilel) {
    		padding-left: 0;
    }
@@ -49,20 +40,13 @@ body { color: $dk-grey; }
  }
  
  .content, #container { position: relative; 
-   /*&:before { content: ""; display: block; position: absolute; right: -50px; top: 50%; margin-top: -380px; 
-     background: url(images/bassClef.svg) -45px 0 no-repeat; background-size: 420px auto;
-     width: 30%; height: 500px;
-     -webkit-mask-position: 0 0; -webkit-mask-size: 300px 200px;
-     -webkit-mask-image: -webkit-gradient(linear, right center, left center, color-stop(0, #000), color-stop(55%, transparent));
-     opacity: .7;
-   }*/
    .cropper { width: 100%; height: 100px;
      img { width: auto; }
    }
  }
   
  .main-pane, #featured { border: none;
-   background-color: $warm-brown;//#ddc08a; 
+   background-color: mix($warm-brown, #fff, 25%);//#ddc08a; 
    margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative;    
    article {padding: 15px; box-sizing: border-box; }
    p { text-align: left; padding: 0; }
@@ -81,7 +65,7 @@ body { color: $dk-grey; }
    }
  }
  
- #content, #content-full, #content-search, #content-images { border: none; background-color: $warm-brown;
+ #content, #content-full, #content-search, #content-images { border: none; background-color: mix($warm-brown, #fff, 25%);
    margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative; 
  	.post, .post-entry, .page, .attachment, .comments {	background: #fff; padding: 10px; margin: 0; }
  	.comments { margin-top: 20px; 
@@ -102,7 +86,7 @@ body { color: $dk-grey; }
    article { border-radius: 6px; padding: 10px; 
      img { width: 100%; }
    }
-   .highlight, .news, .blog { background-color: $warm-pink; }
+   .highlight, .news, .blog { background-color:  mix($warm-brown, #fff, 25%); }
    /*.highlight { background-color: #0afcd8; }
    .news { background-color: #3c6ef2; }
    .blog { background-color: #ed9e7f; }*/

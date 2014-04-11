@@ -99,7 +99,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
   	<a href="#" class="grid pulldown icon-expand strong icon-login">Login leden</a>
-  	<div class="contain login-form flydown round-box secondary abs col-220 fit hidden">
+  	<div class="contain login-form flydown round-box secondary abs col-140 fit hidden">
    		<?php $args = array(
         'echo' => true,
         'redirect' => site_url( $_SERVER['REQUEST_URI'] ), 

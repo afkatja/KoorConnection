@@ -83,8 +83,8 @@ if ( !defined('ABSPATH')) exit;
         	$urlSVG = get_stylesheet_directory_uri() . '/images/logo.svg';
         	$urlPNG = get_stylesheet_directory_uri() . '/images/logo.png';
         ?>
-        	<object data="<?php echo $urlSVG; ?>" width="150px" height="70px" type="image/svg+xml">
-        	   <img src="<?php echo $urlPNG; ?>" width="150" height="70">
+        	<object data="<?php echo $urlSVG; ?>" width="100%" height="100%" type="image/svg+xml">
+        	   <img src="<?php echo $urlPNG; ?>" width="150px" height="70px">
         	</object>
         </a>
         <?php wp_nav_menu(array(
@@ -99,7 +99,9 @@ if ( !defined('ABSPATH')) exit;
 	<?php endif; // header image was removed (again) ?> 	
 	<?php responsive_header_bottom(); // after header content hook ?>
 	
-	<?php get_sidebar(); ?> <!--search form-->
+	<?php 
+		//get_sidebar(); 
+	?> <!--search form-->
 </div><!-- end of #header -->
 <?php responsive_header_end(); // after header container hook ?>
 

@@ -21,7 +21,7 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php get_header(); ?>
 
- <div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
+ <div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-780 fit"; ?> round-box">
         
 <?php if (have_posts()) : ?>
 
@@ -71,11 +71,11 @@ if ( !defined('ABSPATH')) exit;
 
 </div><!-- end of #content -->
 
-  <aside class="col-220 grid-right contain fit">
+  <aside class="<?php if(! is_user_logged_in() ) { ?>col-140 <?php } else { ?>col-220<?php } ?> grid-right contain fit">
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
   	<a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>
-  	<div class="contain login-form flydown round-box secondary abs col-220 fit hidden">
+  	<div class="contain login-form flydown round-box secondary abs col-140 fit hidden">
    		<?php $args = array(
         'echo' => true,
         'redirect' => site_url( $_SERVER['REQUEST_URI'] ), 

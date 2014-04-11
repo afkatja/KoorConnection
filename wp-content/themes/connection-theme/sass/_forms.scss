@@ -23,13 +23,13 @@ textarea,
 	margin: 0;
 	padding: 4px 10px 4px 4px;
 	text-decoration: none;
-	text-shadow: 0 1px 0 #fff;
+	text-shadow: 0 1px 0 transparentize(#fff, .7);
 	vertical-align: middle;
 	white-space: nowrap;
 	text-align: center; 
 	text-transform: capitalize;
 	&:hover, &:focus {
-		@include vertical-gradient($beige, $brown); color: $purple;
+		@include vertical-gradient(mix($beige, #fff, 50%), mix($warm-brown, #fff, 50%)); color: $purple;
 	}
 }
 .input-field { width: 300px;

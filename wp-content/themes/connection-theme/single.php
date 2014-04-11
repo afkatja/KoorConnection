@@ -20,7 +20,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); ?>
 
-<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-960 fit"; ?> round-box">
+<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-780 fit"; ?> round-box">
         
 	<?php get_template_part( 'loop-header' ); ?>
         
@@ -81,7 +81,7 @@ get_header(); ?>
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
   	<a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>
-  	<div class="contain login-form flydown round-box secondary abs col-220 fit hidden">
+  	<div class="contain login-form flydown round-box secondary abs col-140 fit hidden">
    		<?php $args = array(
         'echo' => true,
         'redirect' => site_url( $_SERVER['REQUEST_URI'] ), 

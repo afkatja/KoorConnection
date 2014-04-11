@@ -22,7 +22,7 @@ get_header();
 global $more; $more = 0; 
 ?>
 
-<div id="content-blog" class="grid <?php if(is_user_logged_in() ) { echo "col-460"; } else echo "col-700 fit"; ?> round-box">
+<div id="content-blog" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-780 fit"; ?> round-box">
         
 	<?php get_template_part( 'loop-header' ); ?>
         
@@ -66,7 +66,7 @@ global $more; $more = 0;
       
 </div><!-- end of #content-blog -->
 
-  <aside class="col-220 grid-right contain fit">
+  <aside class="<?php if(! is_user_logged_in() ) { ?>col-140 <?php } else { ?>col-220<?php } ?> grid-right contain fit">
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
   	<a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>
