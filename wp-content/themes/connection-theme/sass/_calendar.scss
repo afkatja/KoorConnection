@@ -29,6 +29,7 @@
 }
 
 #tribe-events-content, #tribe-events {
+	.tribe-events-notices { background: $lila; border: 1px solid transparentize($purple, .7); color: $purple; text-shadow: 0 1px 0 transparentize(#FFF, .5); }
 	.tribe-bar-filters-inner>div { width: 33.333%; }
 	.tribe-bar-submit { padding-top: 30px; 
 		input[type=submit] { padding: 5px 10px; @include vendor(border-radius, 2px); text-transform: capitalize; }

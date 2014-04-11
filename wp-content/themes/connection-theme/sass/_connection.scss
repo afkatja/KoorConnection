@@ -12,6 +12,7 @@
 @import "_calendar";
 @import "_media";
 @import "_gallery";
+@import "_modals";
 
 body { color: $dk-grey; }
 @include sticky-footer(40px, '#container', '#footer', '#footer');
@@ -43,7 +44,7 @@ body { color: $dk-grey; }
    //padding: 10px 0; 
    z-index: 200;
    .main-logo { display: block; height: 100px; //width: 206px; 
-     background: url(images/logo.png) 0 0 no-repeat; background-size: contain;
+     //background: url(images/logo.png) 0 0 no-repeat; background-size: contain;
    }   
  }
  
@@ -66,13 +67,13 @@ body { color: $dk-grey; }
    article {padding: 15px; box-sizing: border-box; }
    p { text-align: left; padding: 0; }
 	 #featured-image { margin-top: 20px;
-	 		a { display: block; }
+ 		a { display: block; }
 	 }
    @include media-query(mobilel) { float: none; width: 100%; }
  }
  
- .photo-slider, .featured-slider { width: 100%; height: 350px;
-   img { border: none; @include vendor(box-shadow, none); margin-top: -180px; }
+ .photo-slider, .featured-slider { width: 100%; height: 350px; position: relative;
+   img { border: none; @include vendor(box-shadow, none); margin-top: -180px; position: absolute; bottom: -200px; }
    p.mask { height: 100%; width: 100%; overflow: hidden; text-align: center; border-radius: 5px;
      img { position: absolute; z-index: 1; 
        &.current { z-index: 3; }
@@ -111,7 +112,7 @@ body { color: $dk-grey; }
  	a.button { @include font-size(22px); padding: 10px 20px; }
  }
  
- .pulldown, .logout { margin-bottom: 30px; font-size: 1.2em; 
+ .pulldown, .logout { margin-bottom: 30px; font-size: 1.4em; font-family: $copse;	text-shadow: 0px 1px 1px transparentize(#fff, .5);
    &.active { background-color: $brown; color: #fff; display: block; height: 30px; padding: 5px 10px 5px 20px; border-radius: 5px 5px 0 0; margin-top: 0; position: relative;
      &:after { content: " "; position: absolute; bottom: 0; width: 100%; height: 1px; right: 0; border-top: 10px solid $brown; z-index: 200; }
    }
@@ -134,9 +135,10 @@ body { color: $dk-grey; }
  .post-edit-link {	@extend .icon-pencil; }
  .comments-link {	@extend .icon-chat; }
  
-img {
-	border: 2px solid #efefef;
+img, .grid img {
+	border: 1px solid #efefef;
 	background: #fff;
 	@include vendor(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset);
 }
+#widgets .grid img, .post-entry .grid img {	margin: 0; }
  

@@ -67,7 +67,9 @@ if ( !defined('ABSPATH')) exit;
 	<?php if ( get_header_image() != '' ) : ?>
                
     <div class="left contain full rel">
-        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140"><img src="<?php header_image(); ?>" width="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> width;} else { echo HEADER_IMAGE_WIDTH;} ?>" height="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> height;} else { echo HEADER_IMAGE_HEIGHT;} ?>" alt="<?php bloginfo('name'); ?>" /></a>
+        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140">
+        	<img src="<?php header_image(); ?>" width="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> width;} else { echo HEADER_IMAGE_WIDTH;} ?>" height="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> height;} else { echo HEADER_IMAGE_HEIGHT;} ?>" alt="<?php bloginfo('name'); ?>" />
+      	</a>
         <p class="title copse strong left alpha col-540 icon-note-beamed">Koor Connection</p>
     </div><!-- end of #logo -->
         
@@ -76,7 +78,15 @@ if ( !defined('ABSPATH')) exit;
     <?php if ( !get_header_image() ) : ?>
                 
     <div class="left full contain rel">
-        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"></a>
+        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+        <?php 
+        	$urlSVG = get_stylesheet_directory_uri() . '/images/logo.svg';
+        	$urlPNG = get_stylesheet_directory_uri() . '/images/logo.png';
+        ?>
+        	<object data="<?php echo $urlSVG; ?>" width="150px" height="70px" type="image/svg+xml">
+        	   <img src="<?php echo $urlPNG; ?>" width="150" height="70">
+        	</object>
+        </a>
         <?php wp_nav_menu(array(
             'container'       => 'nav',
         		'container_class'	=> 'main-nav',

@@ -88,14 +88,11 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 							_e('Call to Action','responsive');
 						?>
 					</a>
-				
-				</p><!-- end of .call-to-action -->
-
+				</p>
 			<?php endif; ?>         
 			
-		</div><!-- end of .col-460 -->
-	
-	</div><!-- end of #featured -->
+		</div>
+	</div>
 	
 	
   <aside class="<?php if(is_user_logged_in()) { ?> col-220 <?php } else {?> col-140 <?php } ?> grid-right contain fit">
@@ -122,7 +119,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 		  <?php wp_login_form( $args ); ?>
   	</div>
   <?php } else { // If logged in: ?>
-  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right strong logout icon-logout">Uitloggen</a> 
+  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right logout icon-logout">Uitloggen</a> 
 	<?php  
   	if (has_nav_menu('sub-header-menu', 'responsive')) { 
     	wp_nav_menu(array(

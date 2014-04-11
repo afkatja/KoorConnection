@@ -21,7 +21,7 @@ jQuery(function($){
    });
    
   /* Isotope masonic tiles */
-  $('.gallery').isotope({
+  $('.post-entry .gallery').isotope({
     // options
     itemSelector : '.gallery-item'
   });

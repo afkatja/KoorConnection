@@ -5,7 +5,7 @@
     & > li { position: relative; float: left; max-width: 15%;
       a { display: block; padding: 0 15px; border: none; color: $purple; white-space: nowrap;
         font-family: "Copse", sans-serif; font-size: 1.4em; line-height: 25px; height: 25px;
-        text-shadow: 0px -1px 2px $grey; 
+        text-shadow: 0px 1px 1px transparentize(#fff, .5); 
         text-overflow: ellipsis; overflow: hidden;
         &:hover { background: none; color: $dk-brown; }
       }
@@ -37,7 +37,7 @@
   li + li { border-top: 2px solid $lila; }
   a { display: block; padding: 0 15px; border: none; color: $purple;
     font-family: "Copse", sans-serif; font-size: 1.4em; line-height: 25px; height: 25px;
-    text-shadow: 0px -1px 2px $grey; text-align: right;
+    text-shadow: 0px 1px 1px transparentize($lila, .5);  text-align: right;
     text-overflow: ellipsis; overflow: hidden;
     &:hover { background: none; color: $dk-brown; }
   }

@@ -90,7 +90,7 @@ get_header(); ?>
 		  <?php wp_login_form( $args ); ?>
   	</div>
   <?php } else { // If logged in: ?>
-  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right strong logout icon-logout">Uitloggen</a> 
+  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right logout icon-logout">Uitloggen</a> 
 	<?php  
   	if (has_nav_menu('sub-header-menu', 'responsive')) { 
     	wp_nav_menu(array(

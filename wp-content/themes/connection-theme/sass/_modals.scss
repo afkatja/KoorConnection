@@ -1,0 +1,23 @@
+/*
+	* Styling reset for easy image display plugin 
+	* http://wordpress.org/plugins/easy-image-display
+*/
+
+#colorbox, #cboxContent, #cboxLoadedContent {
+	@include vendor(box-sizing, border-box);
+}
+#cboxOverlay { background: transparentize($dk-grey, .1); }
+#cboxWrapper { background: $warm-brown; @include vendor(border-radius, 3px); padding: 10px; }
+#cboxTopLeft,
+#cboxTopRight,
+#cboxBottomLeft,
+#cboxBottomRight,
+#cboxMiddleLeft,
+#cboxMiddleRight,
+#cboxTopCenter,
+#cboxBottomCenter { background: none; width: 0; height: 0; }
+#cboxContent { overflow: hidden; border: 10px solid transparent; @include vendor(border-radius, 3px); }
+#cboxLoadedContent { margin-bottom: 0; }
+#cboxClose { background: none; top: 10px; right: 10px; bottom: auto;
+	&:before { content: '\F057'; font-family: $awesome; font-size: 24px; color: #fff; text-shadow: 0 1px 0 transparentize(#000, .1); text-indent: 0; position: absolute; top: 0; left: 0;	display: inline-block; }
+}
