@@ -20,7 +20,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); ?>
 
-<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-780 fit"; ?> round-box">
+<div id="content" class="grid <?php if(is_user_logged_in() ) { echo "col-700"; } else echo "col-780 fit"; ?> round-box tabletp-col-940">
         
 	<?php get_template_part( 'loop-header' ); ?>
         
@@ -77,7 +77,7 @@ get_header(); ?>
       
 </div><!-- end of #content -->
 
-  <aside class="col-220 grid-right contain fit">
+  <aside class="<?php if(is_user_logged_in()) { ?> col-220 <?php } else {?> col-140 <?php } ?> grid-right contain fit tabletp-col-460">
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
   	<a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>

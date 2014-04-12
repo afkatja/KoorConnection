@@ -63,7 +63,7 @@ get_header(); ?>
 </div><!-- end of #content -->
 
   <!--  User area-->
-<aside class="<?php if(! is_user_logged_in() ) { ?>col-140 <?php } else { ?>col-220<?php } ?> grid-right contain fit">
+<aside class="<?php if(! is_user_logged_in() ) { ?>col-140 <?php } else { ?>col-220<?php } ?> grid-right contain fit tabletp-col-460">
   <?php $args = array(
         'echo' => true,
         'redirect' => site_url( $_SERVER['REQUEST_URI'] ), 

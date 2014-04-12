@@ -8,6 +8,7 @@
 #widgets { 
 	&, .front-page & { margin-top: 0; 
 		@include media-query(tabletl) {	margin-top: 0; }
+		@include media-query(tabletp) { float: left; clear: none;	}
 	}
 	.widget_recent_entries {
 	 	ul { padding: 0; 

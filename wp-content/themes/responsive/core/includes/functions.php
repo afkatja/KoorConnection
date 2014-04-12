@@ -84,9 +84,9 @@ function responsive_get_option_defaults() {
 		'responsive_inline_css'           => '',
 		'responsive_inline_js_head'       => '',
 		'responsive_inline_css_js_footer' => '',
-		'static_page_layout_default'      => 'content-sidebar-page',
-		'single_post_layout_default'      => 'content-sidebar-page',
-		'blog_posts_index_layout_default' => 'content-sidebar-page',
+		'static_page_layout_default'      => 'default',
+		'single_post_layout_default'      => 'default',
+		'blog_posts_index_layout_default' => 'default',
 	);
 
 	return apply_filters( 'responsive_option_defaults', $defaults );
@@ -287,7 +287,7 @@ class responsive_widget_menu_class {
 		remove_filter( 'wp_nav_menu_args', array( $this, 'wp_nav_menu_args' ) );
 
 		if ( 'menu' == $args['menu_class'] ) {
-			$args['menu_class'] = apply_filters( 'responsive_menu_widget_class', 'menu_widget' );
+			$args['menu_class'] = apply_filters( 'responsive_menu_widget_class', 'menu-widget' );
 		}
 
 		return $args;
@@ -450,14 +450,15 @@ add_action( 'widgets_init', 'responsive_remove_recent_comments_style' );
  * Ulrich Pogson Contribution
  *
  */
-if ( !function_exists( 'responsive_post_meta_data' ) ) :
+if ( !function_exists( 'responsive_post_meta_data' ) ) {
 
 	function responsive_post_meta_data() {
 		printf( __( '<span class="%1$s">Posted on </span>%2$s<span class="%3$s"> by </span>%4$s', 'responsive' ),
 				'meta-prep meta-prep-author posted',
-				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="timestamp updated">%3$s</span></a>',
+				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="timestamp updated" datetime="%3$s">%4$s</time></a>',
 						 esc_url( get_permalink() ),
-						 esc_attr( get_the_time() ),
+						 esc_attr( get_the_title() ),
+						 esc_html( get_the_date('c')),
 						 esc_html( get_the_date() )
 				),
 				'byline',
@@ -468,7 +469,8 @@ if ( !function_exists( 'responsive_post_meta_data' ) ) :
 				)
 		);
 	}
-endif;
+
+}
 
 /**
  * This function removes WordPress generated category and tag atributes.
@@ -491,13 +493,14 @@ add_filter( 'the_category', 'responsive_category_rel_removal' );
  */
 function get_responsive_breadcrumb_lists() {
 	$responsive_options = get_option( 'responsive_theme_options' );
+	$yoast_options = get_option( 'wpseo_internallinks' );
 	if ( 1 == $responsive_options['breadcrumb'] ) {
 		return;
 	} elseif ( function_exists( 'bcn_display' ) ) {
 		bcn_display();
 	} elseif ( function_exists( 'breadcrumb_trail' ) ) {
 		breadcrumb_trail();
-	} elseif ( function_exists( 'yoast_breadcrumb' ) ) {
+	} elseif ( function_exists( 'yoast_breadcrumb' ) && true === $yoast_options['breadcrumbs-enable'] ) {
 		yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
 	} elseif ( ! is_search() ) {
 		responsive_breadcrumb_lists();
@@ -687,7 +690,7 @@ if ( !function_exists( 'responsive_css' ) ) {
 	function responsive_css() {
 		$theme      = wp_get_theme();
 		$responsive = wp_get_theme( 'responsive' );
-		$responsive_options = get_option( 'responsive_theme_options' );
+		$responsive_options = responsive_get_options();
 		if ( 1 == $responsive_options['minified_css'] ) {
 			wp_enqueue_style( 'responsive-style', get_template_directory_uri() . '/core/css/style.min.css', false, $responsive['Version'] );
 		} else {
@@ -746,7 +749,7 @@ function responsive_upgrade_bar() {
 	?>
 
 	<div class="upgrade-callout">
-		<p><img src="<?php echo get_template_directory_uri(); ?>/core/includes/images/chimp.png" alt="CyberChimps"/>
+		<p><img src="<?php echo get_template_directory_uri(); ?>/core/includes/theme-options/images/chimp.png" alt="CyberChimps"/>
 			<?php printf( __( 'Welcome to %1$s! Upgrade to %2$s today.', 'responsive' ),
 						  'Responsive',
 						  ' <a href="http://cyberchimps.com/store/responsivepro/" target="_blank" title="Responsive Pro">Responsive Pro</a> '
@@ -877,23 +880,23 @@ function responsive_install_plugins() {
 		'is_automatic'     => true, // Automatically activate plugins after installation or not
 		'message'          => '', // Message to output right before the plugins table
 		'strings'          => array(
-			'page_title'                      => __( 'Responsive Add Features', $theme_text_domain ),
-			'menu_title'                      => __( 'Activate Add Ons', $theme_text_domain ),
-			'installing'                      => __( 'Installing Plugin: %s', $theme_text_domain ), // %1$s = plugin name
-			'oops'                            => __( 'Something went wrong with the plugin API.', $theme_text_domain ),
-			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
-			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
-			'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
-			'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), // %1$s = plugin name(s)
-			'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
-			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
-			'activate_link'                   => _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
-			'return'                          => __( 'Return to Required Plugins Installer', $theme_text_domain ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', $theme_text_domain ),
-			'complete'                        => __( 'All plugins installed and activated successfully. %s', $theme_text_domain ) // %1$s = dashboard link
+			'page_title'                      => __( 'Responsive Add Features', 'responsive' ),
+			'menu_title'                      => __( 'Activate Add Ons', 'responsive' ),
+			'installing'                      => __( 'Installing Plugin: %s', 'responsive' ), // %1$s = plugin name
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'responsive' ),
+			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'responsive' ), // %1$s = plugin name(s)
+			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'responsive' ), // %1$s = plugin name(s)
+			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'responsive' ), // %1$s = plugin name(s)
+			'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'responsive' ), // %1$s = plugin name(s)
+			'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'responsive' ), // %1$s = plugin name(s)
+			'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'responsive' ), // %1$s = plugin name(s)
+			'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'responsive' ), // %1$s = plugin name(s)
+			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'responsive' ), // %1$s = plugin name(s)
+			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'responsive' ),
+			'activate_link'                   => _n_noop( 'Activate installed plugin', 'Activate installed plugins', 'responsive' ),
+			'return'                          => __( 'Return to Required Plugins Installer', 'responsive' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'responsive' ),
+			'complete'                        => __( 'All plugins installed and activated successfully. %s', 'responsive' ) // %1$s = dashboard link
 		)
 	);
 

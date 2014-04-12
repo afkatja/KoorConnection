@@ -19,8 +19,8 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>  
 	<?php responsive_widgets_before(); // above widgets container hook ?>
-    <div id="widgets" class="home-widgets contain clear secondary-pane">
-        <div class="grid col-300 round-box highlight">
+    <div id="widgets" class="home-widgets contain clear secondary-pane tabletp-col-460">
+        <div class="grid col-300 tabletp-col-940 round-box highlight">
         <?php responsive_widgets(); // above widgets hook ?>
             
             <?php if (!dynamic_sidebar('home-widget-1')) : ?>
@@ -34,7 +34,7 @@ if ( !defined('ABSPATH')) exit;
         <?php responsive_widgets_end(); // responsive after widgets hook ?>
         </div><!-- end of .col-300 -->
 
-        <div class="grid col-300 round-box highlight">
+        <div class="grid col-300 tabletp-col-940 round-box highlight">
         <?php responsive_widgets(); // responsive above widgets hook ?>
             
 			<?php if (!dynamic_sidebar('home-widget-2')) : ?>
@@ -48,7 +48,7 @@ if ( !defined('ABSPATH')) exit;
         <?php responsive_widgets_end(); // after widgets hook ?>
         </div><!-- end of .col-300 -->
 
-        <div class="grid col-300 fit round-box highlight">
+        <div class="grid col-300 tabletp-col-940 fit round-box highlight">
         <?php responsive_widgets(); // above widgets hook ?>
             
 			<?php if (!dynamic_sidebar('home-widget-3')) : ?>

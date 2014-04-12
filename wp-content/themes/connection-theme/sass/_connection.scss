@@ -34,8 +34,11 @@ body { color: $dk-grey; }
  .masthead {
    //padding: 10px 0; 
    z-index: 200;
-   .main-logo { display: block; height: 100px; //width: 206px; 
-     //background: url(images/logo.png) 0 0 no-repeat; background-size: contain;
+   .main-logo { display: block; height: 100px; 
+   	object { pointer-events: none; }
+   	@include media-query(tabletp) {
+   		height: 130px;
+   	}
    }   
  }
  

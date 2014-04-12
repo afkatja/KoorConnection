@@ -67,7 +67,7 @@ if ( !defined('ABSPATH')) exit;
 	<?php if ( get_header_image() != '' ) : ?>
                
     <div class="left contain full rel">
-        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140">
+        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140 tabletp-col-300">
         	<img src="<?php header_image(); ?>" width="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> width;} else { echo HEADER_IMAGE_WIDTH;} ?>" height="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> height;} else { echo HEADER_IMAGE_HEIGHT;} ?>" alt="<?php bloginfo('name'); ?>" />
       	</a>
         <p class="title copse strong left alpha col-540 icon-note-beamed">Koor Connection</p>
@@ -78,7 +78,7 @@ if ( !defined('ABSPATH')) exit;
     <?php if ( !get_header_image() ) : ?>
                 
     <div class="left full contain rel">
-        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+        <a id="logo" href="<?php echo home_url('/'); ?>" class="block abs left main-logo col-140 tabletp-col-300" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
         <?php 
         	$urlSVG = get_stylesheet_directory_uri() . '/images/logo.svg';
         	$urlPNG = get_stylesheet_directory_uri() . '/images/logo.png';

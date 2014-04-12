@@ -13,66 +13,84 @@
 /*	padding-top: 0;*/
 }
 
-.col-60, 
-.col-140, 
-.col-220, 
-.col-300, 
-.col-380, 
-.col-460, 
-.col-540, 
-.col-620, 
-.col-700, 
-.col-780, 
-.col-860 {
-	margin-right: 2.127659574468%; display: block;
+@mixin grid-setup($namespace: "") {
+
+	.#{$namespace}col-60, 
+	.#{$namespace}col-140, 
+	.#{$namespace}col-220, 
+	.#{$namespace}col-300, 
+	.#{$namespace}col-380, 
+	.#{$namespace}col-460, 
+	.#{$namespace}col-540, 
+	.#{$namespace}col-620, 
+	.#{$namespace}col-700, 
+	.#{$namespace}col-780, 
+	.#{$namespace}col-860 {
+		margin-right: 2.127659574468%; display: block;
+	}
+	
+	.#{$namespace}col-60 {
+		width: 6.382978723404%;
+	}
+	
+	.#{$namespace}col-140 {
+		width: 14.893617021277%;
+	}
+	
+	.#{$namespace}col-220 {
+		width: 23.404255319149%;
+	}
+	
+	.#{$namespace}col-300 {
+		width: 31.914893617021%;
+	}
+	
+	.#{$namespace}col-380 {
+		width: 40.425531914894%;
+	}
+	
+	.#{$namespace}col-460 {
+		width: 48.936170212766%;
+	}
+	
+	.#{$namespace}col-540 {
+		width: 57.446808510638%;
+	}
+	
+	.#{$namespace}col-620 {
+		width: 65.957446808511%;
+	}
+	
+	.#{$namespace}col-700 {
+		width: 74.468085106383%;
+	}
+	
+	.#{$namespace}col-780 {
+		width: 82.978723404255%;
+	}
+	
+	.#{$namespace}col-860 {
+		width: 91.489361702128%;
+	}
+	
+	.#{$namespace}col-940 {
+		width: 100%;
+	}
 }
 
-.col-60 {
-	width: 6.382978723404%;
-}
+@include grid-setup();
 
-.col-140 {
-	width: 14.893617021277%;
+@include media-query(tabletl){
+	@include grid-setup("tabletl-");
 }
-
-.col-220 {
-	width: 23.404255319149%;
+@include media-query(tabletp){
+	@include grid-setup("tabletp-");
 }
-
-.col-300 {
-	width: 31.914893617021%;
+@include media-query(mobilel){
+	@include grid-setup("mobilel-");
 }
-
-.col-380 {
-	width: 40.425531914894%;
-}
-
-.col-460 {
-	width: 48.936170212766%;
-}
-
-.col-540 {
-	width: 57.446808510638%;
-}
-
-.col-620 {
-	width: 65.957446808511%;
-}
-
-.col-700 {
-	width: 74.468085106383%;
-}
-
-.col-780 {
-	width: 82.978723404255%;
-}
-
-.col-860 {
-	width: 91.489361702128%;
-}
-
-.col-940 {
-	width: 100%;
+@include media-query(mobilep){
+  @include grid-setup("mobilep-");
 }
 
 .fit {
