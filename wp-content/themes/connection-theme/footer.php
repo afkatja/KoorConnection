@@ -34,7 +34,7 @@ if ( !defined('ABSPATH')) exit;
 			<?php responsive_footer_top(); ?>
 		    <footer class="wrap center contain">
 					<?php if (has_nav_menu('footer-menu', 'responsive')) { ?>
-					<div class="grid col-540">
+					<div class="grid col-540 mobilep-col-940">
 					 <?php wp_nav_menu(array(
 					    'container'       => '',
 							'fallback_cb'	  	=>  false,
@@ -45,14 +45,14 @@ if ( !defined('ABSPATH')) exit;
 				 <?php } ?>
          <?php get_sidebar('colophon'); ?>
 		                
-        <div class="grid col-300 copyright">
+        <div class="grid col-300 mobilep-col-940 copyright">
             <?php esc_attr_e('&copy;', 'responsive'); ?> <?php _e(date('Y')); ?>
             <a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
                 <?php bloginfo('name'); ?></a>
 						<a href="mailto:info@koorconnection.nl" class="icon-mail">Contact</a>                
         </div><!-- end of .copyright -->
 		        
-        <div class="grid col-300 scroll-top text-center"><a href="#scroll-top" title="<?php esc_attr_e( 'scroll to top', 'responsive' ); ?>"><?php _e( '&uarr;', 'responsive' ); ?></a></div>
+        <div class="grid col-300 mobilep-col-940 scroll-top text-center"><a href="#scroll-top" title="<?php esc_attr_e( 'scroll to top', 'responsive' ); ?>"><?php _e( '&uarr;', 'responsive' ); ?></a></div>
 			</footer>
 			<?php responsive_footer_bottom(); ?>
 		</div><!-- end #footer -->

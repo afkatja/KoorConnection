@@ -1,30 +1,68 @@
-jQuery(function($){
-  var $loginForm = $('.login-form');
-  $loginForm.addClass('hidden');
-  $('a.pulldown').click(function(e){
-    e.preventDefault();
-    if($(this).hasClass('icon-expand')) { 
-    	pullDownLogin.goDown(this, $loginForm); 
-    } else {
-    	pullDownLogin.goUp(this, $loginForm); 
-  	}
-   });
-   $(document).click(function(ev){  
-     if($.contains($('.login-form')[0], ev.target) || ($(ev.target)[0] == $('.pulldown')[0] && $loginForm.hasClass('expanded'))) {
-        return;
-     } else pullDownLogin.goUp($('.pulldown'), $loginForm);  
-   });
-   $('.input-field input').focus(function(){
-     $(this).parent().find('label.abs').hide();
-   }).blur(function(){
-     $(this).parent().find('label.abs').show();
-   });
-   
-  /* Isotope masonic tiles */
-  $('.post-entry .gallery').isotope({
-    // options
-    itemSelector : '.gallery-item'
-  });
+jQuery.noConflict();
+
+(function($){
+	/*!
+	* Mobile Menu
+	*/
+	$(function(){
+		var $expander = $('[data-role="mobile-nav-expander"]');
+		var $mainNav = $('.main-nav');
+		
+		// Close the mobile menu when clicked outside of it.
+		$(document).click(function (e) {
+			if($(e.target).is($expander)) {
+			return;
+			} else {
+				// Check if the menu is open, close in that case.
+				if ($expander.hasClass('nav-toggle-open')) {
+					$mainNav.removeClass('shown');
+					$expander.removeClass('nav-toggle-open');
+				}
+			}
+		});
+		
+		$expander.click(function (e) {
+			e.preventDefault();
+			var shown = $mainNav.hasClass('shown');
+			if(!shown){ 
+				$(this).addClass('nav-toggle-open');
+				$mainNav.addClass('shown');
+			} else {
+				$(this).removeClass('nav-toggle-open');
+				$mainNav.removeClass('shown');
+			}
+		});
+
+		//toggle open login menu
+	  var $loginForm = $('.login-form');
+	  $loginForm.addClass('hidden');
+	  $('a.pulldown').click(function(e){
+	    e.preventDefault();
+	    if($(this).hasClass('icon-expand')) { 
+	    	pullDownLogin.goDown(this, $loginForm); 
+	    } else {
+	    	pullDownLogin.goUp(this, $loginForm); 
+	  	}
+	   });
+	   $(document).click(function(ev){  
+	     if($(ev.target)[0] == $('.pulldown')[0] && $loginForm.hasClass('expanded')) {
+	        return;
+	     } else pullDownLogin.goUp($('.pulldown'), $loginForm);  
+	   });
+	   
+	   //fake placeholders with label elements
+	   $('.input-field input').focus(function(){
+	     $(this).parent().find('label.abs').hide();
+	   }).blur(function(){
+	     $(this).parent().find('label.abs').show();
+	   });
+	   
+	  /* Isotope masonic tiles */
+	  $('.post-entry .gallery').isotope({
+	    // options
+	    itemSelector : '.gallery-item'
+	  });
+	});
    
   var picasaweb = 'https://picasaweb.google.com/data/feed/api/user/114842468267912126592/albumid/5664032092199429489?kind=photo',
   photos = [];
@@ -83,75 +121,4 @@ jQuery(function($){
   setInterval(function(){
     randomCycle();
   }, 3000);
-});
-
-jQuery.fn.filterNode = function(name) {
-  return this.filter(function() {
-      return this.nodeName === name;
-  });
-};
-
-/*!
- * Mobile Menu
- */
-(function ($) {
-	var current = $('.main-nav li.current-menu-item a').html();
-	current = $('.main-nav li.current_page_item a').html();
-	if ($('span').hasClass('custom-mobile-menu-title')) {
-		current = $('span.custom-mobile-menu-title').html();
-	} else if (typeof current == 'undefined' || current === null) {
-			switch ($('body').attr('class')) {
-				case 'home':
-					if ($('#logo span').hasClass('site-name')) {
-						current = $('#logo .site-name a').html();
-					} else {
-						current = $('#logo img').attr('alt');
-					}
-				break;
-				case 'woocommerce':
-					current = $('.page-title').html();
-				break;
-				case 'archive':
-					current = $('.title-archive').html();
-				break;
-				case 'search-results':
-					current = $('.title-search-results').html();
-				break;
-				case 'page-template-blog-excerpt-php':
-					current = $('.current_page_item').text();
-				break;
-				case 'page-template-blog-php':
-				break;
-				case 'post-title':
-					current = $('.post-title').html();
-				break;
-				default: 
-					current = '&nbsp;';
-			}
-	}
-	$('.main-nav').append('<a id="responsive_menu_button" class="icon-menu-1" />').prepend('<p id="responsive_current_menu_item">' + current + '</p>');
-	$('a#responsive_menu_button, #responsive_current_menu_item').click(function () {
-		$('.js .main-nav .menu').slideToggle(function () {
-			if ($(this).is(':visible')) {
-				$('a#responsive_menu_button').addClass('responsive-toggle-open');
-			}
-			else {
-				$('a#responsive_menu_button').removeClass('responsive-toggle-open');
-				$('.js .main-nav .menu').removeAttr('style');
-			}
-		});
-	});
-})(jQuery);
-
-// Close the mobile menu when clicked outside of it.
-(function ($) {
-	$(document).click(function () {
-		// Check if the menu is open, close in that case.
-		if ($('a#responsive_menu_button').hasClass('responsive-toggle-open')) {
-			$('.js .main-nav .menu').slideToggle(function () {
-				$('a#responsive_menu_button').removeClass('responsive-toggle-open');
-				$('.js .main-nav .menu').removeAttr('style');
-			});
-		}
-	})
 })(jQuery);

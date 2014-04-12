@@ -77,7 +77,7 @@ get_header(); ?>
       
 </div><!-- end of #content -->
 
-  <aside class="<?php if(is_user_logged_in()) { ?> col-220 <?php } else {?> col-140 <?php } ?> grid-right contain fit tabletp-col-460">
+  <aside class="<?php if(is_user_logged_in()) { ?> col-220 <?php } else {?> col-140 <?php } ?> grid-right contain fit tabletp-col-460 mobilep-col-940">
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
   	<a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>

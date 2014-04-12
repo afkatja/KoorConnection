@@ -14,7 +14,10 @@
 @import "_gallery";
 @import "_modals";
 
-body { color: $dk-grey; }
+body { color: $dk-grey; font-size: 62%; line-height: 1.3; font-family: Helvetica, Arial, sans-serif; 
+  background: $beige url(images/bgx.png) 50% 60px no-repeat; background-size: 840px auto; 
+	@include media-query(tabletp) { background-size: contain; }  
+}
 @include sticky-footer(40px, '#container', '#footer', '#footer');
 
  footer.full { height: 35px;
@@ -34,11 +37,12 @@ body { color: $dk-grey; }
  .masthead {
    //padding: 10px 0; 
    z-index: 200;
-   .main-logo { display: block; height: 100px; 
+   .main-logo, #logo { display: block; height: 100px; 
    	object { pointer-events: none; }
    	@include media-query(tabletp) {
    		height: 130px;
    	}
+   	@include media-query(mobilep) { float: left;	}
    }   
  }
  
@@ -65,6 +69,9 @@ body { color: $dk-grey; }
      img { position: absolute; z-index: 1; 
        &.current { z-index: 3; }
      }
+   }
+   @include media-query(mobilel) { height: 200px; 
+   	img { bottom: auto; margin-top: 0; }
    }
  }
  
@@ -102,6 +109,9 @@ body { color: $dk-grey; }
  .pulldown, .logout { margin-bottom: 30px; font-size: 1.4em; font-family: $copse;	text-shadow: 0px 1px 1px transparentize(#fff, .5);
    &.active { background-color: $brown; color: #fff; display: block; height: 30px; padding: 5px 10px 5px 20px; border-radius: 5px 5px 0 0; margin-top: 0; position: relative;
      &:after { content: " "; position: absolute; bottom: 0; width: 100%; height: 1px; right: 0; border-top: 10px solid $brown; z-index: 200; }
+   }
+   @include media-query(mobilel) {
+   	margin-top: 20px;
    }
  }
  .login-form { top: 60px; right: 0; z-index: 100; }

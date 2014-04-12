@@ -95,7 +95,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 	</div>
 	
 	
-  <aside class="<?php if(is_user_logged_in()) { ?> col-220 <?php } else {?> col-140 <?php } ?> grid-right contain fit tabletp-col-460">
+  <aside class="<?php if(is_user_logged_in()) { ?> col-220 <?php } else {?> col-140 <?php } ?> grid-right contain fit tabletp-col-460 mobilep-col-940">
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
   	<a href="#" class="grid pulldown icon-expand strong icon-login">Login leden</a>

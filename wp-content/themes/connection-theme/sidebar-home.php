@@ -19,7 +19,7 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>  
 	<?php responsive_widgets_before(); // above widgets container hook ?>
-    <div id="widgets" class="home-widgets contain clear secondary-pane tabletp-col-460">
+    <div id="widgets" class="home-widgets contain clear secondary-pane tabletp-col-460 mobilep-col-940">
         <div class="grid col-300 tabletp-col-940 round-box highlight">
         <?php responsive_widgets(); // above widgets hook ?>
             

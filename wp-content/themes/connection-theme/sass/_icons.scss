@@ -12,7 +12,8 @@
  }
  [class^="icon-"]:before, [class*=" icon-"],
  .prev:before,
- .next:before { font-family: FontAwesome; font-weight: normal; font-style: normal;  display: inline-block; }
+ .next:before,
+ .btn-hamburger:before { font-family: FontAwesome; font-weight: normal; font-style: normal;  display: inline-block; }
  a [class^="icon-"], a [class*=" icon-"] { display: inline-block; }
  /* makes the font 33% larger relative to the icon container */
 .icon-large:before { vertical-align: top; font-size: 4/3em; }
@@ -562,7 +563,7 @@
 .icon-sign-blank:before {
   content: "\f0c8";
 }
-.icon-reorder:before {
+.icon-reorder:before, .btn-hamburger:before {
   content: "\f0c9";
 }
 .icon-list-ul:before {
