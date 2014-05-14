@@ -2,10 +2,22 @@
 	.gallery-item { float: left; }
 }
 .gallery-columns-3 {	
-	 .gallery-item { padding: 1%; @include vendor(box-shadow, 0px 0px 5px rgba(0,0,0, .3)); padding: 10px; @include vendor(border-radius, 3px);//width: 33.3333%; 
+	 .gallery-item { padding: 5px; @include vendor(box-shadow, 0px 0px 5px rgba(0,0,0, .3)); @include vendor(border-radius, 3px);//width: 33.3333%; 
 	   .gallery-icon {  }
 	   .wp-caption-text.gallery-caption { font-size: 1.2em; margin-top: 5px; }
 	 }
 }
 
 .attachment-entry p { margin-top: 10px; }
+
+.photonic-stream { 
+	.photonic-picasa-image img { opacity: 1; border: 1px solid #efefef; background: #fff; @include vendor(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset); @include vendor(border-radius, 3px); }
+	.photonic-pad-photos { padding: 0; margin: 0 !important;  }
+}
+
+
+.AlpinePhotoTiles_container_class { 
+	.AlpinePhotoTiles-link { opacity: .8;
+		&:hover { opacity: 1; }
+	}
+}

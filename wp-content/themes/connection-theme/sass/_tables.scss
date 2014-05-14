@@ -1,0 +1,11 @@
+table.alternating { 
+font-size: 12px;
+	th, td { text-align: left; line-height: 1.5; padding: 5px; }
+	th { border-bottom: 1px solid $brown; word-break: break-all; }
+	tr { 
+		&:nth-child(even) td { background-color: mix($warm-brown, #fff, 25%); }
+	}
+}
+table.fixed-layout { 
+ table-layout: fixed;
+}

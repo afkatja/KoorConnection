@@ -2,22 +2,71 @@
 	* Styling reset for easy image display plugin 
 	* http://wordpress.org/plugins/easy-image-display
 */
-
-#colorbox, #cboxContent, #cboxLoadedContent {
-	@include vendor(box-sizing, border-box);
-}
-#cboxOverlay { background: transparentize($dk-grey, .1); }
-#cboxWrapper { background: mix($warm-brown, #fff, 25%); @include vendor(border-radius, 3px); padding: 10px; }
-#cboxTopLeft,
-#cboxTopRight,
-#cboxBottomLeft,
-#cboxBottomRight,
-#cboxMiddleLeft,
-#cboxMiddleRight,
-#cboxTopCenter,
-#cboxBottomCenter { background: none; width: 0; height: 0; }
-#cboxContent { overflow: hidden; border: 10px solid transparent; @include vendor(border-radius, 3px); }
-#cboxLoadedContent { margin-bottom: 0; }
-#cboxClose { background: none; top: 10px; right: 10px; bottom: auto;
-	&:before { content: '\F057'; font-family: $awesome; font-size: 24px; color: #fff; text-shadow: 0 1px 0 transparentize(#000, .1); text-indent: 0; position: absolute; top: 0; left: 0;	display: inline-block; }
+.ConnectionTheme { 
+	#colorbox, #cboxContent, #cboxLoadedContent, #fancybox-wrap {
+		@include vendor(box-sizing, border-box);
+	}
+	#cboxOverlay,
+	div.pp_overlay { background: transparentize($dk-grey, .1); }
+	
+	#cboxWrapper, 
+	#fancybox-content,
+	.pp_content_container { background: mix($warm-brown, #fff, 25%); @include vendor(border-radius, 3px); padding: 10px; }
+	
+	#cboxTopLeft,
+	#cboxTopRight,
+	#cboxBottomLeft,
+	#cboxBottomRight,
+	#cboxMiddleLeft,
+	#cboxMiddleRight,
+	#cboxTopCenter,
+	#cboxBottomCenter,
+	.fancybox-bg,
+	div.pp_default .pp_top, 
+	div.pp_default .pp_top .pp_middle, 
+	div.pp_default .pp_top .pp_left, 
+	div.pp_default .pp_top .pp_right, 
+	div.pp_default .pp_bottom, 
+	div.pp_default .pp_bottom .pp_left, 
+	div.pp_default .pp_bottom .pp_middle, 
+	div.pp_default .pp_bottom .pp_right { background: none; width: 0; height: 0; }
+	#cboxContent,
+	.pp_content { overflow: hidden; border: 10px solid transparent; @include vendor(border-radius, 3px); }
+	
+	.pp_content { width: 100% !important; }
+	div.pp_default .pp_content_container .pp_left,
+	div.pp_default .pp_content_container .pp_right { background: none; padding: 0; }
+	
+	#cboxLoadedContent { margin-bottom: 0; }
+	
+	#cboxClose, 
+	#fancybox-close,
+	div.pp_default .pp_close { background: none; top: 10px; right: 10px; bottom: auto;
+		&:before { content: '\F057'; font-family: $awesome; font-size: 24px; color: #fff; text-shadow: 0 1px 0 transparentize(#000, .1); text-indent: 0; position: absolute; top: 0; left: 0;	display: inline-block; }
+	}
+		div.pp_default .pp_description { line-height: 26px; }
+	div.pp_default .pp_content_container .pp_details { margin: 10px 0;
+		.pp_close { top: 7px; 
+			&:before { color: $grey; }
+		}
+	}
+	div.pp_default .pp_nav .pp_play, div.pp_default .pp_nav .pp_pause { display: none; }
+	
+	#fancybox-title, #fancybox-title a { max-width: 100%; margin-top: -50px; color: #FFF; text-shadow: 0 1px 0 transparentize(#000, .1); background: none; font-family: $copse; font-size: 18px;	text-align: center;	}
+	#fancybox-wrap { padding-right: 0; }
+	#fancybox-outer { background: none; }
+	.csstransforms & { 
+		#fancybox-left-ico,
+		#fancybox-right-ico,
+		div.pp_default .pp_gallery a.pp_arrow_previous, 
+		div.pp_default .pp_gallery a.pp_arrow_next { background: none; 
+			&:before {
+				content: '\F01A'; font-family: $awesome; font-size: 24px; color: #fff; text-shadow: 0 1px 0 transparentize(#000, .1); text-indent: 0; position: absolute; top: 0; left: 0;	display: inline-block; -webkit-font-smoothing: antialiased;
+			}
+		}
+		#fancybox-left-ico:before,
+		div.pp_default .pp_gallery a.pp_arrow_previous { @include vendor(transform, rotate(90deg)); }
+		#fancybox-right-ico:before,
+		div.pp_default .pp_gallery a.pp_arrow_next { @include vendor(transform, rotate(-90deg)); }
+	}
 }

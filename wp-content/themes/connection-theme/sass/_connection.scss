@@ -13,9 +13,11 @@
 @import "_media";
 @import "_gallery";
 @import "_modals";
+@import "_tables";
+@import "_tabs";
 
 body { color: $dk-grey; font-size: 62%; line-height: 1.3; font-family: Helvetica, Arial, sans-serif; 
-  background: $beige url(images/bgx.png) 50% 60px no-repeat; background-size: 840px auto; 
+  background: $beige /*url(images/bgx.png) 50% 60px no-repeat*/; /*background-size: 840px auto; */
 	@include media-query(tabletp) { background-size: contain; }  
 }
 @include sticky-footer(40px, '#container', '#footer', '#footer');

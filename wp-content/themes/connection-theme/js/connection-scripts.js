@@ -62,6 +62,9 @@ jQuery.noConflict();
 	    // options
 	    itemSelector : '.gallery-item'
 	  });
+	  /*$('.post-entry .photonic-stream').isotope({
+	  	itemSelector: '.photonic-gallery-c'
+	  });*/
 	});
    
   var picasaweb = 'https://picasaweb.google.com/data/feed/api/user/114842468267912126592/albumid/5664032092199429489?kind=photo',

@@ -33,7 +33,7 @@ if ( !defined('ABSPATH')) exit;
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="shortcut icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 
 <?php wp_enqueue_style('responsive-style', get_stylesheet_uri(), false, '1.9.3.2');
 	wp_enqueue_script ('jquery.isotope.min', get_stylesheet_directory_uri() . '/js/jquery.isotope.min.js', array( 'jquery' ), '1.5.26', true );
@@ -41,8 +41,11 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
+<?php $theme = wp_get_theme(); 
+	$theme = $theme->get('Name');
+	$theme = str_replace(' ', '', $theme);
+?>
+<body <?php body_class($theme); ?>>
                  
 <?php responsive_container(); // before container hook ?>
 <div id="container" class="hfeed">
