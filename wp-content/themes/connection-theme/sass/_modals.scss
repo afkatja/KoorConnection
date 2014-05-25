@@ -70,3 +70,7 @@
 		div.pp_default .pp_gallery a.pp_arrow_next { @include vendor(transform, rotate(-90deg)); }
 	}
 }
+
+.jp-carousel-wrap {
+  .jp-carousel-info { margin-top: -50px; }
+}

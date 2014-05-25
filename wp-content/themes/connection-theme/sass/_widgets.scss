@@ -19,3 +19,7 @@
 	 	h4:before { content: '\E825'; font-family: $fontello; display: inline-block; margin-right: 3px; color: $purple; }
 	 }
 }
+
+.widget-gallery-slideshow.carousel {
+  .slideshow-window { background: none; border: none; margin-bottom: 0; }
+}

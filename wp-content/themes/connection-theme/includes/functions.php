@@ -1,5 +1,6 @@
 <?php
-
+update_option('siteurl','http://connection.local/KoorConnection');
+update_option('home','http://connection.local/KoorConnection');
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 

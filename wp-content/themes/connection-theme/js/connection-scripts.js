@@ -65,6 +65,12 @@ jQuery.noConflict();
 	  /*$('.post-entry .photonic-stream').isotope({
 	  	itemSelector: '.photonic-gallery-c'
 	  });*/
+	  
+	  $('.post-entry .gallery-item').each(function(i, el){
+	    var img = $(el).find('.gallery-icon img');
+	    var title = img.attr('data-image-title');
+	    img.after('<span class="gallery-item-title">'+title+'</span>');
+	  });
 	});
    
   var picasaweb = 'https://picasaweb.google.com/data/feed/api/user/114842468267912126592/albumid/5664032092199429489?kind=photo',

@@ -1,6 +1,13 @@
-/wp-content/themes/avada
-/wp-content/themes/sensitive
+wp-content/themes/avada
+wp-content/themes/sensitive
+wp-content/plugins
+wp-includes/wp-db.php
+wp-content/uploads
+
 wp-config.php
 phpinfo.php
-
 connectionSite
+*.scssc
+*.esproj
+*.espressostorage
+.htaccess
