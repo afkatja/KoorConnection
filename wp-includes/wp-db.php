@@ -600,7 +600,6 @@ class wpdb {
 		$this->dbpassword = $dbpassword;
 		$this->dbname = $dbname;
 		$this->dbhost = $dbhost;
-
 		$this->db_connect();
 	}
 

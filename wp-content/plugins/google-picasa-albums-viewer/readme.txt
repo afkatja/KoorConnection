@@ -4,8 +4,8 @@ Contributors: nakunakifi
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZAZHU9ERY8W34
 Tags: album, albums, CDN, google picasa, image, images gallery, image hosting, lightbox, picasa, picasa web, photo, photos, photo albums, showcase
 Requires at least: 2.8
-Tested up to: 3.4.2
-Stable tag: 1.2.3
+Tested up to: 3.8.1
+Stable tag: 1.3.0
 
 Provides simple drag & drop image gallery functionality to enable you to display Google Picasa Web albums in your WordPress installation.
 
@@ -60,6 +60,9 @@ Zend GData - Copyright (c) 2005-2010, Zend Technologies USA, Inc.
 
 
 == Changelog ==
+
+1.3.0
+* Checked compatability with WordPress v3.8.1
 
 1.2.3
 * Fixed: activation.css, removed it for now.

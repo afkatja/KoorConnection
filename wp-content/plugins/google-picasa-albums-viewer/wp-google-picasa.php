@@ -5,7 +5,7 @@
     Description: Provides simple drag & drop image gallery functionality to enable you to display Google Picasa Web albums in your WordPress installation.
 
 	Author: Ian Kennerley - <a href='http://twitter.com/nakunakifi'>@nakunakifi</a> on twitter
-	Version: 1.2.3
+	Version: 1.3.0
 	Author URI: http://nakunakifi.com
 	License: GPLv2
 	
@@ -52,7 +52,7 @@ class WPPicasa {
 
 	/** Version ***************************************************************/
 
-    var $plugin_version = '1.2.3';
+    var $plugin_version = '1.3.0';
 		
 	/** Variables ***************************************************************/
 	var $page;
