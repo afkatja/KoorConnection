@@ -3,6 +3,7 @@ wp-content/themes/sensitive
 wp-content/plugins
 wp-includes/wp-db.php
 wp-content/uploads
+wp-content/plugins
 
 wp-config.php
 phpinfo.php
