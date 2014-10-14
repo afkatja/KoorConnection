@@ -6,4 +6,3 @@
  */
 
 require_once( 'buddypress.php' );
-require_once( 'wpml.php' );

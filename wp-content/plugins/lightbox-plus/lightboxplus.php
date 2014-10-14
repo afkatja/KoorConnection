@@ -251,7 +251,6 @@
             * @param mixed $optionsName
             */
             function getAdminOptions( $optionsName ) {
-            	$theOptions = [];
                 $savedOptions = get_option( $optionsName );
                 if ( !empty( $savedOptions ) ) {
                     foreach ( $savedOptions as $key => $option ) {

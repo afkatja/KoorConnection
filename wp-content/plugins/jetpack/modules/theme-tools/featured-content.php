@@ -329,13 +329,9 @@ class Featured_Content {
 			return $terms;
 		}
 
-		$tag = get_term_by( 'name', self::get_setting( 'tag-name' ), 'post_tag' );
-
-		if ( false !== $tag ) {
-			foreach ( $terms as $order => $term ) {
-				if ( is_object( $term ) && $tag->term_id == $term->term_id && 'post_tag' == $term->taxonomy ) {
-					unset( $terms[ $order ] );
-				}
+		foreach( $terms as $order => $term ) {
+			if ( is_object( $term ) && self::get_setting( 'tag-id' ) == $term->term_id && 'post_tag' == $term->taxonomy ) {
+				unset( $terms[ $order ] );
 			}
 		}
 
@@ -372,13 +368,9 @@ class Featured_Content {
 			return $terms;
 		}
 
-		$tag = get_term_by( 'name', self::get_setting( 'tag-name' ), 'post_tag' );
-
-		if ( false !== $tag ) {
-			foreach ( $terms as $term ) {
-				if ( $tag->term_id == $term->term_id ) {
-					unset( $terms[ $term->term_id ] );
-				}
+		foreach( $terms as $order => $term ) {
+			if ( self::get_setting( 'tag-id' ) == $term->term_id ) {
+				unset( $terms[ $term->term_id ] );
 			}
 		}
 

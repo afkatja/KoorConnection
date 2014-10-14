@@ -2,8 +2,8 @@
 
 /**
  * Module Name: Markdown
- * Module Description: Write posts or pages in plain-text Markdown syntax.
- * Sort Order: 31
+ * Module Description: Write in Markdown, publish in HTML.
+ * Sort Order: 12
  * First Introduced: 2.8
  * Requires Connection: No
  * Auto Activate: No
