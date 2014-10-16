@@ -12,18 +12,6 @@
 	 }
 }
 
-.flexbox .gallery {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	height: 130vh;
-	.gallery-item { float: none; margin: 1%;
-		.gallery-icon.portrait { max-height:  300px; overflow: hidden; }
-		a { display: block; min-width: 100%; max-height: 300px; }
-		img { min-width: 100%; }
-	}
-}
-
 .attachment-entry p { margin-top: 10px; }
 
 .photonic-stream { 
