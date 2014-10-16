@@ -1887,16 +1887,27 @@ label .required { left: -5px; position: absolute; top: 5px; }
 .gallery-columns-3 .gallery-item .wp-caption-text.gallery-caption { font-size: 1.2em; display: none; }
 
 /* line 15, sass/_gallery.scss */
+.flexbox .gallery { display: flex; flex-direction: column; flex-wrap: wrap; height: 130vh; }
+/* line 20, sass/_gallery.scss */
+.flexbox .gallery .gallery-item { float: none; margin: 1%; }
+/* line 21, sass/_gallery.scss */
+.flexbox .gallery .gallery-item .gallery-icon.portrait { max-height: 300px; overflow: hidden; }
+/* line 22, sass/_gallery.scss */
+.flexbox .gallery .gallery-item a { display: block; min-width: 100%; max-height: 300px; }
+/* line 23, sass/_gallery.scss */
+.flexbox .gallery .gallery-item img { min-width: 100%; }
+
+/* line 27, sass/_gallery.scss */
 .attachment-entry p { margin-top: 10px; }
 
-/* line 18, sass/_gallery.scss */
+/* line 30, sass/_gallery.scss */
 .photonic-stream .photonic-picasa-image img { opacity: 1; border: 1px solid #efefef; background: #fff; -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset; -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset; -ms-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; }
-/* line 19, sass/_gallery.scss */
+/* line 31, sass/_gallery.scss */
 .photonic-stream .photonic-pad-photos { padding: 0; margin: 0 !important; }
 
-/* line 24, sass/_gallery.scss */
+/* line 36, sass/_gallery.scss */
 .AlpinePhotoTiles_container_class .AlpinePhotoTiles-link { opacity: .8; }
-/* line 25, sass/_gallery.scss */
+/* line 37, sass/_gallery.scss */
 .AlpinePhotoTiles_container_class .AlpinePhotoTiles-link:hover { opacity: 1; }
 
 /*
