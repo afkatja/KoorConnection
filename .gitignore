@@ -14,3 +14,5 @@ connectionSite
 *.espressostorage
 .htaccess
 
+
+wp-content/themes/connection-theme/sass/_gallery.scss
