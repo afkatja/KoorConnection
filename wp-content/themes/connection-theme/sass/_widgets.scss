@@ -1,4 +1,4 @@
-.widget-wrapper { margin-bottom: 0; background: #fff; @extend .box; @include vendor(border-radius, 3px); min-height: 230px; }
+.widget-wrapper { margin-bottom: 0; background: #fff; @extend .box; @include vendor(border-radius, 3px); }
 
 #widgets.search {	background: mix($warm-brown, #fff, 25%); margin-bottom: 10px;
 	.widget_search { padding: 0; }
@@ -18,17 +18,8 @@
 	 .tribe-events-list-widget ol li {
 	 	h4:before { content: '\E825'; font-family: $fontello; display: inline-block; margin-right: 3px; color: $purple; }
 	 }
-	 
-	 .textwidget { font-size: 1.4em; line-height: 1.2; }
-	 
-	 .gallery-item .wp-caption-text.gallery-caption { display: none; }
 }
 
 .widget-gallery-slideshow.carousel {
-  .slideshow-window { background: none; border: none; margin-bottom: 0; 
-  	.slideshow-controls { display: none !important; }
-  	.slideshow-loading { background: url(images/loader.gif) 50% 50% no-repeat; background-size: 50px auto;
-	  	img { display: none !important; }
-		}
-  }
+  .slideshow-window { background: none; border: none; margin-bottom: 0; }
 }

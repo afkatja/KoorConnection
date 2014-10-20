@@ -14,6 +14,18 @@
 
 .attachment-entry p { margin-top: 10px; }
 
+.flexbox .gallery {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 130vh;
+	.gallery-item { float: none; margin: 1%;
+		.gallery-icon.portrait { max-height:  300px; overflow: hidden; }
+		a { display: block; min-width: 100%; max-height: 300px; }
+		img { min-width: 100%; }
+	}
+}
+
 .photonic-stream { 
 	.photonic-picasa-image img { opacity: 1; border: 1px solid #efefef; background: #fff; @include vendor(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset); @include vendor(border-radius, 3px); }
 	.photonic-pad-photos { padding: 0; margin: 0 !important;  }
