@@ -58,11 +58,11 @@ jQuery.noConflict();
 	   });
 	   
 	  /* Isotope masonic tiles */
-	  $('.post-entry .gallery').isotope({
+	  /*$('.post-entry .gallery').isotope({
 	    // options
 	    itemSelector : '.gallery-item'
 	  });
-	  /*$('.post-entry .photonic-stream').isotope({
+	  $('.post-entry .photonic-stream').isotope({
 	  	itemSelector: '.photonic-gallery-c'
 	  });*/
 	  

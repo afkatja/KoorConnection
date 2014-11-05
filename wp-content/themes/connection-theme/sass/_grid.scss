@@ -76,6 +76,9 @@
 	.#{$namespace}col-940 {
 		width: 100%;
 	}
+	.#{$namespace}grid-reset {
+	  float: none;
+	}
 }
 
 @include grid-setup();

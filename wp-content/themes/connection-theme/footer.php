@@ -59,7 +59,7 @@ if ( !defined('ABSPATH')) exit;
 		<?php responsive_footer_after(); ?>
 		
 		<?php wp_footer(); ?>
-		<div class="social abs">
+		<div class="social fxd">
 			<ul><li><a href="https://twitter.com/KoorConnection" class="ib vh rel icon-twitter">@koorconnection</a></li>
 			<li><a href="https://www.facebook.com/groups/273765169424858/" class="ib vh rel icon-facebook">Connection group</a></li>
 			<li><a href="http://www.youtube.com/channel/UCe-GYjf64U_fJKdyPQMIEhQ" class="ib vh rel icon-youtube">Connection channel</a></li></ul>
