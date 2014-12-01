@@ -1,11 +1,11 @@
 .site-nav, .main-nav { /*background-color: $lila;*/ clear: none; display: block;
   float: right; width: 82.978723404255%; padding: 10px;	margin-top: 45px; margin-right: 0;
   #responsive_current_menu_item { display: none; }
-  ul, .menu { /*background-color: #fff;*/ background-image: none; 
+  ul, .menu { /*background-color: #fff;*/ background-image: none;
     & > li { position: relative; float: left; //max-width: 15%;
       a { display: block; padding: 0 15px; border: none; color: $purple; white-space: nowrap;
         font-family: "Copse", sans-serif; font-size: 1.6em; line-height: 25px; height: 25px;
-        text-shadow: 0px 1px 1px transparentize(#fff, .5); 
+        text-shadow: 0px 1px 1px transparentize(#fff, .5);
         text-overflow: ellipsis; overflow: hidden;
         &:hover { background: none; color: $dk-brown; }
       }
@@ -14,9 +14,9 @@
       &:hover { background: none;
         /*&:after { position: absolute; content: ' '; bottom: -19px; left: 50%; width: 0px; height: 0px; border-color: #fff transparent transparent transparent; border-width: 10px; border-style: solid; margin-left: -10px; }*/
       }
-      &.current_page_item {	
+      &.current_page_item {
       	a { background: none; color: $dk-brown; }
-        /*&:after { position: absolute; content: ' '; bottom: -19px; left: 50%; width: 0px; height: 0px; border-color: #fff transparent transparent transparent; border-width: 10px; border-style: solid; margin-left: -10px; }*/ 
+        /*&:after { position: absolute; content: ' '; bottom: -19px; left: 50%; width: 0px; height: 0px; border-color: #fff transparent transparent transparent; border-width: 10px; border-style: solid; margin-left: -10px; }*/
       }
     }
     li + li { border-left: 1px solid transparentize(#fff, .6); @include vendor(box-shadow, -1px 0px 0px 0 $lila); }
@@ -25,17 +25,19 @@
   	width: 65.957446808511%; margin-top: 0;
   }
   @include media-query(mobilel) {
-  	.js & { 
+  	.js & {
   		float: none; width: 100%; background-color: mix($warm-brown, #fff, 25%); @include vendor(border-radius, 3px);
   		position: absolute; top: 80px; left: 0;
   		height: 0; opacity: 0; margin: 0; padding: 0;
-  		@include vendor(transition, all .3s ease-in-out);
+  		@include vendor(transition, height .3s ease-in-out);
   		ul { display: none; }
-  		&.shown { height: auto; opacity: 1;  margin-bottom: 20px; padding: 10px;
+  		&.shown { height: auto; opacity: 1;  margin-bottom: 20px; padding: 10px; background: $warm-brown;
   			ul { display: block; }
+        a#responsive_menu_button,
+        #responsive_current_menu_item { display: none; }
   		}
 	  	ul { background: #fff;
-		  	& > li { float: none; width: 100%; 
+		  	& > li { float: none; width: 100%;
 		  		a { padding: 5px 15px; height: auto; }
 		  		& + li { border-left: none; border-top: 1px solid transparentize($purple, .8); @include vendor(box-shadow, 0 -1px 0 0 mix($warm-brown, #fff, 30%));}
 		  	}
@@ -44,9 +46,9 @@
   }
 }
 
-.btn-hamburger {	color: $purple; font-size: 4em; margin-top: 30px; cursor: pointer; }
+.btn-hamburger { width: 2em;	color: $purple; font-size: 4em; margin-top: 30px; cursor: pointer; }
 
-.sub-header-nav {	@include mass-extend(grid-right, full, fit, contain, round-box); background-color: mix($warm-brown, #fff, 25%); 
+.sub-header-nav {	@include mass-extend(grid-right, full, fit, contain, round-box); background-color: mix($warm-brown, #fff, 25%);
 	@include media-query(mobilel) { width: 100%; }
 }
 .members-nav { z-index: 100; position: relative; box-sizing: border-box; background: #fff;
@@ -62,7 +64,7 @@
   .current-menu-item {
   	&, &.current_page_item { position: relative;
 	  	a { background: none; color: $dk-brown; }
-	  	&:after { position: absolute; content: ' '; left: -25px; top: 3px; width: 0px; height: 0px; border-color: transparent #fff transparent transparent; border-width: 15px; border-style: solid; } 
+	  	&:after { position: absolute; content: ' '; left: -25px; top: 3px; width: 0px; height: 0px; border-color: transparent #fff transparent transparent; border-width: 15px; border-style: solid; }
   	}
   }
 }
@@ -71,7 +73,7 @@
 	@include vendor(border-radius, 5px 0 0 5px);
 	@include vendor(transition, all .3s ease-out);
   &:hover { padding-right: 10px; padding-left: 10px; }
-  li a { height: 35px; width: 35px; color: $warm-brown; 
+  li a { height: 35px; width: 35px; color: $warm-brown;
     &:before { font-size: 3em; text-indent: 0; position: absolute; left: 50%; margin-left: -.5em; top: 50%; margin-top: -17px; text-shadow: none;
 	}
     &:hover { color: $pink; }

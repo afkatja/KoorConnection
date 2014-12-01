@@ -1,9 +1,9 @@
-.gallery {
+.gallery 	{
 	.gallery-item { float: left; }
 }
-.gallery-columns-3 {	
-	 .gallery-item { padding: 5px; margin: 5px; @include vendor(box-shadow, 0px 0px 5px rgba(0,0,0, .3)); @include vendor(border-radius, 3px);//width: 33.3333%; 
-	   .gallery-icon { 
+.gallery-columns-3 {
+	 .gallery-item { padding: 5px; margin: 5px; @include vendor(box-shadow, 0px 0px 5px rgba(0,0,0, .3)); @include vendor(border-radius, 3px);//width: 33.3333%;
+	   .gallery-icon {
 	     a { position: relative;
 	     .gallery-item-title { display: block; position: absolute; bottom: 0; width: 100%; height: 30px; color: #fff; @include vertical-gradient(rgba(0,0,0,0), rgba(0,0,0,.7), 0, 100%); text-align: center; font-size: 1.5em; line-height: 40px; @include vendor(transition, all .3s ease-in-out); }
        }
@@ -14,13 +14,32 @@
 
 .attachment-entry p { margin-top: 10px; }
 
-.photonic-stream { 
+.flexbox #wrapper .gallery {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 1410px;//130vh;
+	overflow: hidden;
+	.gallery-item { float: none; margin: 1%; padding: 5px 5px 0; border-bottom: 5px solid #fff; overflow: hidden;
+		a { display: block; min-width: 100%; }
+		img { min-width: 100%; }
+	}
+	@include media-query(tabletp) {
+		display: block; height: auto;
+		.gallery-item { float: left; width: 28%; }
+	}
+	@include media-query(mobilel) {
+		.gallery-item { width: 98%; }
+	}
+}
+
+.photonic-stream {
 	.photonic-picasa-image img { opacity: 1; border: 1px solid #efefef; background: #fff; @include vendor(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset); @include vendor(border-radius, 3px); }
 	.photonic-pad-photos { padding: 0; margin: 0 !important;  }
 }
 
 
-.AlpinePhotoTiles_container_class { 
+.AlpinePhotoTiles_container_class {
 	.AlpinePhotoTiles-link { opacity: .8;
 		&:hover { opacity: 1; }
 	}

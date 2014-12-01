@@ -18,7 +18,7 @@
 
 body, body * { color: $dk-grey; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; }
 body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-repeat*/; /*background-size: 840px auto; */
-	/*@include media-query(tabletp) { background-size: contain; }*/  
+	/*@include media-query(tabletp) { background-size: contain; }*/
 }
 @include sticky-footer(40px, '#container', '#footer', '#footer');
 
@@ -26,37 +26,42 @@ body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-r
     ul { padding-left: 25px; padding-right: 25px; box-sizing: border-box; }
  }
  #container { max-width: 100%; }
- .wrap { width: 90%; 
+ .wrap { width: 90%;
  }
  .main, #wrapper { padding: 30px 0; position: relative; background: none; border: none; max-width: 1200px;
    @include media-query(mobilel) {
    		padding-left: 0;
+      padding-top: 20px;
    }
  }
 
+ a { color: $purple;
+  &:hover, &:focus {
+   &, &:before, &:after { color: $dk-brown; }
+  }
+}
+
 .title { margin-top: 70px; }
- 
+
  .masthead {
-   //padding: 10px 0; 
+   //padding: 10px 0;
    z-index: 200;
-   .main-logo, #logo { display: block; height: 100px; 
-   	object { pointer-events: none; }
-   	@include media-query(tabletp) {
-   		height: 130px;
-   	}
-   	@include media-query(mobilep) { float: left;	}
-   }   
+   .main-logo, #logo { display: block; height: 100px;
+   	 object { pointer-events: none; }
+   	 @include media-query(tabletp) { height: 130px; }
+   	 @include media-query(mobilel) { float: left; height: 100px;	}
+   }
  }
- 
- .content, #container { position: relative; 
+
+ .content, #container { position: relative;
    .cropper { width: 100%; height: 100px;
      img { width: auto; }
    }
  }
-  
+
  .main-pane, #featured { border: none;
-   background-color: mix($warm-brown, #fff, 25%);//#ddc08a; 
-   margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative;    
+   background-color: mix($warm-brown, #fff, 25%);//#ddc08a;
+   margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative;
    article {padding: 15px; box-sizing: border-box; }
    p { text-align: left; padding: 0; }
 	 #featured-image { margin-top: 20px;
@@ -64,23 +69,36 @@ body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-r
 	 }
    @include media-query(mobilel) { float: none; width: 100%; }
  }
- 
+
  .photo-slider, .featured-slider { width: 100%; height: 350px; position: relative;
+  background-repeat: no-repeat; background-position: center 70%; background-size: cover;
    img { border: none; @include vendor(box-shadow, none); margin-top: -180px; position: absolute; bottom: -200px; }
    p.mask { height: 100%; width: 100%; overflow: hidden; text-align: center; border-radius: 5px;
-     img { position: absolute; z-index: 1; 
+     img { position: absolute; z-index: 1;
        &.current { z-index: 3; }
      }
    }
-   @include media-query(mobilel) { height: 200px; 
+   @include media-query(tabletl) {
+    background-position: center 80%;
+   }
+   @include media-query(tabletp) {
+    background-position: center 67%;
+   }
+   @include media-query(mobilel) { height: 200px;
+    background-position: 55% 70%;
+    background-size: 200% auto;
    	img { bottom: auto; margin-top: 0; }
    }
  }
- 
- #content, #content-full, #content-search, #content-images { border: none; background-color: mix($warm-brown, #fff, 25%);
-   margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative; 
+
+ #content,
+ #content-full,
+ #content-search,
+ #content-images,
+ #content-archive { border: none; background-color: mix($warm-brown, #fff, 25%);
+   margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative;
  	.post, .post-entry, .page, .attachment, .comments {	background: #fff; padding: 10px; margin: 0; }
- 	.comments { margin-top: 20px; 
+ 	.comments { margin-top: 20px;
  		.comment-author { @extend %contain; margin-bottom: 20px;
  			img, .fn { display: block; float: left; }
  			.fn, .says { margin-top: 15px; margin-left: 5px; }
@@ -93,9 +111,11 @@ body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-r
  	}
  	@include media-query(mobilel) { float: none; width: 100%; }
  }
- 
+
+ .entry-title a { color: $purple; }
+
  .secondary-pane { margin-top: 20px; box-sizing: border-box;
-   article { border-radius: 6px; padding: 10px; 
+   article { border-radius: 6px; padding: 10px;
      img { width: 100%; }
    }
    .highlight, .news, .blog { background-color:  mix($warm-brown, #fff, 25%); }
@@ -103,41 +123,48 @@ body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-r
    .news { background-color: #3c6ef2; }
    .blog { background-color: #ed9e7f; }*/
  }
- 
- .call-to-action { text-align: left; 
+
+ .call-to-action { text-align: left;
  	a.button { @include font-size(22px); padding: 10px 20px; }
  }
- 
- .pulldown, .logout { margin-bottom: 30px; font-size: 1.4em; font-family: $copse;	text-shadow: 0px 1px 1px transparentize(#fff, .5);
-   &.active { background-color: $brown; color: #fff; display: block; height: 30px; padding: 5px 10px 5px 20px; border-radius: 5px 5px 0 0; margin-top: 0; position: relative;
-     &:after { content: " "; position: absolute; bottom: 0; width: 100%; height: 1px; right: 0; border-top: 10px solid $brown; z-index: 200; }
+
+ .pulldown, .logout { margin: 5px 0 30px 20px; font-size: 1.4em; font-family: $copse;	text-shadow: 0px 1px 1px transparentize(#fff, .5); color: $purple;
+   &.active { background-color: $brown; color: #fff; text-shadow: 0px 1px 1px transparentize(#000, .5); display: block; height: 30px; padding: 5px 10px 5px 20px; border-radius: 5px 5px 0 0; margin: 0; position: relative;
+     &:after { content: " "; position: absolute; bottom: -10px; width: 100%; height: 1px; right: 0; border-top: 10px solid $brown; z-index: 200; }
    }
    @include media-query(mobilel) {
    	margin-top: 20px;
    }
  }
- .login-form { top: 60px; right: 0; z-index: 100; }
+ .login-form { top: 70px; right: 0; z-index: 100;
+    @include media-query(mobilel) {
+      position: static; margin-top: 40px; width: 100%;
+    }
+ }
 
  .title-search-results { color: #fff; margin: 10px 0; }
- .page + .page { border-top: 10px solid $warm-brown; }
- 
- .post-meta, .post-title { padding: 10px; margin: 0; color: $grey; 
+ .page + .page,
+ .post + .post { border-top: 10px solid $warm-brown; }
+
+ .post-meta, .post-title { padding: 10px; margin: 0; color: $grey;
  		h1 { padding-left: 0; }
  }
 
- #respond {	margin-top: 20px;	border: none; 
+ #respond {	margin-top: 20px;	border: none;
  	.logged-in-as { font-size: 10px; }
  	.comment-form-comment { padding-top: 10px; }
  }
- 
- .post-edit {	border-top: 1px solid #efefef; padding-top: 10px; @include vendor(box-shadow, 0 -1px 0 transparentize($pink, .5)); }
+
+ .post-edit {	border-top: 1px solid #efefef; margin-top: 10px; padding-top: 10px; @include vendor(box-shadow, 0 -1px 0 transparentize($pink, .5)); }
  .post-edit-link {	@extend .icon-pencil; }
  .comments-link {	@extend .icon-chat; }
- 
+
 img, .grid img {
 	border: 1px solid #efefef;
 	background: #fff;
 	@include vendor(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset);
 }
 #widgets .grid img, .post-entry .grid img {	margin: 0; }
- 
+.partituren {
+  a  { display: block; color: $purple; }
+ }

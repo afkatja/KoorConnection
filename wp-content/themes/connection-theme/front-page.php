@@ -12,8 +12,8 @@ if ( !defined('ABSPATH')) exit;
  *                 http://themeid.com/forum/topic/505/child-theme-example/
  *
  * @file           front-page.php
- * @package        Responsive 
- * @author         Emil Uzelac 
+ * @package        Responsive
+ * @author         Emil Uzelac
  * @copyright      2003 - 2013 ThemeID
  * @license        license.txt
  * @version        Release: 1.0
@@ -38,10 +38,10 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 	$template = get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true );
 	$template = ( $template == 'default' ) ? 'index.php' : $template;
 	locate_template( $template, true );
-} else { 
+} else {
 
 	get_header();
-	
+
 	//test for first install no database
 	$db = get_option( 'responsive_theme_options' );
     //test if all options are empty so we can display default text if they are
@@ -58,7 +58,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 					_e( 'Hello, World!', 'responsive' );
 				?>
 			</h1>
-			
+
 			<h2 class="featured-subtitle">
 				<?php
 				if ( isset( $responsive_options['home_subheadline'] ) && $db && $empty )
@@ -75,34 +75,34 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 					_e( 'Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like.','responsive' );
 				?>
 			</p>
-			
-			<?php if ($responsive_options['cta_button'] == 0): ?>  
-   
+
+			<?php if ($responsive_options['cta_button'] == 0): ?>
+
 				<p class="call-to-action">
 
 					<a href="<?php echo $responsive_options['cta_url']; ?>" class="purple button ib">
-						<?php 
+						<?php
 						if( isset( $responsive_options['cta_text'] ) && $db && $empty )
-							echo $responsive_options['cta_text']; 
+							echo $responsive_options['cta_text'];
 						else
 							_e('Call to Action','responsive');
 						?>
 					</a>
 				</p>
-			<?php endif; ?>         
-			
+			<?php endif; ?>
+
 		</div>
 	</div>
-	
-	
-  <aside class="<?php if(is_user_logged_in()) { ?> col-220 <?php } else {?> col-140 <?php } ?> grid-right contain fit tabletp-col-460 mobilep-col-940">
+
+
+  <aside class="<?php if(is_user_logged_in()) { ?>col-220 <?php } else {?>col-140 <?php } ?> grid-right contain fit tabletp-col-460 mobilel-col-940">
   <!--  User area-->
   <?php if(! is_user_logged_in() ) { ?>
   	<a href="#" class="grid pulldown icon-expand strong icon-login">Login leden</a>
   	<div class="contain login-form flydown round-box secondary abs col-140 fit hidden">
    		<?php $args = array(
         'echo' => true,
-        'redirect' => site_url( $_SERVER['REQUEST_URI'] ), 
+        'redirect' => site_url( $_SERVER['REQUEST_URI'] ),
         'form_id' => 'loginform',
         'label_username' => __( 'Username' ),
         'label_password' => __( 'Password' ),
@@ -114,22 +114,22 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
         'id_submit' => 'wp-submit',
         'remember' => true,
         'value_username' => NULL,
-        'value_remember' => false 
+        'value_remember' => false
 		  ); ?>
 		  <?php wp_login_form( $args ); ?>
   	</div>
   <?php } else { // If logged in: ?>
-  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right logout icon-logout">Uitloggen</a> 
-	<?php  
-  	if (has_nav_menu('sub-header-menu', 'responsive')) { 
+  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right logout icon-logout">Uitloggen</a>
+	<?php
+  	if (has_nav_menu('sub-header-menu', 'responsive')) {
     	wp_nav_menu(array(
   	    'container'       => 'nav',
   	    'container_class' => 'sub-header-nav',
   			'menu_class'      => 'members-nav',
   			'theme_location'  => 'sub-header-menu')
-  		); 
-	   	} 
-		} 
+  		);
+	   	}
+		}
 	}?>
 </aside>
 

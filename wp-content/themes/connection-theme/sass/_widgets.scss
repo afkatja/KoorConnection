@@ -1,24 +1,33 @@
-.widget-wrapper { margin-bottom: 0; background: #fff; @extend .box; @include vendor(border-radius, 3px); }
+.widget-wrapper { margin-bottom: 0; background: #fff; @extend .box; @include vendor(border-radius, 3px); height: 100%; }
 
 #widgets.search {	background: mix($warm-brown, #fff, 25%); margin-bottom: 10px;
 	.widget_search { padding: 0; }
 	.submit {	width: 25%; }
 }
 
-#widgets { 
-	&, .front-page & { margin-top: 0; 
+#widgets {
+	&, .front-page & { margin-top: 0;
+		.gallery { height: 200px;
+			.gallery-item { height: 100%; }
+			.gallery-caption { display: none; }
+		}
 		@include media-query(tabletl) {	margin-top: 0; }
 		@include media-query(tabletp) { float: left; clear: none;	}
 	}
+	.grid { height: 300px; }
+	&.search .grid { height: auto; }
 	.widget_recent_entries {
-	 	ul { padding: 0; 
+	 	ul { padding: 0;
 	 		a { font-size: 1.4em; }
 	 	}
 	 }
 	 .tribe-events-list-widget ol li {
-	 	h4:before { content: '\E825'; font-family: $fontello; display: inline-block; margin-right: 3px; color: $purple; }
+	   a:before { content: '\E825'; font-family: $fontello; display: inline-block; margin-right: 3px; color: $purple; }
+	   a:hover, a:focus {
+	   	 &, &:before { color: $dk-brown; }
+	   }
 	 }
-  
+
   .textwidget { font-size: 1.4em; }
 }
 
