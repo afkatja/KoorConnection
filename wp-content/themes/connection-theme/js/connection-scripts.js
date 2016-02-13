@@ -5,6 +5,10 @@ jQuery.noConflict();
 	* Mobile Menu
 	*/
 	$(function(){
+    setInterval(function(){
+      cycleImages($('.featured-slider'));
+    }, 15000);
+
 		var $expander = $('[data-role="mobile-nav-expander"]');
 		var $mainNav = $('.main-nav');
 
@@ -20,7 +24,7 @@ jQuery.noConflict();
 				}
 			}
 		});
-		
+
 		$('.prev, .next').click(fakeNav);
 
 		$expander.click(function (e) {
@@ -75,7 +79,7 @@ jQuery.noConflict();
 	  });
 	});
 
-  var picasaweb = 'https://picasaweb.google.com/data/feed/api/user/114842468267912126592/albumid/5664032092199429489?kind=photo',
+  /*var picasaweb = 'https://picasaweb.google.com/data/feed/api/user/114842468267912126592/albumid/5664032092199429489?kind=photo',
   photos = [];
 
   $.getJSON(picasaweb + "&alt=json-in-script&callback=?", function(data, status) {
@@ -90,7 +94,7 @@ jQuery.noConflict();
     //$('.photo-slider img:first').addClass('current');
     });
     //setInterval(cycleImages, 5000);
-  });
+  });*/
 
   var pullDownLogin = {
     init: function(){
@@ -107,19 +111,19 @@ jQuery.noConflict();
        $(target).removeClass('active icon-collapse').addClass('icon-expand');
      }
   };
-  
+
   function fakeNav(e){
   	var btn = $(e.target).find('a');
   	btn.click();
   }
 
-  var cycleImages = function(){
-    var $active = $('.photo-slider .current'),
+  var cycleImages = function($container){
+    var $active = $container.find('.current'),
         $prev = $active.prev(),
-        $next = ($('.photo-slider .current').next().length > 0) ? $('.photo-slider .current').next() : $('.photo-slider img:first');
-    $next.css('z-index', 2); //move the next image up the pile
+        $next = ($container.find('.current').next().length > 0) ? $container.find('.current').next() : $container.find('img:first');
+    $next.show().css('zIndex', 2);
     $active.fadeOut(1500, function(){ //fade out the top image
-      $active.css('z-index', 1).show().removeClass('current'); //reset the z-index and unhide the image
+      $active.css('z-index', 1).removeClass('current'); //reset the z-index and unhide the image
       $next.css('z-index', 3).addClass('current').fadeIn(1500); //make the next image the top one
       $prev.hide();
     });

@@ -12,3 +12,5 @@ connectionSite
 *.esproj
 *.espressostorage
 .htaccess
+
+*.map

@@ -26,7 +26,8 @@ input[type=url],
 #tribe-bar-form.tribe-bar-mini .tribe-bar-submit input[type=submit],
 .wpgform-column-wrapper .jfk-button.jfk-button-action,
 .tribe-events-button,
-#tribe-events .tribe-events-button {
+#tribe-events .tribe-events-button,
+#tribe-form .tribe-events-button.tribe-no-param {
 	@include vendor(box-shadow, 0 1px 0 rgba(255, 255, 255, 0.3) inset);
 	@include vendor(border-radius, 2px);
 	@include vertical-gradient(#f9f9f9, #f1f1f1);
@@ -41,7 +42,7 @@ input[type=url],
 	vertical-align: middle;
 	white-space: nowrap;
 	text-align: center;
-	text-transform: capitalize;
+	//text-transform: capitalize;
 	display: inline-block;
 	padding: 0 10px;
 	height: 30px;
@@ -59,6 +60,8 @@ input[type=url],
 .wpgform-column-wrapper .ss-form-entry { position: relative; padding-bottom: 15px;
 	input.ss-q-short { padding-left: 100px; }
 }
+
+.ConnectionTheme input::-webkit-input-placeholder { line-height: 30px; font-style: normal; }
 
 label {	display: inline-block; margin-bottom: 5px; }
 label.ss-q-item-label { position: absolute;

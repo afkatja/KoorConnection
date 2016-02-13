@@ -5,13 +5,13 @@
             #{$property}:$value;
 }
 
-@mixin vendor-value($property, $value){  
+@mixin vendor-value($property, $value){
   #{$property}:-webkit-#{$value};
      #{$property}:-moz-#{$value};
       #{$property}:-ms-#{$value};
           #{$property}:#{$value};
 }
-@mixin box-sizing($sizing) { 
+@mixin box-sizing($sizing) {
   @include vendor(box-sizing, $sizing);
 }
 
@@ -62,6 +62,47 @@ $base-line-height:  22px !default;
   line-height: ($line-height / $font-size)*1rem;
 }
 
+// Flexbox mixin, to define flex behaviour for an element.
+@mixin flex($value) {
+  -webkit-flex: $value;
+  flex: $value;
+}
+
+@mixin flex-container() {
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-direction($direction){
+  -webkit-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-align-items($alignment) {
+  -webkit-align-items: $alignment;
+  align-items: $alignment;
+}
+
+@mixin flex-align-self($alignment) {
+  -webkit-align-self: $alignment;
+  align-self: $alignment;
+}
+
+@mixin flex-wrap( $wrap ) {
+  -webkit-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-order( $order ) {
+  -webkit-order: $order;
+  order: $order;
+}
+
+@mixin justify-content( $justify ) {
+  -webkit-justify-content: $justify;
+  justify-content: $justify;
+}
+
 /**
  * Media queries
  */
@@ -72,6 +113,9 @@ $base-line-height:  22px !default;
   }
   @if $media-query == tablet-and-up{
       @media only screen and (min-width: $mobilel + 1) { @content; }
+  }
+  @if $media-query == xxl {
+      @media screen and (min-width: $xxl) { @content; }
   }
   @if $media-query == tabletl{
       @media only screen and (max-width: $tabletl) { @content; }

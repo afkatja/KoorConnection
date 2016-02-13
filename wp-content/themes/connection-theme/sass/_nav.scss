@@ -3,7 +3,7 @@
   #responsive_current_menu_item { display: none; }
   ul, .menu { /*background-color: #fff;*/ background-image: none;
     & > li { position: relative; float: left; //max-width: 15%;
-      a { display: block; padding: 0 15px; border: none; color: $purple; white-space: nowrap;
+      a { display: block; padding: 0 10px; border: none; color: $purple; white-space: nowrap;
         font-family: "Copse", sans-serif; font-size: 1.6em; line-height: 25px; height: 25px;
         text-shadow: 0px 1px 1px transparentize(#fff, .5);
         text-overflow: ellipsis; overflow: hidden;
@@ -46,29 +46,81 @@
   }
 }
 
+.members-menu {
+  margin-bottom: 20px;
+  clear: both;
+  .sub-header-nav {
+    margin-bottom: 0;
+    @include media-query(mobilel) { width: 100%; }
+  }
+  .pulldown, .logout { margin: 5px 0 30px 20px; font-size: 1.4em; font-family: $copse; color: $purple;
+    &.active { background-color: $brown; color: #fff; display: block; height: 30px; padding: 5px 10px 5px 20px; border-radius: 5px 5px 0 0; margin: 0; position: relative;
+     &:after { content: " "; position: absolute; bottom: -10px; width: 100%; height: 1px; right: 0; border-top: 10px solid $brown; z-index: 200; }
+    }
+  }
+  .logout {
+    top: -90px;
+    right: 0;
+    @include media-query(mobilel) {
+      top: 0;
+    }
+  }
+  .members-nav { z-index: 100; position: relative; box-sizing: border-box;
+    @include vendor-value(display, flex);
+    @include vendor(justify-content, center);
+    article, .widget-wrapper { border-radius: 6px; padding: 10px; }
+    li { padding: 0 5px; margin: 5px 0; }
+    li + li { border-left: 1px solid mix($warm-brown, #fff, 30%); @include vendor(box-shadow, -1px 0 0 0 transparentize($purple, .8)); margin-left: 5px; padding-left: 10px;}
+    a { display: block; border: none; color: $purple;
+      font-family: "Copse", sans-serif; font-size: 1.4em; line-height: 25px; height: 25px;
+      text-shadow: 0px 1px 1px transparentize($lila, .5); 
+      text-overflow: ellipsis; overflow: hidden;
+      &:hover { background: none; color: $dk-brown; }
+    }
+    .current-menu-item {
+      &, &.current_page_item { position: relative;
+        a { background: none; color: $dk-brown; }
+        &:after { position: absolute; content: ' '; left: -25px; top: 3px; width: 0px; height: 0px; border-color: transparent #fff transparent transparent; border-width: 15px; border-style: solid; }
+      }
+    }
+    @include media-query(mobilel) {
+      @include vendor(flex-direction, column);
+      li + li {
+        border-top: 1px solid mix($warm-brown, #fff, 30%); border-left: none; box-shadow: 0 -1px 0 0 transparentize($purple, .8);
+        margin-left: 0; margin-top: 5px; padding-top: 10px;
+      }
+      a { text-align: center; }
+    }
+  }
+  &.abs {
+    top: 20px;
+    right: 0;
+    margin: 0;
+    .sub-header-nav {
+      background-color: mix($warm-brown, #fff, 25%);
+    }
+    
+    .login-form { top: 40px; right: 0; z-index: 100;
+      .login-submit { text-align: right; }
+    }
+    
+    @include media-query(mobilel) {
+      //position: static;
+      text-align: right;
+      .pulldown,
+      .logout {
+        margin: 0;
+      }
+      .login-form {
+        //position: static; 
+        //margin-top: 40px; 
+        width: 100%;
+      }
+    }
+  }
+}
+
 .btn-hamburger { width: 2em;	color: $purple; font-size: 4em; margin-top: 30px; cursor: pointer; }
-
-.sub-header-nav {	@include mass-extend(grid-right, full, fit, contain, round-box); background-color: mix($warm-brown, #fff, 25%);
-	@include media-query(mobilel) { width: 100%; }
-}
-.members-nav { z-index: 100; position: relative; box-sizing: border-box; background: #fff;
-  article, .widget-wrapper { border-radius: 6px; padding: 10px; }
-  li { padding: 5px 0; }
-  li + li { border-top: 1px solid transparentize($purple, .8); @include vendor(box-shadow, 0 -1px 0 0 mix($warm-brown, #fff, 30%)); }
-  a { display: block; padding: 0 15px; border: none; color: $purple;
-    font-family: "Copse", sans-serif; font-size: 1.4em; line-height: 25px; height: 25px;
-    text-shadow: 0px 1px 1px transparentize($lila, .5);  text-align: right;
-    text-overflow: ellipsis; overflow: hidden;
-    &:hover { background: none; color: $dk-brown; }
-  }
-  .current-menu-item {
-  	&, &.current_page_item { position: relative;
-	  	a { background: none; color: $dk-brown; }
-	  	&:after { position: absolute; content: ' '; left: -25px; top: 3px; width: 0px; height: 0px; border-color: transparent #fff transparent transparent; border-width: 15px; border-style: solid; }
-  	}
-  }
-}
-
 .social { right: 0; top: 50%; margin-top: -60px; background-color: $dk-grey; box-shadow: -1px 0 5px $grey; z-index: 20;
 	@include vendor(border-radius, 5px 0 0 5px);
 	@include vendor(transition, all .3s ease-out);

@@ -48,7 +48,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
     $empty = ( empty( $responsive_options['home_headline'] ) && empty( $responsive_options['home_subheadline'] ) && empty( $responsive_options['home_content_area'] ) ) ? false : true;
 	?>
 
-	<div id="featured" class="grid <?php if(is_user_logged_in()) { ?> col-700 <?php } else {?> col-780 <?php } ?> main-pane round-box tabletp-col-940">
+	<div id="featured" class="grid main-pane round-box col-940">
 		<div class="clear default box">
 			<h1 class="featured-title">
 				<?php
@@ -94,44 +94,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 		</div>
 	</div>
 
-
-  <aside class="<?php if(is_user_logged_in()) { ?>col-220 <?php } else {?>col-140 <?php } ?> grid-right contain fit tabletp-col-460 mobilel-col-940">
-  <!--  User area-->
-  <?php if(! is_user_logged_in() ) { ?>
-  	<a href="#" class="grid pulldown icon-expand strong icon-login">Login leden</a>
-  	<div class="contain login-form flydown round-box secondary abs col-140 fit hidden">
-   		<?php $args = array(
-        'echo' => true,
-        'redirect' => site_url( $_SERVER['REQUEST_URI'] ),
-        'form_id' => 'loginform',
-        'label_username' => __( 'Username' ),
-        'label_password' => __( 'Password' ),
-        'label_remember' => __( 'Remember Me' ),
-        'label_log_in' => __( 'Log In' ),
-        'id_username' => 'username',
-        'id_password' => 'pass',
-        'id_remember' => 'rememberme',
-        'id_submit' => 'wp-submit',
-        'remember' => true,
-        'value_username' => NULL,
-        'value_remember' => false
-		  ); ?>
-		  <?php wp_login_form( $args ); ?>
-  	</div>
-  <?php } else { // If logged in: ?>
-  	<a href="<?php echo wp_logout_url(home_url()) ?>" class="grid-right logout icon-logout">Uitloggen</a>
-	<?php
-  	if (has_nav_menu('sub-header-menu', 'responsive')) {
-    	wp_nav_menu(array(
-  	    'container'       => 'nav',
-  	    'container_class' => 'sub-header-nav',
-  			'menu_class'      => 'members-nav',
-  			'theme_location'  => 'sub-header-menu')
-  		);
-	   	}
-		}
-	}?>
-</aside>
+  <?php }?>
 
 <?php get_sidebar('home'); ?>
 <?php get_footer(); ?>
