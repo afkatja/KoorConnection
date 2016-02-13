@@ -17,9 +17,7 @@
 @import "_tabs";
 
 body, body * { color: $dk-grey; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; }
-body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-repeat*/; /*background-size: 840px auto; */
-	/*@include media-query(tabletp) { background-size: contain; }*/
-}
+body { font-size: 62.5%; background: $beige; }
 @include sticky-footer(40px, '#container', '#footer', '#footer');
 
  footer.full { height: 35px;
@@ -70,25 +68,27 @@ body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-r
    @include media-query(mobilel) { float: none; width: 100%; }
  }
 
- .photo-slider, .featured-slider { width: 100%; height: 350px; position: relative;
-  background-repeat: no-repeat; background-position: center 70%; background-size: cover;
-   img { border: none; @include vendor(box-shadow, none); margin-top: -180px; position: absolute; bottom: -200px; }
-   p.mask { height: 100%; width: 100%; overflow: hidden; text-align: center; border-radius: 5px;
-     img { position: absolute; z-index: 1;
+ .photo-slider,
+ .featured-slider {
+    width: 100%; height: 430px; position: relative;
+    background-repeat: no-repeat; background-position: center 70%; background-size: cover;
+    img { position: absolute; z-index: 1; border: none; box-shadow: none; top: 50%; @include vendor(transform, translateY(-50%)); left: 0; width: 100%;
        &.current { z-index: 3; }
-     }
-   }
-   @include media-query(tabletl) {
-    background-position: center 80%;
-   }
-   @include media-query(tabletp) {
-    background-position: center 67%;
-   }
-   @include media-query(mobilel) { height: 200px;
-    background-position: 55% 70%;
-    background-size: 200% auto;
-   	img { bottom: auto; margin-top: 0; }
-   }
+    }
+    @include media-query(xxl) {
+      height: 500px;
+    }
+    @include media-query(tabletl) {
+      background-position: center 80%;
+    }
+    @include media-query(tabletp) {
+      background-position: center 67%;
+    }
+    @include media-query(mobilel) { height: 200px;
+      background-position: 55% 70%;
+      background-size: 200% auto;
+    	img { bottom: auto; }
+    }
  }
 
  #content,
@@ -97,7 +97,12 @@ body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-r
  #content-images,
  #content-archive { border: none; background-color: mix($warm-brown, #fff, 25%);
    margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; position: relative;
- 	.post, .post-entry, .page, .attachment, .comments {	background: #fff; padding: 10px; margin: 0; }
+ 	.post,
+  .post-entry,
+  .page,
+  .attachment,
+  .comments {	background: #fff; padding: 10px; margin: 0; }
+  .page .post-entry { padding: 0; }
  	.comments { margin-top: 20px;
  		.comment-author { @extend %contain; margin-bottom: 20px;
  			img, .fn { display: block; float: left; }
@@ -113,6 +118,10 @@ body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-r
  }
 
  .entry-title a { color: $purple; }
+ .post-entry { font-size: 1.4em;
+    p { font-size: 1em; }
+    a + a { display: block; } //img + link do not go wel together
+ }
 
  .secondary-pane { margin-top: 20px; box-sizing: border-box;
    article { border-radius: 6px; padding: 10px;
@@ -144,7 +153,7 @@ body { font-size: 62.5%; background: $beige; /*url(images/bgx.png) 50% 60px no-r
 
  .title-search-results { color: #fff; margin: 10px 0; }
  .page + .page,
- .post + .post { border-top: 10px solid $warm-brown; }
+ .post + .post { border-top: 10px solid mix($warm-brown, #fff, 25%); }
 
  .post-meta, .post-title { padding: 10px; margin: 0; color: $grey;
  		h1 { padding-left: 0; }

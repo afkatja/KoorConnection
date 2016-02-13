@@ -14,7 +14,12 @@
 		@include media-query(tabletl) {	margin-top: 0; }
 		@include media-query(tabletp) { float: left; clear: none;	}
 	}
-	.grid { height: 300px; }
+	.title { margin-top: 10px; font-size: 16px; font-family: $copse; color: $purple; }
+	.grid { height: 400px;
+		@include media-query(mobilel) { height: auto;
+			img { width: 100%; height: auto; }
+		}
+	}
 	&.search .grid { height: auto; }
 	.widget_recent_entries {
 	 	ul { padding: 0;
@@ -22,7 +27,10 @@
 	 	}
 	 }
 	 .tribe-events-list-widget ol li {
-	   a:before { content: '\E825'; font-family: $fontello; display: inline-block; margin-right: 3px; color: $purple; }
+	 	 margin-bottom: 10px;
+	 	 .entry-title.summary,
+	 	 .entry-title.summary a { line-height: 1.2; margin-bottom: 0; }
+	   a:before { content: '\E825'; font-family: $fontello; display: inline-block; margin-right: 5px; color: $purple; }
 	   a:hover, a:focus {
 	   	 &, &:before { color: $dk-brown; }
 	   }
@@ -32,5 +40,15 @@
 }
 
 .widget-gallery-slideshow.carousel {
-  .slideshow-window { background: none; border: none; margin-bottom: 0; }
+  .slideshow-window { background: none; border: none; margin-bottom: 0; border-radius: 0; text-align: center; overflow: visible;
+		img { display: inline-block !important; }
+		.slideshow-controls { @include vendor(transform, translateY(130px)); }
+  }
+}
+
+.dpe-flexible-posts a {
+	display: block;
+	text-align: center;
+	img { display: inline-block; }
+	.title { text-align: left; }
 }
