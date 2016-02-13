@@ -147,7 +147,7 @@ if ( !defined('ABSPATH')) exit;
             );
         } ?>
     </div>
-    
+
 	<?php responsive_header_bottom(); // after header content hook ?>
 
 	<?php
@@ -164,6 +164,7 @@ if ( !defined('ABSPATH')) exit;
     <img src="<?php echo $img_url . '/images/koorweekend2014.jpg'?>">
     <img src="<?php echo $img_url . '/images/connection.jpg'?>">
     <img src="<?php echo $img_url . '/images/kooruitje2015.jpg'?>">
+    <img src="<?php echo $img_url . '/images/kerst2016.jpg'?>">
   </div>
 <?php } ?>
 
