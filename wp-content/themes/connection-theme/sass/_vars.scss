@@ -10,6 +10,17 @@ $warm-pink: #ead5ce;
 $dk-grey: #444; //default text color
 $grey: #777;
 
+//new color theme
+$light: #FFFEF5; //rgba(44, 87, 255, .1)
+$light-blue: #E6EEF5;
+$blue: #2A3670;//#171E3E;
+$black: #0F0C09;
+$blue-alpha: transparentize($blue, .8);
+$brown-light: #AD9B89;
+
+//mixed colors
+$light-warm-brown: mix(#D1C0AE, #fff, 25%);
+
 // fonts
 $copse: "Copse", sans-serif;
 $arial: Helvetica, Arial, sans-serif;

@@ -56,21 +56,15 @@ jQuery.noConflict();
       } else pullDownLogin.goUp($('.pulldown'), $loginForm);
     });
 
+		var $mobileMemberTrigger = $('[data-role="toggle-members-nav"]');
+		$mobileMemberTrigger.on('click', toggleMembersNav);
+
 	   //fake placeholders with label elements
 	   $('.input-field input').focus(function(){
 	     $(this).parent().find('label.abs').hide();
 	   }).blur(function(){
 	     $(this).parent().find('label.abs').show();
 	   });
-
-	  /* Isotope masonic tiles */
-	  /*$('.post-entry .gallery').isotope({
-	    // options
-	    itemSelector : '.gallery-item'
-	  });
-	  $('.post-entry .photonic-stream').isotope({
-	  	itemSelector: '.photonic-gallery-c'
-	  });*/
 
 	  $('.post-entry .gallery-item').each(function(i, el){
 	    var img = $(el).find('.gallery-icon img');
@@ -79,22 +73,12 @@ jQuery.noConflict();
 	  });
 	});
 
-  /*var picasaweb = 'https://picasaweb.google.com/data/feed/api/user/114842468267912126592/albumid/5664032092199429489?kind=photo',
-  photos = [];
-
-  $.getJSON(picasaweb + "&alt=json-in-script&callback=?", function(data, status) {
-    $.each(data.feed.entry, function(i, pic) {
-      var thumb = pic.media$group.media$thumbnail[0];
-      var photo = pic.media$group.media$content[0];
-      var desc = pic.media$group.media$description.$t;
-      $('<img/>').attr({
-          'src': pic.content.src,
-          'alt': desc
-      }).appendTo('.photo-slider p.mask').hide();
-    //$('.photo-slider img:first').addClass('current');
-    });
-    //setInterval(cycleImages, 5000);
-  });*/
+	var away = true;
+	function toggleMembersNav(e){
+		away = !away;
+		$(e.target).toggleClass('icon-login', away).toggleClass('icon-logout', !away);
+		$('.members-menu').toggleClass('away', away);
+	}
 
   var pullDownLogin = {
     init: function(){

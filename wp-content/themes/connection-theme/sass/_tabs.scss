@@ -1,14 +1,46 @@
-.wp-accordion { 
-	h3.wp-tab-title { font-family: $copse; border: none;  color: $grey; font-size: 1.8em; @include vendor(border-radius, 2px);
-		&.ui-state-default { background: mix($warm-brown, #fff, 25%); }
-		&.ui-state-active { color: $dk-grey; @include vendor(border-radius, 2px 2px 0 0); }
-		&:hover, &.ui-state-hover { border: none; background: mix($warm-brown, #fff, 35%); }
-	}
-	.ui-accordion-content { color: $dk-grey; font-family: Helvetica, Arial, sans-serif; border: none; @include vendor(border-radius, 0 0 2px 2px); border: 1px solid $brown; 
-		&.ui-accordion-content-active { height: auto !important; }
-		h4 { font-size: 1.2em; }
-	}
-	& + h2,
-	& + h3,
-	& + h4 { margin-top: 2em; }
+.wp-accordion {
+  h3.wp-tab-title {
+    font-family: $copse;
+    border: none;
+    color: $grey;
+    font-size: 1.8em;
+    @include vendor(border-radius, 2px);
+
+    &.ui-state-default {
+      background: mix($warm-brown, #fff, 25%);
+    }
+
+    &.ui-state-active {
+      color: $dk-grey;
+      @include vendor(border-radius, 2px 2px 0 0);
+    }
+
+    &:hover,
+    &.ui-state-hover {
+      border: none;
+      background: mix($warm-brown, #fff, 35%);
+    }
+  }
+
+  .ui-accordion-content {
+    color: $dk-grey;
+    font-family: Helvetica, Arial, sans-serif;
+    border: none;
+    @include vendor(border-radius, 0 0 2px 2px);
+    border: 1px solid $brown;
+
+    &.ui-accordion-content-active {
+      height: auto !important;
+    }
+
+    h4 {
+      font-size: 1.2em;
+    }
+  }
+
+  & + h2,
+  & + h3,
+  & + h4 {
+    margin-top: 2em;
+  }
 }

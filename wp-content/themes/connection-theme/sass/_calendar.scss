@@ -1,127 +1,414 @@
 #calendar_wrap {
-	#wp-calendar { position: relative; font-size: 1.2em; width: 100%; }
-	caption { color: $dk-brown; @extend .h3; @extend .gamma; }
-	th { color: $grey; text-align: center; font-weight: bold; padding-bottom: 5px;	}
-	td { text-align: center; color: $dk-grey; padding: 5px; background: $lila; border: 1px solid #fff;
-		&.pad { background: none;	}
-	}
-	tfoot {
-		position: absolute; top: 0; left: 0; width: 100%;
-		#prev, #next { font-size: 1.4em; padding: 0; background: none; }
-		#prev { text-align: left; }
-		#next { text-align: right; }
-	}
+  #wp-calendar {
+    position: relative;
+    font-size: 1.2em;
+    width: 100%;
+  }
+
+  caption {
+    color: $dk-brown;
+    @extend .h3;
+    @extend .gamma;
+  }
+
+  th {
+    color: $grey;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+
+  td {
+    text-align: center;
+    color: $black;
+    padding: 5px;
+    background: $brown-light;
+    border: 1px solid #fff;
+
+    &.pad {
+      background: none;
+    }
+  }
+
+  tfoot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    #prev,
+    #next {
+      font-size: 1.4em;
+      padding: 0;
+      background: none;
+    }
+
+    #prev {
+      text-align: left;
+    }
+
+    #next {
+      text-align: right;
+    }
+  }
 }
 
-#tribe-events-bar { background: mix($warm-brown, #fff, 25%); }
-#tribe-bar-form { background: none;
-	#tribe-bar-collapse-toggle { text-transform: capitalize; line-height: 30px; background: mix($warm-brown, #fff, 25%);
-		span.tribe-bar-toggle-arrow {
-			&:after { content: '\E823'; font-family: $fontello; border: none; font-size: 24px; top: 5px; right: 5px; }
-		}
-	}
-	.tribe-bar-filters {
-		 .label-tribe-bar-search, .label-tribe-bar-date { text-indent: -9999em; overflow: hidden; text-transform: capitalize;
-		 	 &:before { text-indent: 0; position: absolute; top: 0; left: 0; }
-		 }
-		 .label-tribe-bar-search:before { content: 'Zoek'; }
-		 .label-tribe-bar-date:before { content: 'Op datum'; }
-	}
+#tribe-events-bar {
+  background: $light-warm-brown;
 }
 
-#tribe-events-content, #tribe-events {
-	.tribe-events-notices { background: $lila; border: 1px solid transparentize($purple, .7); color: $purple; text-shadow: 0 1px 0 transparentize(#FFF, .5); }
-	.tribe-bar-filters-inner>div { width: 33.333%; }
-	.tribe-bar-submit { padding-top: 25px; margin-left: 0; float: left;
-		input[type=submit] { padding: 5px 10px; @include vendor(border-radius, 2px); text-transform: capitalize; }
-	}
-	a { font-size: 14px; }
-	h2 a { font-size: inherit; }
-	#tribe-bar-views { background: none;
-		.tribe-bar-views-inner { background: none;
-			label { text-transform: capitalize;
-				&:after { content: '\E827'; font-family: $fontello; display: inline-block; margin-left: 5px; }
-			}
-		}
-		.tribe-bar-views-list { margin-top: 10px;
-			.tribe-bar-views-option a { background: mix($warm-brown, #fff, 25%); }
-			.tribe-bar-views-option.tribe-bar-active a {
-				background: none;
-			}
-			.tribe-bar-views-option a + a { border-top: 1px solid $beige;
-				&:hover, &:focus { background-color: $warm-brown; }
+#tribe-bar-form {
+  background: none;
 
-			}
-			.tribe-bar-views-option-upcoming .tribe-icon-upcoming { background: none; padding-left: 0;
-				&:before { content: '\F00B'; font-family: $awesome; }
-			}
-			.tribe-bar-views-option-month .tribe-icon-month { background: none; padding-left: 0;
-				&:before { content: '\F073'; font-family: $awesome; }
-			}
-			.tribe-bar-views-option-list .tribe-icon-list { background: none; padding-left: 0;
-				&:before { content: "\f03a"; font-family: $awesome; }
-			}
-		}
-	}
-	.tribe-events-list { margin-bottom: 0; }
-	.tribe-events-calendar {
-		th { color: $dk-grey; text-transform: capitalize; }
-		td.tribe-events-present div[id*="tribe-events-daynum-"],
-		td.tribe-events-present div[id*="tribe-events-daynum-"]>a {
-			background-color: $warm-brown;
-		}
-		.tribe-events-tooltip { border: none; background-color: white; color: $dk-grey; padding: 6px 8px; @include vendor(box-shadow, 0 1px 3px 1px rgba(0, 0, 0, 0.2)); @include vendor(border-radius, 2px);
-			h4 { background-color: transparent; color: $dk-grey; font-family: $copse; }
-			.tribe-events-arrow { height: 18px;	background-image: none; background-color: #fff;	@include vendor(box-shadow, 0 1px 3px 1px rgba(0,0,0,0.3)); @include vendor(border-radius, 2px); @include vendor(transform, rotate(45deg)); clip: rect(0px, 20px, 20px, 0px); bottom: -9px; }
-		}
-	}
+  #tribe-bar-collapse-toggle {
+    text-transform: capitalize;
+    line-height: 30px;
+    background: $light-warm-brown;
+
+    span.tribe-bar-toggle-arrow {
+      &:after {
+        content: '\E823';
+        font-family: $fontello;
+        border: none;
+        font-size: 24px;
+        top: 5px;
+        right: 5px;
+      }
+    }
+  }
+
+  .tribe-bar-filters {
+    .label-tribe-bar-search,
+    .label-tribe-bar-date {
+      text-indent: -9999em;
+      overflow: hidden;
+      text-transform: capitalize;
+
+      &:before {
+        text-indent: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .label-tribe-bar-search:before {
+      content: 'Zoek';
+    }
+
+    .label-tribe-bar-date:before {
+      content: 'Op datum';
+    }
+  }
 }
+
+#tribe-events-content,
+#tribe-events {
+  .tribe-events-notices {
+    background: $light-warm-brown;
+    border: 1px solid $blue-alpha;
+    color: $blue;
+    text-shadow: 0 1px 0 transparentize(#fff, .5);
+  }
+
+  .tribe-bar-filters-inner > div {
+    width: 33.333%;
+  }
+
+  .tribe-bar-submit {
+    padding-top: 25px;
+    margin-left: 0;
+    float: left;
+
+    input[type=submit] {
+      padding: 5px 10px;
+      border-radius: 2px;
+      text-transform: capitalize;
+    }
+  }
+
+  a {
+    font-size: 14px;
+  }
+
+  h2 a {
+    font-size: inherit;
+  }
+
+  #tribe-bar-views {
+    background: none;
+
+    .tribe-bar-views-inner {
+      background: none;
+
+      label {
+        text-transform: capitalize;
+
+        &:after {
+          content: '\E827';
+          font-family: $fontello;
+          display: inline-block;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .tribe-bar-views-list {
+      margin-top: 10px;
+
+      .tribe-bar-views-option a {
+        background: $light-warm-brown;
+      }
+
+      .tribe-bar-views-option.tribe-bar-active a {
+        background: none;
+      }
+
+      .tribe-bar-views-option a + a {
+        border-top: 1px solid $beige;
+
+        &:hover,
+        &:focus {
+          background-color: $brown-light;
+        }
+      }
+
+      .tribe-bar-views-option-upcoming .tribe-icon-upcoming {
+        background: none;
+        padding-left: 0;
+
+        &:before {
+          content: '\F00B';
+          font-family: $awesome;
+        }
+      }
+
+      .tribe-bar-views-option-month .tribe-icon-month {
+        background: none;
+        padding-left: 0;
+
+        &:before {
+          content: '\F073';
+          font-family: $awesome;
+        }
+      }
+
+      .tribe-bar-views-option-list .tribe-icon-list {
+        background: none;
+        padding-left: 0;
+
+        &:before {
+          content: "\f03a";
+          font-family: $awesome;
+        }
+      }
+    }
+  }
+
+  .tribe-events-list {
+    margin-bottom: 0;
+  }
+
+  .tribe-events-calendar {
+    th {
+      color: $black;
+      text-transform: capitalize;
+    }
+
+    td.tribe-events-present div[id*="tribe-events-daynum-"],
+    td.tribe-events-present div[id*="tribe-events-daynum-"] > a {
+      background-color: $brown-light;
+    }
+
+    .tribe-events-tooltip {
+      border: none;
+      background-color: white;
+      color: $black;
+      padding: 6px 8px;
+      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+
+      h4 {
+        background-color: transparent;
+        color: $black;
+        font-family: $copse;
+      }
+
+      .tribe-events-arrow {
+        height: 18px;
+        background-image: none;
+        background-color: #fff;
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+        border-radius: 2px;
+        @include vendor(transform, rotate(45deg));
+        clip: rect(0px, 20px, 20px, 0px);
+        bottom: -9px;
+      }
+    }
+  }
+}
+
 .tribe-events-content,
-.tribe-events-list .tribe-events-loop .tribe-events-content { font-family: $copse; font-size: 1em; color: $dk-grey; float: none; }
-.tribe-events-schedule { margin-top: 10px; }
-.single-tribe_events .tribe-events-event-meta { border: none; margin: 20px 0;
-	.tribe-events-meta-group { padding-left: 0; padding-right: 0;
-		& + .tribe-events-meta-group { padding-left: 2%; }
-	}
+.tribe-events-list .tribe-events-loop .tribe-events-content {
+  font-family: $copse;
+  font-size: 1em;
+  color: $dk-grey;
+  float: none;
 }
-.tribe-events-list h2.tribe-events-page-title { text-align: left; }
-.tribe-events-list h2.tribe-events-list-event-title {	font-size: 2em; }
-.tribe-events-list-separator-month { color: $dk-grey; background: none; text-transform: capitalize; padding: 0; font-size: 16px; margin-top: 1em;
-	& + .type-tribe_events.tribe-events-first { padding-top: 1em; }
+
+.tribe-events-schedule {
+  margin-top: 10px;
 }
-.tribe-events-list .type-tribe_events { padding-top: 1em; }
+
+.single-tribe_events .tribe-events-event-meta {
+  border: none;
+  margin: 20px 0;
+
+  .tribe-events-meta-group {
+    padding-left: 0;
+    padding-right: 0;
+
+    & + .tribe-events-meta-group {
+      padding-left: 2%;
+    }
+  }
+}
+
+.tribe-events-list h2.tribe-events-page-title {
+  text-align: left;
+}
+
+.tribe-events-list h2.tribe-events-list-event-title {
+  font-size: 2em;
+}
+
+.tribe-events-list-separator-month {
+  color: $dk-grey;
+  background: none;
+  text-transform: capitalize;
+  padding: 0;
+  font-size: 16px;
+  margin-top: 1em;
+
+  & + .type-tribe_events.tribe-events-first {
+    padding-top: 1em;
+  }
+}
+
+.tribe-events-list .type-tribe_events {
+  padding-top: 1em;
+}
+
 .author.location,
 address.tribe-events-address,
 .tribe-events-gmap,
-.tribe-events-loop .tribe-events-event-meta { font-weight: normal; }
-.tribe-events-read-more { margin-top: 20px; font-family: $arial; font-size: 12px; }
-#tribe-events .tribe-events-button, .tribe-events-button { text-transform: none; }
-.location.address { margin: .5em 0; }
-.tribe-events-list .type-tribe_events.tribe-event-end-month { margin-bottom: 3em; position: relative;
-	&:after { content: ''; position: absolute; display: block; bottom: -1.5em; left: -10px; right: -10px; height: 10px; background: mix($warm-brown, #fff, 25%); }
+.tribe-events-loop .tribe-events-event-meta {
+  font-weight: normal;
+}
+
+.tribe-events-read-more {
+  margin-top: 20px;
+  font-family: $arial;
+  font-size: 12px;
+}
+
+#tribe-events .tribe-events-button,
+.tribe-events-button {
+  text-transform: none;
+}
+
+.location.address {
+  margin: .5em 0;
+}
+
+.tribe-events-list .type-tribe_events.tribe-event-end-month {
+  margin-bottom: 3em;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -1.5em;
+    left: -10px;
+    right: -10px;
+    height: 10px;
+    background: mix($warm-brown, #fff, 25%);
+  }
 }
 
 .datepicker.dropdown-menu table {
-	border-collapse: separate; border-spacing: 0;
-	thead th { padding: 10px 0; }
-	th.next, th.prev { text-indent: -9999em; margin-top: 10px;
-		&:before { text-indent: 0; position: absolute; top: 3px; }
-		&:hover, &:focus { background-color: $warm-brown;
-			&:before { color: #fff; }
-		}
-	}
-	th.next { right: 10px;
-		&:before { left: 5px; }
-	}
-	th.prev { left: 10px;
-		&:before { left: 3px; }
-	}
-	tr td { border: none;
-		span { height: 30px; width: 25%; line-height: 30px; border: 1px solid #efefef; margin: 0; color: $purple;
-			&:hover, &:focus { color: $brown; }
-		}
-	}
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead th {
+    padding: 10px 0;
+  }
+
+  th.next,
+  th.prev {
+    text-indent: -9999em;
+    margin-top: 10px;
+
+    &:before {
+      text-indent: 0;
+      position: absolute;
+      top: 3px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $warm-brown;
+
+      &:before {
+        color: #fff;
+      }
+    }
+  }
+
+  th.next {
+    right: 10px;
+
+    &:before {
+      left: 5px;
+    }
+  }
+
+  th.prev {
+    left: 10px;
+
+    &:before {
+      left: 3px;
+    }
+  }
+
+  tr td {
+    border: none;
+
+    span {
+      height: 30px;
+      width: 25%;
+      line-height: 30px;
+      border: 1px solid $light;
+      margin: 0;
+      color: $blue;
+
+      &:hover,
+      &:focus {
+        color: $brown;
+      }
+    }
+  }
 }
-.single-tribe_events .tribe-events-venue-map { border: 1px solid #fff; @include vendor(box-shadow, 0 0 5px rgba(0,0,0, .2)); background: mix($warm-brown, #fff, 25%);
-	img, .grid img { @include vendor(box-shadow, none); background: none; }
+
+.single-tribe_events .tribe-events-venue-map {
+  border: 1px solid #fff;
+  @include vendor(box-shadow, 0 0 5px rgba(0, 0, 0, .2));
+  background: $light-warm-brown;
+
+  img,
+  .grid img {
+    @include vendor(box-shadow, none);
+    background: none;
+  }
 }

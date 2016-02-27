@@ -47,15 +47,12 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <body <?php body_class($theme); ?>>
 
-<?php responsive_container(); // before container hook ?>
-<div id="container" class="hfeed">
-
   <?php responsive_header(); // before header hook ?>
-  <div id="header" class="masthead contain rel wrap center">
+  <header id="header" class="masthead">
+		<div class="contain rel wrap center">
+			<?php responsive_header_top(); // before header content hook ?>
 
-		<?php responsive_header_top(); // before header content hook ?>
-
-        <?php if (has_nav_menu('top-menu', 'responsive')) { ?>
+	      <?php if (has_nav_menu('top-menu', 'responsive')) { ?>
 	        <?php wp_nav_menu(array(
 				    'container'       => '',
 						'fallback_cb'	  =>  false,
@@ -63,99 +60,42 @@ if ( !defined('ABSPATH')) exit;
 						'theme_location'  => 'top-menu')
 						);
 					?>
-        <?php } ?>
+	      <?php } ?>
 
-    <?php responsive_in_header(); // header hook ?>
+	    <section class="full contain rel">
+	        <a id="logo" href="<?php echo home_url('/'); ?>" class="block left main-logo col-140 tabletp-col-300 mobilep-col-460" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+	        <?php
+	        	$urlSVG = get_stylesheet_directory_uri() . '/images/logo-new-theme.svg';
+	        	$urlPNG = get_stylesheet_directory_uri() . '/images/logo-new-theme.png';
+	        ?>
+	        	<object data="<?php echo $urlSVG; ?>" width="100%" height="100%" type="image/svg+xml">
+	        	   <img src="<?php echo $urlPNG; ?>" width="150px" height="70px">
+	        	</object>
+	        </a>
+					<button class="reset-btn grid-right hidden mobilel-shown icon-login btn-toggle-membersnav" data-role="toggle-members-nav"></button>
+	        <button type="button" class="btn-hamburger reset-btn grid-right hidden mobilel-shown" data-role="mobile-nav-expander"></button>
+				</section>
+				<section class="full contain rel">
+	        <?php wp_nav_menu(array(
+	            'container'       => 'nav',
+	        		'container_class'	=> 'main-nav',
+	        		'menu_class' => 'contain',
+	        		'fallback_cb'	  =>  'responsive_fallback_menu',
+	        		'theme_location'  => 'header-menu')
+	        	);
+	        ?>
 
-    <?php
-        if(function_exists('get_custom_header')) {
-            $img_width = get_custom_header() -> width;
-        } else {
-            $img_width = HEADER_IMAGE_WIDTH;
-        }
-        if(function_exists('get_custom_header')) {
-            $img_height = get_custom_header() -> height;
-        } else {
-            $img_height = HEADER_IMAGE_HEIGHT;
-        }
-    ?>
-    <?php if ( get_header_image() != '' ) : ?>
-    <div class="left contain full rel">
-        <a id="logo" href="<?php echo home_url('/'); ?>" class="block left main-logo col-140 tabletp-col-300 mobilep-col-460">
-        	<img src="<?php header_image(); ?>" width="<?php echo $img_width; ?>" height="<?php echo $img_height; ?>" alt="<?php bloginfo('name'); ?>" />
-      	</a>
-        <p class="title copse strong left alpha col-540 icon-note-beamed">Koor Connection</p>
-    </div>
-
-    <?php endif; // header image was removed ?>
-
-
-
-    <div class="left full contain rel">
-        <a id="logo" href="<?php echo home_url('/'); ?>" class="block left main-logo col-140 tabletp-col-300 mobilep-col-460" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-        <?php
-        	$urlSVG = get_stylesheet_directory_uri() . '/images/logo.svg';
-        	$urlPNG = get_stylesheet_directory_uri() . '/images/logo.png';
-        ?>
-        	<object data="<?php echo $urlSVG; ?>" width="100%" height="100%" type="image/svg+xml">
-        	   <img src="<?php echo $urlPNG; ?>" width="150px" height="70px">
-        	</object>
-        </a>
-        <button type="button" class="btn-hamburger reset-btn grid-right hidden mobilel-shown" data-role="mobile-nav-expander"></button>
-        <?php wp_nav_menu(array(
-            'container'       => 'nav',
-        		'container_class'	=> 'main-nav',
-        		'menu_class' => 'contain',
-        		'fallback_cb'	  =>  'responsive_fallback_menu',
-        		'theme_location'  => 'header-menu')
-        	);
-        ?>
-
-      <!--  User area-->
-      <?php if(! is_user_logged_in() ) { ?>
-      <div class="col-220 mobilel-col-940 grid-right contain fit abs members-menu">
-        <a href="#" class="grid-right pulldown icon-expand strong icon-login">Login leden</a>
-        <div class="contain login-form flydown round-box secondary abs full fit hidden">
-            <?php $args = array(
-            'echo' => true,
-            'redirect' => site_url( $_SERVER['REQUEST_URI'] ),
-            'form_id' => 'loginform',
-            'label_username' => __( 'Username' ),
-            'label_password' => __( 'Password' ),
-            'label_remember' => __( 'Remember Me' ),
-            'label_log_in' => __( 'Log In' ),
-            'id_username' => 'username',
-            'id_password' => 'pass',
-            'id_remember' => 'rememberme',
-            'id_submit' => 'wp-submit',
-            'remember' => true,
-            'value_username' => NULL,
-            'value_remember' => false
-              ); ?>
-              <?php wp_login_form( $args ); ?>
-        </div>
-    </div>
-    <?php } else { // If logged in: ?>
-    <div class="members-menu wrap center contain rel">
-        <a href="<?php echo wp_logout_url(home_url()) ?>" class="abs logout icon-logout">Uitloggen</a>
-        <?php
-            wp_nav_menu(array(
-            'container'       => 'nav',
-            'container_class' => 'sub-header-nav grid-right full',
-                'menu_class'      => 'members-nav horizontal contain',
-                'theme_location'  => 'sub-header-menu')
-            );
-        } ?>
-    </div>
-
+	      <!--  User area-->
+	      <?php include 'memberNav.php'; ?>
+			</section>
+		</div>
 	<?php responsive_header_bottom(); // after header content hook ?>
 
-	<?php
-		//get_sidebar();
-	?> <!--search form-->
-    </div>
-</div><!-- end of #header -->
+</header><!-- end of #header -->
 <?php responsive_header_end(); // after header container hook ?>
+
+<?php responsive_container(); // before container hook ?>
+<div id="container" class="hfeed">
 
 <?php if(is_front_page() || is_home()) { ?>
   <div class="featured-slider full fit mask">

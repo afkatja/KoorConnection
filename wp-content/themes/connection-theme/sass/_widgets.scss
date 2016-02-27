@@ -1,54 +1,158 @@
-.widget-wrapper { margin-bottom: 0; background: #fff; @extend .box; @include vendor(border-radius, 3px); height: 100%; }
+.widget-wrapper {
+  margin-bottom: 0;
+  background: #fff;
+  @extend .box;
+  @include vendor(border-radius, 3px);
+  height: 100%;
+}
 
-#widgets.search {	background: mix($warm-brown, #fff, 25%); margin-bottom: 10px;
-	.widget_search { padding: 0; }
-	.submit {	width: 25%; }
+#widgets.search {
+  background: mix($warm-brown, #fff, 25%);
+  margin-bottom: 10px;
+
+  .widget_search {
+    padding: 0;
+  }
+
+  .submit {
+    width: 25%;
+  }
 }
 
 #widgets {
-	&, .front-page & { margin-top: 0;
-		.gallery { height: 200px;
-			.gallery-item { height: 100%; }
-			.gallery-caption { display: none; }
-		}
-		@include media-query(tabletl) {	margin-top: 0; }
-		@include media-query(tabletp) { float: left; clear: none;	}
-	}
-	.title { margin-top: 10px; font-size: 16px; font-family: $copse; color: $purple; }
-	.grid { height: 400px;
-		@include media-query(mobilel) { height: auto;
-			img { width: 100%; height: auto; }
-		}
-	}
-	&.search .grid { height: auto; }
-	.widget_recent_entries {
-	 	ul { padding: 0;
-	 		a { font-size: 1.4em; }
-	 	}
-	 }
-	 .tribe-events-list-widget ol li {
-	 	 margin-bottom: 10px;
-	 	 .entry-title.summary,
-	 	 .entry-title.summary a { line-height: 1.2; margin-bottom: 0; }
-	   a:before { content: '\E825'; font-family: $fontello; display: inline-block; margin-right: 5px; color: $purple; }
-	   a:hover, a:focus {
-	   	 &, &:before { color: $dk-brown; }
-	   }
-	 }
+  &,
+  .front-page & {
+    margin-top: 0;
 
-  .textwidget { font-size: 1.4em; }
+    .gallery {
+      height: 200px;
+
+      .gallery-item {
+        height: 100%;
+      }
+
+      .gallery-caption {
+        display: none;
+      }
+    }
+    @include media-query(tabletl) {
+      margin-top: 0;
+    }
+    @include media-query(tabletp) {
+      float: left;
+      clear: none;
+    }
+  }
+
+  .title {
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: $copse;
+    color: $blue;
+  }
+
+  .grid {
+    height: 400px;
+    @include media-query(mobilel) {
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &.search .grid {
+    height: auto;
+  }
+
+  .widget_recent_entries {
+    ul {
+      padding: 0;
+
+      a {
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  .tribe-events-list-widget {
+		ol li {
+	    margin-bottom: 10px;
+
+	    .entry-title.summary,
+	    .entry-title.summary a {
+	      line-height: 1.2;
+	      margin-bottom: 0;
+				font-family: $copse;
+	    }
+
+	    a:before {
+	      content: '\E825';
+	      font-family: $fontello;
+	      display: inline-block;
+	      margin-right: 5px;
+	      color: $blue;
+	    }
+
+	    a:hover,
+	    a:focus {
+	      &,
+	      &:before {
+	        color: $dk-brown;
+	      }
+	    }
+	  }
+		.tribe-events-widget-link {
+			text-align: right;
+			a {
+				&:after {
+					content: '\f061';
+					font-family: $awesome;
+					font-size: 1em;
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+
+  .textwidget {
+    font-size: 1.4em;
+  }
 }
 
 .widget-gallery-slideshow.carousel {
-  .slideshow-window { background: none; border: none; margin-bottom: 0; border-radius: 0; text-align: center; overflow: visible;
-		img { display: inline-block !important; }
-		.slideshow-controls { @include vendor(transform, translateY(130px)); }
+  .slideshow-window {
+    background: none;
+    border: none;
+    margin-bottom: 0;
+    border-radius: 0;
+    text-align: center;
+    overflow: visible;
+
+    img {
+      display: inline-block !important;
+    }
+
+    .slideshow-controls {
+      @include vendor(transform, translateY(130px));
+			@include media-query(mobilel) {
+				@include vendor(transform, translateY(20px));
+			}
+    }
   }
 }
 
 .dpe-flexible-posts a {
-	display: block;
-	text-align: center;
-	img { display: inline-block; }
-	.title { text-align: left; }
+  display: block;
+  text-align: center;
+
+  img {
+    display: inline-block;
+  }
+
+  .title {
+    text-align: left;
+  }
 }

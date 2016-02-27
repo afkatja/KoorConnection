@@ -34,7 +34,7 @@ if ( !defined('ABSPATH')) exit;
 			<?php responsive_footer_top(); ?>
 		    <footer class="wrap center contain">
 					<?php if (has_nav_menu('footer-menu', 'responsive')) { ?>
-					<div class="grid col-540 mobilep-col-940">
+					<div class="grid col-540 mobilel-col-940">
 					 <?php wp_nav_menu(array(
 					    'container'       => '',
 							'fallback_cb'	  	=>  false,
@@ -45,7 +45,7 @@ if ( !defined('ABSPATH')) exit;
 				 <?php } ?>
          <?php get_sidebar('colophon'); ?>
 
-        <div class="grid col-300 mobilep-col-940 copyright">
+        <div class="grid col-300 mobilel-col-940 copyright">
             <?php esc_attr_e('&copy;', 'responsive'); ?> <?php _e(date('Y')); ?>
             <a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
                 <?php bloginfo('name'); ?></a>

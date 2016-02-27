@@ -16,18 +16,6 @@
 @import "_tables";
 @import "_tabs";
 
-body,
-body * {
-  color: $dk-grey;
-  line-height: 1.5;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-body {
-  font-size: 62.5%;
-  background: $beige;
-}
-
 @include sticky-footer(40px, '#container', '#footer', '#footer');
 
 footer.full {
@@ -62,7 +50,7 @@ footer.full {
 }
 
 a {
-  color: $purple;
+  color: $blue;
 
   &:hover,
   &:focus {
@@ -81,6 +69,7 @@ a {
 .masthead {
   //padding: 10px 0;
   z-index: 200;
+  //border-bottom: 1px solid $dk-brown;
 
   .main-logo,
   #logo {
@@ -117,7 +106,7 @@ a {
 .main-pane,
 #featured {
   border: none;
-  background-color: mix($warm-brown, #fff, 25%); //#ddc08a;
+  background-color: $light-warm-brown;
   margin-top: 0;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -183,7 +172,7 @@ a {
 #content-images,
 #content-archive {
   border: none;
-  background-color: mix($warm-brown, #fff, 25%);
+  background-color: $light-warm-brown;
   margin-top: 0;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -254,7 +243,7 @@ a {
 }
 
 .entry-title a {
-  color: $purple;
+  color: $blue;
 }
 
 .post-entry {
@@ -287,12 +276,8 @@ a {
   .highlight,
   .news,
   .blog {
-    background-color: mix($warm-brown, #fff, 25%);
+    background-color: $light-warm-brown;
   }
-
-  /*.highlight { background-color: #0afcd8; }
-   .news { background-color: #3c6ef2; }
-   .blog { background-color: #ed9e7f; }*/
 }
 
 .call-to-action {
@@ -311,14 +296,16 @@ a {
 
 .page + .page,
 .post + .post {
-  border-top: 10px solid mix($warm-brown, #fff, 25%);
+  border-top: 10px solid $light-warm-brown;
 }
 
 .post-meta,
 .post-title {
-  padding: 10px;
+  padding: 10px 0;
   margin: 0;
-  color: $grey;
+  color: $blue;
+  text-shadow: -1px -1px 0 $brown-light;
+  font-family: $copse;
 
   h1 {
     padding-left: 0;
@@ -368,6 +355,6 @@ img,
 .partituren {
   a {
     display: block;
-    color: $purple;
+    color: $blue;
   }
 }
