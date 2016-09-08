@@ -1529,85 +1529,85 @@ p { font-size: 1.4em; margin-bottom: .5em; }
 .dpe-flexible-posts a .title { text-align: left; }
 
 /* line 1, sass/_forms.scss */
-input[type=text], input[type=search], input[type=password], input[type=email], input[type=url], textarea, textarea.ss-q-long, .field, #tribe-bar-form input[type="text"], .wpgform-column-wrapper input.ss-q-short { line-height: 16px; margin: 0; border: none; background-color: white; color: #0F0C09; padding: 6px 8px; box-shadow: 0 1px 0 #fff, inset 0 1px 3px 1px rgba(0, 0, 0, 0.2); border-radius: 2px; width: 100%; }
-/* line 21, sass/_forms.scss */
+input[type=text], input[type=search], input[type=password], input[type=email], input[type=url], textarea, textarea.ss-q-long, .field, #tribe-bar-form input[type="text"], .wpgform-column-wrapper input.ss-q-short { -webkit-appearance: initial; line-height: 16px; margin: 0; border: none; background-color: white; color: #0F0C09; padding: 6px 8px; box-shadow: 0 1px 0 #fff, inset 0 1px 3px 1px rgba(0, 0, 0, 0.2); border-radius: 2px; width: 100%; }
+/* line 22, sass/_forms.scss */
 input[type=text]:focus, input[type=search]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, textarea:focus, textarea.ss-q-long:focus, .field:focus, #tribe-bar-form input[type="text"]:focus, .wpgform-column-wrapper input.ss-q-short:focus { box-shadow: inset 0 1px 3px #777; outline: none; }
 
-/* line 27, sass/_forms.scss */
+/* line 28, sass/_forms.scss */
 input[type=text], input[type=search], input[type=password], input[type=email], input[type=url], #tribe-bar-form input[type="text"], .wpgform-column-wrapper input.ss-q-short { height: 30px; line-height: 30px; }
 
-/* line 38, sass/_forms.scss */
+/* line 39, sass/_forms.scss */
 .submit, input[type=submit], button[type=submit], #tribe-bar-form.tribe-bar-mini .tribe-bar-submit input[type=submit], .wpgform-column-wrapper .jfk-button.jfk-button-action, .tribe-events-button, #tribe-events .tribe-events-button, #tribe-form .tribe-events-button.tribe-no-param { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset; border-radius: 2px; background-color: #f9f9f9; /*Old browsers*/ background: -moz-linear-gradient(top, #f9f9f9 0 #f1f1f1 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(100%, #f1f1f1)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #f9f9f9 0, #f1f1f1 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #f9f9f9 0, #f1f1f1 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #f9f9f9 0, #f1f1f1 100%); /* IE10+ */ background: linear-gradient(to bottom, #f9f9f9 0, #f1f1f1 100%); /* W3C */ border: 1px solid #ddd; color: #0F0C09; cursor: pointer; display: inline-block; font-weight: 700; margin: 0; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3); vertical-align: middle; white-space: nowrap; text-align: center; display: inline-block; padding: 0 10px; height: 30px; line-height: 30px; width: auto; }
-/* line 68, sass/_forms.scss */
+/* line 69, sass/_forms.scss */
 .submit:hover, .submit:focus, input[type=submit]:hover, input[type=submit]:focus, button[type=submit]:hover, button[type=submit]:focus, #tribe-bar-form.tribe-bar-mini .tribe-bar-submit input[type=submit]:hover, #tribe-bar-form.tribe-bar-mini .tribe-bar-submit input[type=submit]:focus, .wpgform-column-wrapper .jfk-button.jfk-button-action:hover, .wpgform-column-wrapper .jfk-button.jfk-button-action:focus, .tribe-events-button:hover, .tribe-events-button:focus, #tribe-events .tribe-events-button:hover, #tribe-events .tribe-events-button:focus, #tribe-form .tribe-events-button.tribe-no-param:hover, #tribe-form .tribe-events-button.tribe-no-param:focus { background-color: #d6cdc4; /*Old browsers*/ background: -moz-linear-gradient(top, #d6cdc4 0 #faf7f5 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d6cdc4), color-stop(100%, #faf7f5)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #d6cdc4 0, #faf7f5 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #d6cdc4 0, #faf7f5 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #d6cdc4 0, #faf7f5 100%); /* IE10+ */ background: linear-gradient(to bottom, #d6cdc4 0, #faf7f5 100%); /* W3C */ color: #2A3670; }
 
-/* line 75, sass/_forms.scss */
+/* line 76, sass/_forms.scss */
 .input-field, .ss-form-entry { width: 50%; }
-/* line 79, sass/_forms.scss */
+/* line 80, sass/_forms.scss */
 .input-field input, .ss-form-entry input { padding: 3px 9px; border-radius: 5px; width: 94%; height: 22px; }
-@media only screen and (max-width: 800px) { /* line 75, sass/_forms.scss */
+@media only screen and (max-width: 800px) { /* line 76, sass/_forms.scss */
   .input-field, .ss-form-entry { width: 100%; } }
 
-/* line 90, sass/_forms.scss */
+/* line 91, sass/_forms.scss */
 .wpgform-column-wrapper .ss-form-entry { position: relative; padding-bottom: 15px; }
 
-/* line 95, sass/_forms.scss */
+/* line 96, sass/_forms.scss */
 .ConnectionTheme input::-webkit-input-placeholder { line-height: 30px; font-style: normal; }
 
-/* line 100, sass/_forms.scss */
+/* line 101, sass/_forms.scss */
 label { display: inline-block; margin-bottom: 5px; }
 
-/* line 106, sass/_forms.scss */
+/* line 107, sass/_forms.scss */
 label.ss-q-item-label .ss-q-title, label.ss-q-item-label .ss-q-help.ss-secondary-text { color: #777; }
 
-/* line 112, sass/_forms.scss */
+/* line 113, sass/_forms.scss */
 label.abs.inside { left: 10px; top: 6px; font-size: 1.2em; font-weight: normal; color: #0F0C09; line-height: 20px; display: inline-block; }
 
-/* line 122, sass/_forms.scss */
+/* line 123, sass/_forms.scss */
 .wpgform-column-wrapper .ss-q-help.ss-secondary-text:not(:empty) { position: relative; margin-top: 5px; font-size: 1em; z-index: 2; top: 0; font-size: .8em; pointer-events: none; }
 
-/* line 133, sass/_forms.scss */
+/* line 134, sass/_forms.scss */
 .ss-item.ss-radio.wpgform-dontsplit label.ss-q-item-label { position: relative; margin-top: 10px; }
-/* line 141, sass/_forms.scss */
+/* line 142, sass/_forms.scss */
 .ss-item.ss-radio.wpgform-dontsplit ul li { float: left; }
-/* line 145, sass/_forms.scss */
+/* line 146, sass/_forms.scss */
 .ss-item.ss-radio.wpgform-dontsplit ul li + li { margin-left: 5px; }
 
-/* line 151, sass/_forms.scss */
+/* line 152, sass/_forms.scss */
 .input-field + .input-field, .ss-form-question + .ss-form-question { margin-top: 10px; }
 
-/* line 156, sass/_forms.scss */
+/* line 157, sass/_forms.scss */
 .ss-choice-item-control, .ss-choice-label { display: inline-block; min-width: 25px; vertical-align: top; }
 
-/* line 163, sass/_forms.scss */
+/* line 164, sass/_forms.scss */
 .ss-choice-label { margin-top: 8px; }
 
-/* line 167, sass/_forms.scss */
+/* line 168, sass/_forms.scss */
 .button { background-color: #2A3670; color: #fff; width: auto; padding: 5px 10px; font-weight: bold; cursor: pointer; margin-top: 10px; border-radius: 3px; }
-/* line 176, sass/_forms.scss */
+/* line 177, sass/_forms.scss */
 .button:hover { color: #fff; background-color: #AD9B89; }
 
-/* line 182, sass/_forms.scss */
+/* line 183, sass/_forms.scss */
 .required { color: #92278F; }
 
-/* line 186, sass/_forms.scss */
+/* line 187, sass/_forms.scss */
 label { position: relative; }
-/* line 189, sass/_forms.scss */
+/* line 190, sass/_forms.scss */
 label .required { left: -5px; position: absolute; top: 5px; }
 
-/* line 197, sass/_forms.scss */
+/* line 198, sass/_forms.scss */
 .ConnectionTheme .form-container { flex: 1 0 800px; }
-@media only screen and (max-width: 740px) { /* line 197, sass/_forms.scss */
+@media only screen and (max-width: 740px) { /* line 198, sass/_forms.scss */
   .ConnectionTheme .form-container { flex: 1 0 400px; } }
-@media only screen and (max-width: 480px) { /* line 197, sass/_forms.scss */
+@media only screen and (max-width: 480px) { /* line 198, sass/_forms.scss */
   .ConnectionTheme .form-container { flex: 1 0 200px; } }
-/* line 205, sass/_forms.scss */
+/* line 206, sass/_forms.scss */
 .ConnectionTheme .form-container textarea.ss-q-long, .ConnectionTheme .form-container select { width: 100%; background: #fff; }
-/* line 210, sass/_forms.scss */
+/* line 211, sass/_forms.scss */
 .ConnectionTheme .form-container textarea { -webkit-appearance: initial; }
-/* line 213, sass/_forms.scss */
+/* line 214, sass/_forms.scss */
 .ConnectionTheme .form-container select { height: 30px; }
-/* line 216, sass/_forms.scss */
+/* line 217, sass/_forms.scss */
 .ConnectionTheme .form-container .ss-required-asterisk, .ConnectionTheme .form-container .error-message { color: #DDBFA7; }
 
 @font-face { font-family: 'fontello'; src: url("fonts/fontello.eot?19752574"); src: url("fonts/fontello.eot?19752574#iefix") format("embedded-opentype"), url("fonts/fontello.woff?19752574") format("woff"), url("fonts/fontello.ttf?19752574") format("truetype"), url("fonts/fontello.svg?19752574#fontello") format("svg"); font-weight: normal; font-style: normal; }
