@@ -90,10 +90,6 @@ button[type=submit],
 .wpgform-column-wrapper .ss-form-entry {
   position: relative;
   padding-bottom: 15px;
-
-  input.ss-q-short {
-    padding-left: 100px;
-  }
 }
 
 .ConnectionTheme input::-webkit-input-placeholder {
@@ -107,16 +103,13 @@ label {
 }
 
 label.ss-q-item-label {
-  position: absolute;
-
   .ss-q-title,
   .ss-q-help.ss-secondary-text {
     color: $grey;
   }
 }
 
-label.abs.inside,
-.wpgform-column-wrapper label.ss-q-item-label {
+label.abs.inside {
   left: 10px;
   top: 6px;
   font-size: 1.2em;
@@ -200,11 +193,28 @@ label {
   }
 }
 
-textarea,
-.ss-q-long {
-  width: 100%;
-}
 
-textarea.ss-q-long {
-  padding-top: 40px;
+.ConnectionTheme .form-container {
+  flex: 1 0 800px;
+  @include media-query(mobilel) {
+    flex: 1 0 400px;
+  }
+  @include media-query(mobilep) {
+    flex: 1 0 200px;
+  }
+  textarea.ss-q-long,
+  select {
+    width: 100%;
+    background: #fff;
+  }
+  textarea {
+    -webkit-appearance: initial;
+  }
+  select {
+    height: 30px;
+  }
+  .ss-required-asterisk,
+  .error-message {
+    color: $warm-brown;
+  }
 }

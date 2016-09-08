@@ -31,9 +31,7 @@
         line-height: 25px;
         height: 25px;
         text-shadow: 0px 1px 1px transparentize(#fff, .5);
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        word-break: break-all;
 
         &:hover {
           background: none;
@@ -43,10 +41,16 @@
 
       &:first-child {
         padding-left: 3px;
+        a {
+          padding-left: 0;
+        }
       }
 
       &:last-child {
         padding-right: 3px;
+        a {
+          padding-right: 0;
+        }
       }
 
       &:hover {
@@ -126,6 +130,7 @@
   clear: both;
   z-index: 1;
   @include media-query(mobilel) {
+    top: -30px;
     border-radius: 5px;
     padding: 10px;
     background-color: $light-warm-brown;
@@ -241,7 +246,6 @@
     li {
       padding: 0 5px;
       margin: 5px 0;
-      overflow: hidden;
     }
 
     li + li {
@@ -258,9 +262,9 @@
       line-height: 25px;
       height: 25px;
       text-shadow: 0px 1px 1px $light;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      word-break: break-all;
+      line-height: 1;
+      text-align: center;
 
       &:hover {
         background: none;
@@ -309,7 +313,7 @@
 .btn-toggle-membersnav {
   width: 2em;
   color: $blue;
-  font-size: 4em;
+  font-size: 2.4em;
   margin-top: 30px;
   cursor: pointer;
 }
@@ -392,11 +396,13 @@
     a {
       display: block;
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 100px;
       padding: 5px;
       left: 0;
-      bottom: 50px;
+      bottom: -50px;
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 1px 1px 5px rgba(0,0,0, .2);
     }
   }
 }

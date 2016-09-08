@@ -1,7 +1,7 @@
 .mejs-container {
 	&.mejs-audio { width: 100% !important; max-width: 650px; background: $grey; margin-bottom: 20px; @include vendor(border-radius, 2px);
 		.mejs-controls { padding-right: 5px; @include vendor(border-radius, 2px);
-			@include vertical-gradient(rgba(50, 50, 50, 0.3),rgba(0, 0, 0, 0.5)); 
+			@include vertical-gradient(rgba(50, 50, 50, 0.3),rgba(0, 0, 0, 0.5));
 	    .mejs-playpause-button,
 	    .mejs-time.mejs-currenttime-container,
 	    .mejs-time.mejs-duration-container,
@@ -9,14 +9,14 @@
 			div.mejs-time-rail { width: 70% !important; position: relative;
 				.mejs-time-total { width: 95% !important; }
 			}
-			div.mejs-horizontal-volume-slider { float: right; width: 8%; 
+			div.mejs-horizontal-volume-slider { float: right; width: 8%;
 				.mejs-horizontal-volume-total { width: 100%; }
 			}
 		}
 		.mejs-mediaelement { width: auto; }
 		.me-cannotplay {  }
-		@include media-query(tabletp) { 
-			.mejs-controls { 
+		@include media-query(tabletp) {
+			.mejs-controls {
 			  .mejs-playpause-button,
 			  .mejs-time.mejs-currenttime-container,
 			  .mejs-time.mejs-duration-container,
@@ -28,18 +28,30 @@
 	}
 }
 
-.jcorg-yt-thumbnails {  
-	.jcorg-yt-thumbnail img { 
+.jcorg-yt-thumbnails {
+	.jcorg-yt-thumbnail img {
 		&, &:hover {
 			border: 1px solid #efefef;
 			background: #fff;
-			@include vendor(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset); 
+			@include vendor(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset);
 			@include vendor(border-radius, 3px);
 		}
 	}
 	.jcorg-yt-thumbnail-title { height: auto; padding: 5px 0; }
 }
 
-.pp_content_container {  
+.pp_content_container {
 	.pp_gallery { bottom: -60px; width: 100%; margin-left: -200px; }
+}
+
+.ConnectionTheme {
+	.fluid-width-video-wrapper {
+		padding-top: 0 !important; 
+		iframe,
+	  object,
+	  embed {
+			position: static;
+			min-height: 500px;
+		}
+	}
 }

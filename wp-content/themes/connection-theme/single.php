@@ -32,7 +32,7 @@ get_header(); ?>
 			<div id="post<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php responsive_entry_top(); ?>
 
-        <?php //get_template_part( 'post-meta' ); 
+        <?php //get_template_part( 'post-meta' );
         ?>
 
         <div class="post-entry">
@@ -68,9 +68,11 @@ get_header(); ?>
 		</div><!-- end of #post-<?php the_ID(); ?> -->
 		<?php responsive_entry_after(); ?>
 
-		<?php responsive_comments_before(); ?>
-		<?php comments_template( '', true ); ?>
-		<?php responsive_comments_after(); ?>
+		<?php if( comments_open() ) : ?>
+			<?php responsive_comments_before(); ?>
+			<?php comments_template( '', true ); ?>
+			<?php responsive_comments_after(); ?>
+		<?php endif; ?>
 
     <?php
 		endwhile;

@@ -2,8 +2,8 @@
   margin-bottom: 0;
   background: #fff;
   @extend .box;
-  @include vendor(border-radius, 3px);
-  height: 100%;
+  border-radius: 3px;
+  @include flex(1);
 }
 
 #widgets.search {
@@ -16,6 +16,17 @@
 
   .submit {
     width: 25%;
+    text-indent: -999px;
+    position: relative;
+    overflow: hidden;
+    &:before {
+      text-indent: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @include vendor(transform, translateX(-50%) translateY(-50%));
+      margin: 0;
+    }
   }
 }
 
@@ -23,6 +34,11 @@
   &,
   .front-page & {
     margin-top: 0;
+    @include flex-container;
+    @include flex-wrap(wrap);
+    &:before {
+      display: none;
+    }
 
     .gallery {
       height: 200px;
@@ -52,19 +68,13 @@
   }
 
   .grid {
-    height: 400px;
+    @include flex-container;
+    @include flex-direction(column);
     @include media-query(mobilel) {
-      height: auto;
-
       img {
         width: 100%;
-        height: auto;
       }
     }
-  }
-
-  &.search .grid {
-    height: auto;
   }
 
   .widget_recent_entries {
@@ -150,6 +160,7 @@
 
   img {
     display: inline-block;
+    object-fit: cover;
   }
 
   .title {

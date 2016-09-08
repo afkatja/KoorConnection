@@ -248,16 +248,32 @@ a {
 
 .post-entry {
   font-size: 1.4em;
+  @include flex-container;
+  @include flex-wrap(wrap);
+  @include justify-content(flex-start);
 
   p {
     font-size: 1em;
   }
-
   a + a {
     display: block;
+    @include flex(1);
+    margin-left: 10px;
   }
-
-  //img + link do not go wel together
+  img {
+    object-fit: cover;
+  }
+  h2,
+  h3,
+  p {
+    flex: 1 0 800px;
+    @include media-query(mobilel) {
+      flex: 1 0 400px;
+    }
+    @include media-query(mobilep) {
+      flex: 1 0 200px;
+    }
+  }
 }
 
 .secondary-pane {
