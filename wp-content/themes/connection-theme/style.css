@@ -2248,7 +2248,7 @@ a:hover, a:hover:before, a:hover:after, a:focus, a:focus:before, a:focus:after {
   .main-pane, #featured { float: none; width: 100%; } }
 
 /* line 138, sass/_connection.scss */
-.photo-slider, .featured-slider { width: 100%; height: 430px; position: relative; }
+.photo-slider, .featured-slider { width: 100%; height: 60vh; position: relative; }
 /* line 144, sass/_connection.scss */
 .photo-slider img, .featured-slider img { position: absolute; z-index: 1; border: none; box-shadow: none; top: 50%; left: 0; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); width: 100%; object-fit: cover; height: 100%; }
 /* line 156, sass/_connection.scss */
