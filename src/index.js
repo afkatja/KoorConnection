@@ -10,9 +10,10 @@ import NotFound from './components/NotFound';
 
 class App {
   buildRoutes(data) {
-    return data.pages.map((page, i) => {
+    console.log('building routes', data);
+    return data.map((page, i) => {
       <Route key={i} component={Home} path={`/${page.slug}`} exact />
-    }
+    });
   }
 
   run() {
