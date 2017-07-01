@@ -4,17 +4,24 @@ import styled from 'styled-components';
 
 import { sizes, media } from '../../styles/styles';
 
+import LogoLink from '../atoms/Logo';
 import List from '../molecules/List';
 import LinkItem from '../atoms/Link';
 
-const Nav = styled.nav`
+const NavContainer = styled.header`
   flex: none;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  padding: 20px 0;
+  max-width: ${sizes.siteWidth};
   height: ${sizes.mainNavHeight};
+  display: flex;
+  align-items: center;
+`;
+
+const Nav = styled.nav`
+  margni-left: auto;
+  height: 100%;
   li:not(:last-child) {
     margin-right: 10px;
   }
@@ -34,16 +41,18 @@ export default class MainNav extends Component {
 
   render() {
     return (
-      <Nav>
-        <List className="centered">
-          {this.props.links.map((link, i) => (
-            <li key={link.id}>
-              <LinkItem to={link.slug} className="nav-link">{link.title.rendered}</LinkItem>
-            </li>
-          ))}
-        </List>
-      </Nav>
+      <NavContainer className="container">
+        <LogoLink />
+        <Nav>
+          <List className="main-nav">
+            {this.props.links.map((link, i) => (
+              <li key={link.id}>
+                <LinkItem to={link.slug} className="nav-link">{link.title.rendered}</LinkItem>
+              </li>
+            ))}
+          </List>
+        </Nav>
+      </NavContainer>
     );
   }
-
 }

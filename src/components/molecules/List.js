@@ -8,6 +8,10 @@ export default styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  &.main-nav {
+    height: 100%;
+    align-items: flex-end;
+  }
   &.centered {
     justify-content: center;
   }

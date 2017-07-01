@@ -10,7 +10,7 @@ import MainNav from './navigation/MainNav';
 import FooterNav from './navigation/FooterNav';
 
 const SiteContainer = styled.div`
-  max-width: 1200px;
+  max-width: ${sizes.siteWidth};
   margin-left: auto;
   margin-right: auto;
   background: #fff;

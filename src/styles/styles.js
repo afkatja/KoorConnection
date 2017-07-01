@@ -68,8 +68,10 @@ export const breakpoints = {
 };
 
 export const sizes = {
-  mainNavHeight: '100px',
+  siteWidth: '1200px',
+  mainNavHeight: '122px',
   footerHeight: '200px',
+  logoSize: '122px',
 };
 
 // eslint-disable-next-line import/prefer-default-export
