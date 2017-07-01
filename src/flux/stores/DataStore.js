@@ -33,7 +33,7 @@ class DataStore {
 
   getPageBySlug(slug) {
     const pages = this.getState().data.pages;
-    return pages[Object.keys(pages).find((page, i) => pages[page].slug === slug)] || {};
+    return pages[Object.keys(pages).find(page => pages[page].slug === slug)] || {};
   }
 }
 

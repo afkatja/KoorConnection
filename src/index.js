@@ -5,13 +5,15 @@ import { createBrowserHistory } from 'history';
 
 import DataActions from './flux/actions/DataActions';
 
+import './styles/styles';
+
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 
 class App {
   buildRoutes(data) {
     console.log('building routes', data);
-    return data.map((page, i) => {
+    return data.pages.map((page, i) => {
       <Route key={i} component={Home} path={`/${page.slug}`} exact />
     });
   }
@@ -32,3 +34,7 @@ class App {
   }
 }
 new App().run();
+
+if (module.hot) {
+  module.hot.accept();
+}
