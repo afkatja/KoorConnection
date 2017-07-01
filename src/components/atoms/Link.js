@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { transparentize } from 'polished';
 
 import { colors, typography } from '../../styles/styles';
 
@@ -13,6 +14,19 @@ const styles = css`
   &:hover,
   &:focus {
     color: ${colors.$brownLight}
+  }
+  &.nav-link {
+    font-family: ${typography.styledFont};
+    display: block;
+    text-shadow: 0px 1px 1px ${transparentize(0.5, '#fff')};
+    word-break: break-all;
+    white-space: nowrap;
+    color: ${colors.$blue};
+
+    &:hover,
+    &:focus {
+      color: ${colors.$darkBrown};
+    }
   }
   &.label-link {
     display: inline-block;
@@ -64,7 +78,6 @@ export default class LinkItem extends Component {
   render() {
     const { to, ...props } = this.props;
     const rendered = to ? <StyledLink to={to} {...props} /> : <StyledAnchor {...props} />;
-  console.log(rendered);
     return (rendered);
   }
 }

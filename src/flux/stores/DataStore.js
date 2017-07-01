@@ -11,6 +11,7 @@ class DataStore {
       getAll: this.getAll,
       getPages: this.getPages,
       getPosts: this.getPosts,
+      getSettings: this.getSettings,
       getPageBySlug: this.getPageBySlug,
     });
   }
@@ -29,6 +30,10 @@ class DataStore {
 
   getPosts() {
     return this.getState().data.posts;
+  }
+
+  getSettings() {
+    return this.getState().data.settings;
   }
 
   getPageBySlug(slug) {

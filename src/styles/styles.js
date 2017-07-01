@@ -21,6 +21,10 @@ injectGlobal`
     color: {colors.$black};
   }
 
+  body {
+    background: #fffef5;
+  }
+
   #root {
     display: block;
     min-height: 100%;
@@ -47,22 +51,29 @@ export const colors = {
 
   //mixed colors
   $lightWarmBrown: mix(0.25, '#D1C0AE', '#fff'),
+  $darkBrown: '#AA766C',
 };
 
 export const typography = {
   compactFontSize: '12px',
   regularFontSize: '16px',
+  styledFont: 'Copse, sans-serif',
 };
 
-export const sizes = {
+export const breakpoints = {
   tabletLandscape: 1024,
   tabletPortrait: 768,
   mobileLandscape: 60,
   mobilePortrait: 380,
 };
 
+export const sizes = {
+  mainNavHeight: '100px',
+  footerHeight: '200px',
+};
+
 // eslint-disable-next-line import/prefer-default-export
-export const media = Object.keys(sizes).reduce((accumulator, label) => ({
+export const media = Object.keys(breakpoints).reduce((accumulator, label) => ({
   ...accumulator,
   [label]: (...args) => css`
     @media (max-width: ${sizes[label]}px) {
