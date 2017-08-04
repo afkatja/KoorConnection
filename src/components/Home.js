@@ -8,6 +8,7 @@ import DataStore from '../flux/stores/DataStore';
 
 import MainNav from './navigation/MainNav';
 import FooterNav from './navigation/FooterNav';
+import SocialNav from './navigation/SocialNav';
 
 const SiteContainer = styled.div`
   max-width: ${sizes.siteWidth};
@@ -33,12 +34,13 @@ export default class Home extends Component {
     const pages = DataStore.getPages();
     const posts = DataStore.getPosts();
     const settings = DataStore.getSettings();
-    console.log(settings);
+    console.log('do we have the settings?', settings);
     return (
       <SiteContainer className="site-wrap">
         <MainNav links={pages} />
         <main className="main">{this.props.children}</main>
         <FooterNav links={posts} />
+        <SocialNav />
       </SiteContainer>
     );
   }
