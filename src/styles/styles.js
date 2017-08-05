@@ -98,22 +98,41 @@ export const mediaMin = {
 };
 
 export function centerHorizontal() {
-  return `
+  return css`
     left: 50%;
     transform: translateX(-50%);
   `;
 }
 export function centerVertical() {
-  return `
+  return css`
     top: 50%;
     transform: translateY(-50%);
   `;
 }
 export function centerAll() {
-  return `
+  return css`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  `;
+}
+
+export function widerThan (content) {
+  return css`
+    margin-left: calc(-50vw + ${content} / 2);
+    margin-right: calc(-50vw + ${content} / 2);
+    ${media.tabletLandscape`
+      margin-left: calc(-50vw + ${content}/ 2);
+      margin-right: calc(-50vw + ${content} / 2);
+    `}
+    ${media.tabletPortrait`
+      margin-left: -2rem;
+      margin-right: -2rem;
+    `}
+    ${media.mobileLandscape`
+      margin-left: 0;
+      margin-right: 0;
+    `}
   `;
 }
 
