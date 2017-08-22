@@ -130,7 +130,7 @@
   clear: both;
   z-index: 1;
   @include media-query(mobilel) {
-    top: -30px;
+    top: 0;
     border-radius: 5px;
     padding: 10px;
     background-color: $light-warm-brown;
@@ -194,7 +194,7 @@
   }
 
   &.abs {
-    top: -50px;
+    top: 0;
     right: 0;
     margin: 0;
     z-index: 100;

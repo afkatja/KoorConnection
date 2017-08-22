@@ -251,7 +251,9 @@ a {
   @include flex-container;
   @include flex-wrap(wrap);
   @include justify-content(flex-start);
-
+  #post311 & {
+    display: block;
+  }
   p {
     font-size: 1em;
   }
